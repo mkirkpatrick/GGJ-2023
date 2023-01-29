@@ -9,10 +9,10 @@ public class TitleScreenController : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
-        StartCoroutine(LoadDashboard(ScreenWaitTime));
+        StartCoroutine(LoadMainMenu(ScreenWaitTime));
     }
 
-    IEnumerator LoadDashboard(float _time)
+    IEnumerator LoadMainMenu(float _time)
     {
         yield return new WaitForSeconds(_time);
 
