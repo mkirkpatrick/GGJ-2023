@@ -1,0 +1,74 @@
+{
+    "name": "Player Input",
+    "maps": [
+        {
+            "name": "Game",
+            "id": "547e3d99-e46b-4156-9683-74eb70ae600e",
+            "actions": [
+                {
+                    "name": "Mouse1",
+                    "type": "Button",
+                    "id": "78a8e1f0-9599-44b6-a586-8c98ea162611",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Mouse2",
+                    "type": "Button",
+                    "id": "31a2480b-1109-4178-a7a8-b2d4e7a6a295",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MouseScroll",
+                    "type": "Value",
+                    "id": "11f65be4-60a1-443a-b6db-fbe9a5ed1c99",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "56d5250c-c98c-4855-bed5-f340fe695181",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9ca3ccc5-8456-427d-aaa8-7a3c34eb1b16",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mouse2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9d1f6290-dfb8-4cde-b8ad-0bc494c4bc91",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseScroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
