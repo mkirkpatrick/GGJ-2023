@@ -6,10 +6,6 @@ using UnityEngine;
 public class Tribe : ScriptableObject
 {
     public string tribeName;
-    public string skinColor;
-    public string bodyType;
-    public string hairType;
-    public string eyeColor;
 
     public Tribe()
     {
