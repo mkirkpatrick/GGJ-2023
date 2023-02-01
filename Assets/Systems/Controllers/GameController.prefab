@@ -243,3 +243,17 @@ MonoBehaviour:
   cameraController: {fileID: 0}
   isActive: 0
   mouseScrollScale: 2
+--- !u!114 &2835587238874075525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8775741241594093752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67eaf3a5d58662a42a34a44ba89a182a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultCursor: {fileID: 0}
+  brackets: {fileID: 0}
