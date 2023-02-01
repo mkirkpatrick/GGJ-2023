@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class TitleScreenController : MonoBehaviour
+public class TitleScreenView : MonoBehaviour
 {
     public float ScreenWaitTime = 2f;
 

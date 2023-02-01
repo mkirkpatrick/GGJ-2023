@@ -435,8 +435,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 937589047}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1807923959}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -724,17 +724,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125543330}
   m_CullTransparentMesh: 1
---- !u!114 &1238536109 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 593559425, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
-  m_PrefabInstance: {fileID: 7754383465525070413}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92a6c6a9226c35a4398290dc75069aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1807923957
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +735,7 @@ GameObject:
   - component: {fileID: 1807923959}
   - component: {fileID: 1807923958}
   m_Layer: 0
-  m_Name: Title Screen Controller
+  m_Name: Title Screen View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -776,9 +765,10 @@ Transform:
   m_LocalPosition: {x: 509.14096, y: 292.50974, z: 2.7273242}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 831206410}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7754383465525070413
 PrefabInstance:
@@ -789,7 +779,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1286279445190711421, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1286279445190711421, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
       propertyPath: m_LocalPosition.x
@@ -831,10 +821,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2835587238874075524, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
-      propertyPath: cameraController
-      value: 
-      objectReference: {fileID: 1238536109}
     - target: {fileID: 9081123683381597248, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
       propertyPath: m_Name
       value: GameController

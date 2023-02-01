@@ -20,8 +20,7 @@ public class GameController : MonoBehaviour
     }
     private void Start()
     {
-
-        Screen.SetResolution(1280, 720, false);
+        Screen.SetResolution(1366, 768, false);
         Screen.fullScreenMode = FullScreenMode.Windowed;
     }
 }
