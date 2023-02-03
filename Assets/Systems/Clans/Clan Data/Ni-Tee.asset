@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c640056ebabea9646a8b14bb8d83c6be, type: 3}
-  m_Name: Tribe 1
+  m_Script: {fileID: 11500000, guid: aa14c9b0255296e4d9dcc63f81805b34, type: 3}
+  m_Name: Ni-Tee
   m_EditorClassIdentifier: 
-  tribeName: Tribe 1
-  skinColor: Brown
-  bodyType: Agile
-  hairType: Long
-  eyeColor: Golden
+  clanName: Ni-Tee
+  description: 

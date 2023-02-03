@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa14c9b0255296e4d9dcc63f81805b34, type: 3}
+  m_Name: Huma
+  m_EditorClassIdentifier: 
+  clanName: Huma
+  description: "A proud clan of warrior dung beetles, the Hum\u0101 believe might
+    makes right\u2026and they love to be right. Distinguished by their imposing carapaces,
+    martial-red color, and impressive stature, the Hum\u0101 view their neighboring
+    clans with a mix of pity and disgust."
