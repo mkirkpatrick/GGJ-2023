@@ -14,10 +14,15 @@ public class MainMenuView : MonoBehaviour
 
     void Start()
     {
+        playButton.onClick.AddListener(() => StartGame());
         settingsButton.onClick.AddListener(() => GoToSettings());
         exitButton.onClick.AddListener(() => ExitGame());
     }
 
+    void StartGame()
+    {
+        SceneManager.LoadScene("Journey Start");
+    }
     void GoToSettings() {
         SceneManager.LoadScene("Settings");
     }
