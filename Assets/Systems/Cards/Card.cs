@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public enum CardType {Attack, Huma, Mani, Nihtee, Heal, Utility };
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+[CreateAssetMenu(fileName = "New Card Data", menuName = "ScriptableObjects/Card")]
+public class Card : ScriptableObject 
+{
+   
+    public string cardName;
+    public string cardDescription;
+    public Sprite cardImage;
+    public CardType cardType;
+    public int effectValue;
+    public int id;
+
+
 }
