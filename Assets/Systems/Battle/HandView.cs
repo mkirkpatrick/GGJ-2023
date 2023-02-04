@@ -6,18 +6,29 @@ using TMPro;
 
 public class HandView : MonoBehaviour
 {
-    public Button card1Button;
-    public Button card2Button;
-    public Button card3Button;
-    public Button card4Button;
-    public Button card5Button;
+    public GameObject[] cardSlots;
 
     private void Start()
     {
-        card1Button.onClick.AddListener( () => SelectCard(1));
+        cardSlots = new GameObject[5];
+
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            cardSlots[i] = transform.GetChild(i).gameObject;
+        }
     }
 
-    private void SelectCard(int _index) { 
-    
+    public void SelectCard(int _index) {
+        cardSlots[_index].SetActive(false);
+
+
+    }
+
+    private void AdjustHand()
+    {
+        for(int i = 0; i < cardSlots.Length; i++)
+        {
+
+        }
     }
 }
