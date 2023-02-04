@@ -244,12 +244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f80eec33af390948b5dbd3c301d80f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardObjs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   cardColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 0, b: 0, a: 1}
@@ -258,6 +252,7 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0, a: 1}
   - {r: 1, g: 0, b: 1, a: 1}
   - {r: 0, g: 0, b: 0, a: 1}
+  cardSlots: []
 --- !u!1 &377279894
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,11 +340,11 @@ MonoBehaviour:
       - m_Target: {fileID: 329023013}
         m_TargetAssemblyTypeName: PlayerHandTest, Assembly-CSharp
         m_MethodName: SelectCard
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 377279894}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -713,10 +708,10 @@ MonoBehaviour:
       - m_Target: {fileID: 329023013}
         m_TargetAssemblyTypeName: PlayerHandTest, Assembly-CSharp
         m_MethodName: SelectCard
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 520243717}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -860,11 +855,11 @@ MonoBehaviour:
       - m_Target: {fileID: 329023013}
         m_TargetAssemblyTypeName: PlayerHandTest, Assembly-CSharp
         m_MethodName: SelectCard
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1081646330}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1175,11 +1170,11 @@ MonoBehaviour:
       - m_Target: {fileID: 329023013}
         m_TargetAssemblyTypeName: PlayerHandTest, Assembly-CSharp
         m_MethodName: SelectCard
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1315985011}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1322,11 +1317,11 @@ MonoBehaviour:
       - m_Target: {fileID: 329023013}
         m_TargetAssemblyTypeName: PlayerHandTest, Assembly-CSharp
         m_MethodName: SelectCard
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1393380825}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

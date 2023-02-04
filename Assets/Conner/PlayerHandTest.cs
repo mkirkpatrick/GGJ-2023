@@ -1,13 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHandTest : MonoBehaviour
 {
-    public GameObject[] cardObjs;
     public List<Color> cardColors = new List<Color>();
     GameObject[] inactiveCards;
+
+    public GameObject[] cardSlots;
 
     private void Start()
     {
@@ -20,11 +21,11 @@ public class PlayerHandTest : MonoBehaviour
         cardColors.Add(Color.magenta);
         cardColors.Add(Color.black);
 
-        cardObjs = new GameObject[5];
+        cardSlots = new GameObject[5];
 
         for(int i = 0; i < transform.childCount; i++)
         {
-            cardObjs[i] = transform.GetChild(i).gameObject;
+            cardSlots[i] = transform.GetChild(i).gameObject;
         }
 
         AdjustHand();
@@ -32,32 +33,22 @@ public class PlayerHandTest : MonoBehaviour
 
     void AdjustHand()
     { 
-        for(int i = 0; i < cardObjs.Length; i++)
+        for(int i = 0; i < cardSlots.Length; i++)
         {
-            cardObjs[i].SetActive(true);
-            cardObjs[i].GetComponent<Image>().color = cardColors[i];
+            cardSlots[i].SetActive(true);
+            cardSlots[i].GetComponent<Image>().color = cardColors[i];
         }
     }
 
-    public void SelectCard(GameObject cardButton)
+    public void SelectCard(int slotNum)
     {
-        int num = cardButton.GetComponent<CardButtonData>().cardNum;
-        cardButton.SetActive(false);
+        cardSlots[slotNum].SetActive(false);
 
         //Cycle color back to start of list
-        Color usedColor = cardColors[num];
-        cardColors.RemoveAt(num);
+        Color usedColor = cardColors[slotNum];
+        cardColors.RemoveAt(slotNum);
         cardColors.Insert(cardColors.Count, usedColor);
 
         Invoke("AdjustHand", 1f);
-    }
-
-    public void AddCard()
-    {
-        if(transform.childCount < 5)
-        {
-            
-
-        }
     }
 }
