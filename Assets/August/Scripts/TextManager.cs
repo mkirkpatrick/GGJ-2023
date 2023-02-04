@@ -8,28 +8,23 @@ public class TextManager : MonoBehaviour
 {
     public TMP_Text dialogueText;
     public Image dialoguePanel;
-    public Button nextButton;
     public Queue<string> sentences;
     public string currentText;
+    public AudioSource typingAudio;
 
 
     void Start()
     {
+        typingAudio = GetComponent<AudioSource>();
         sentences = new Queue<string>();
     }
 
-
-    void Update()
-    {
-        if (sentences.Count > 0)
-        {
-            nextButton.gameObject.SetActive(true);
-        }
-        else
-        {
-            nextButton.gameObject.SetActive(false);
-        }
-    }
+    //To use this in a script:
+    //1. Create a "public DialogueText dialogueText" at the beginning of your script.
+    //2. In the inspector of the object with the script attached, choose the number of sentences and fill in the text boxes with your desired text.
+    //3. Link it to this script/the TextManager with GetComponenet or whatever.
+    //4. Run "StartDialogue(dialogueText)" function.
+    //It should take care of the rest!
 
     public void StartDialogue(DialogueText dialogue)
     {
@@ -54,13 +49,26 @@ public class TextManager : MonoBehaviour
     IEnumerator DisplayNextSentenceCoroutine()
     {
         string sentence = sentences.Dequeue();
+
         for (int i = 0; i < sentence.Length; i++)
         {
-
+            if (typingAudio.isPlaying == false)
+            {
+            typingAudio.Play();
+            }
             currentText = sentence.Substring(0, i + 1);
             dialogueText.text = currentText;
+            yield return new WaitForSeconds(.03f);
+        }
 
-            yield return new WaitForSeconds(.01f);
+        yield return new WaitForSeconds(3f);
+        if (sentences.Count == 0)
+        {
+            EndDialogue();
+        }
+        else
+        {
+            DisplayNextSentence();
         }
     }
 
@@ -68,9 +76,9 @@ public class TextManager : MonoBehaviour
     public void EndDialogue()
     {
         dialogueText.text = " ";
+        sentences.Clear();
         dialoguePanel.gameObject.SetActive(false);
         dialogueText.gameObject.SetActive(false);
-        nextButton.gameObject.SetActive(false);
     }
 
 }
