@@ -11,34 +11,20 @@ public class RootMapController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CameraController.instance.Activate( nodes[currentNodeIndex] );
+        CameraController.instance.Activate( nodes[PlayerController.instance.player.nodeLocation] );
 
-        StartCoroutine(CycleNodes());
-    }
-
-    IEnumerator CycleNodes()
-    {
-        yield return new WaitForSeconds(3);
-        MoveToNextNode();
-        yield return new WaitForSeconds(3);
-        MoveToNextNode();
-        yield return new WaitForSeconds(3);
-        MoveToNextNode();
-        yield return new WaitForSeconds(3);
-        MoveToNextNode();
-        yield return new WaitForSeconds(3);
-        MoveToNextNode();
-        yield return new WaitForSeconds(3);
-        CameraController.instance.Deactivate();
-        SceneManager.LoadScene("Ending");
-
+        StartCoroutine(MoveToNextNode());
     }
     
-    void MoveToNextNode()
+    IEnumerator MoveToNextNode()
     {
+        yield return new WaitForSeconds(2);
         currentNodeIndex++;
+        PlayerController.instance.player.nodeLocation = currentNodeIndex;
         CameraController.instance.followObject = nodes[currentNodeIndex];
         CameraController.instance.MoveCameraToTarget(nodes[currentNodeIndex].position);
-
+        yield return new WaitForSeconds(3);
+        CameraController.instance.Deactivate();
+        SceneManager.LoadScene("Battle");
     }
 }

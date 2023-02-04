@@ -6,9 +6,13 @@ using UnityEngine;
 public class Player
 {
     public Clan currentClan;
-    public int health;
+    public int healthCurrent;
+    public int healthMax;
+
+    public int nodeLocation = 0;
 
     public Player() {
-        health = 30;
+        healthCurrent = 30;
+        healthMax = 30;
     }
 }

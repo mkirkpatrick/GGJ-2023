@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Systems/Root Map/Root Map.unity
     guid: 082acbc0e608a924db079381655c8c20
   - enabled: 1
+    path: Assets/Systems/Battle/Battle.unity
+    guid: 621e6dff02ebd744fa51ae54fca61e21
+  - enabled: 1
     path: Assets/Systems/Ending/Ending.unity
     guid: b34084ab762ca1a49bc4d6fe297080ec
   m_configObjects: {}
