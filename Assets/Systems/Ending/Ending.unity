@@ -5142,6 +5142,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 974693462308254333, guid: c89917a5c04ebf24a8d73327445ade63, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 8.8451
+      objectReference: {fileID: 0}
+    - target: {fileID: 974693462308254333, guid: c89917a5c04ebf24a8d73327445ade63, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20.823
+      objectReference: {fileID: 0}
+    - target: {fileID: 974693462308254333, guid: c89917a5c04ebf24a8d73327445ade63, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 974693462308254333, guid: c89917a5c04ebf24a8d73327445ade63, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -381.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c89917a5c04ebf24a8d73327445ade63, type: 3}
 --- !u!1 &535677115
@@ -10163,8 +10179,8 @@ MonoBehaviour:
   sentences:
   - As you emerge from the cold earth, you feel the warmth of the sun for the first
     time.
-  - 'The Path has led you here, battered and alone, trembling at the base of the
-    great tree.
+  - 'The Path has led you here, battered and alone, trembling at the base of a great
+    tree.
 
 '
   - Her heaven-ward arms invite your eyes to the canopy above.
@@ -10174,7 +10190,7 @@ MonoBehaviour:
     in the tree\u2019s embrace."
   - Lost brothers and sisters, long forgotten ancestors, and new friends too!
   - "This is the Path\u2019s true lesson: our shared origin. "
-  - Just as each distant tendril converges into one, so too do we forget the shared
+  - Just as each distant tendril converges into one, so too do we forget the common
     genesis of our own roots, our own paths.
   - "A place where we can live in peace and harmony as one clan\u2014"
   - "as Hum\u0101n\u012Bhtee.\r\n"

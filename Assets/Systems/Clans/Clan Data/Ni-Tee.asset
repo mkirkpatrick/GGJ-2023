@@ -12,11 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa14c9b0255296e4d9dcc63f81805b34, type: 3}
   m_Name: Ni-Tee
   m_EditorClassIdentifier: 
-  clanName: Ni-Tee
-  description: "The Nih-tee are a clan of highly spiritual rhino beetles. The Nih-tee
-    live monk-like, ascetic lives in worship of a rhinoceros deity, and spend their
-    time meditating, philosophizing, honing their swordsmanship, and sharpening their
-    horns.\r\n\r\nFor the Nih-tee, the Path is the ultimate spiritual pilgrimage.
-    Their texts foretell of a Chosen One who will one day reach the end of the Path
-    where awaits their deity, ready to crown the Nih-tee as the rightful stewards
-    of his kingdom.\r"
+  clanName: Nih-Tee
+  description: "The Nih-tee are a clan of highly spiritual rhino beetles. They live
+    monk-like, ascetic lives meditating, philosophizing, honing their swordsmanship,
+    and sharpening their horns.\r"

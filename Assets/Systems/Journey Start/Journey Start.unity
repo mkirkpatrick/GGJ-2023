@@ -436,10 +436,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "A proud clan of warrior dung beetles, the Hum\u0101 believe might makes
-    right\u2026and they love to be right. Distinguished by their imposing carapaces,
-    martial-red color, and impressive stature, the Hum\u0101 view their neighboring
-    clans with a mix of pity and disgust."
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b3582fdcf4fb34a4eb1e49a832a47b99, type: 2}
   m_sharedMaterial: {fileID: -824934119054355178, guid: b3582fdcf4fb34a4eb1e49a832a47b99, type: 2}
@@ -1585,7 +1582,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ni-Tee
+  m_text: Nih-Tee
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c6a22d719146974ab6571717cc52803, type: 2}
   m_sharedMaterial: {fileID: -824934119054355178, guid: 9c6a22d719146974ab6571717cc52803, type: 2}
@@ -1720,7 +1717,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Huma
+  m_text: "Hum\u0101"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c6a22d719146974ab6571717cc52803, type: 2}
   m_sharedMaterial: {fileID: -824934119054355178, guid: 9c6a22d719146974ab6571717cc52803, type: 2}
@@ -1855,7 +1852,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Mani
+  m_text: "Man\u012B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c6a22d719146974ab6571717cc52803, type: 2}
   m_sharedMaterial: {fileID: -824934119054355178, guid: 9c6a22d719146974ab6571717cc52803, type: 2}

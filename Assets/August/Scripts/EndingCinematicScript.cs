@@ -20,7 +20,7 @@ public class EndingCinematicScript : MonoBehaviour
 
     IEnumerator PauseThenRun()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         textManagerScript.StartDialogue(dialogueText);
         yield return new WaitForSeconds(22f);
         redParticles.Play();
