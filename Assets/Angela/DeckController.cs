@@ -6,8 +6,9 @@ public class DeckController : MonoBehaviour
 {
     public List<Card> allCards;
     public Deck currentDeck;
+    public int comboIndex;
 
-    // Start is called before the first frame update
+    /*for debugging
     void Start()
     {
         currentDeck = GetNewDeck();
@@ -16,12 +17,7 @@ public class DeckController : MonoBehaviour
         DiscardCard(1, currentDeck);
         PrintDeck();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    */
 
     //fills deck with card data set
     public Deck GetNewDeck()
@@ -30,11 +26,21 @@ public class DeckController : MonoBehaviour
         for(var i=0; i<allCards.Count; i++){
             DeckAdd(allCards[i], temp);
         }
+        //UNCOMMENT ONCE PLAYER STUFF IS UNDER CONTROL
+        /*
+        if(p.currentClan.clanName.Equals("Huma")){
+            DeckAdd(clanCards[0], temp);
+        } else if (p.currentClan.clanName.Equals("Mani")){
+            DeckAdd(clanCards[1], temp);
+        } else if (p.currentClan.clanName.Equals("Nih-Tee")){
+            DeckAdd(clanCards[2], temp);
+        }
+        */
         PopulateDraw(temp);  
         return temp;
-        //**need to add clan specific card based on players chosen clan**
     }
 
+    //for debugging, probably won't be used
     public void PrintDeck(){
         Debug.Log("drawpile");
         foreach(Card c in currentDeck.drawPile){
@@ -72,7 +78,7 @@ public class DeckController : MonoBehaviour
         deck.discardPile.Clear();
         if(includeHand){
             deck.hand.Clear();
-            DrawFullHand(deck);
+            DrawUntilFull(deck);
         }
     }
 
@@ -82,6 +88,7 @@ public class DeckController : MonoBehaviour
         Debug.Log("Drawing Card..." + c.cardName);
         deck.hand.Add(c);
         deck.drawPile.RemoveAt(0);
+        //update the combo index
         return c;
     }
 
@@ -96,14 +103,35 @@ public class DeckController : MonoBehaviour
         deck.deck.Add(c);
     }
 
+    //run when encounter starting, it makes the draw pile = to deck
     public void PopulateDraw(Deck deck){
         deck.drawPile = deck.deck;
     }
 
-    public void DrawFullHand(Deck deck){
-        for(var i=0; i<5; i++){
+    //good to call after a turn, will draw until hand has 5 cards in it
+    public void DrawUntilFull(Deck deck){
+        //if this doesn't work then switch to a while loop
+        var num = 5-deck.hand.Count;
+        for(var i=0; i<num; i++){
             DrawCard(deck);
         }
+    }
+
+    //calculates the range of the root combo (returns the furthest index)
+    public int updateComboIndex(Deck deck){
+        CardType c = deck.hand[0].cardType;
+        bool isCombo = true;
+        var index = 1;
+        var comboIndex = 0;
+        while((index<5)&&isCombo){
+            if(deck.hand[index].cardType.Equals(c)){
+                index++;
+                comboIndex = index;
+            } else{
+                isCombo = false;
+            }
+        }
+        return comboIndex;
     }
 
 }

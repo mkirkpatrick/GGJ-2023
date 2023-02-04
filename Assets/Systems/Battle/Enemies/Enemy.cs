@@ -9,4 +9,7 @@ public class Enemy : ScriptableObject
     public int healthCurrent;
     public int healthMax;
     public Sprite sprite;
+
+    public bool isBleeding;
+    public bool isEnemyAction;
 }
