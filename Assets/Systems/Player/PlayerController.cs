@@ -6,18 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
 
-    public Clan currentClan;
+    public Player player;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        instance = this;
+        player = new Player();
     }
 }

@@ -6,6 +6,9 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
 
+    public PlayerController playerController;
+    public DeckController deckController;
+
     private void Awake()
     {
         if (instance == null)

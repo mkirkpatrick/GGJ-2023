@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1032a15d296c51a4687866f05276adfb
+guid: d47804612366efc42b93f0a9ad06a15e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,55 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Overworld Map Icons_0
+      name: Branches Animation_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f19fe1dfcb33b3448a523efbefda5cdc
-      internalID: 322101041
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overworld Map Icons_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68b3ccda11522ef409e1c595a8fe0d47
-      internalID: -1124717971
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overworld Map Icons_2
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 76
         y: 0
-        width: 32
-        height: 32
+        width: 76
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01e0e13aff2e1b743b9065b5bec992ed
-      internalID: -983385605
+      spriteID: 3351e13c96bb1104b926b6afaf84691b
+      internalID: -884391773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overworld Map Icons_3
+      name: Branches Animation_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 152
         y: 0
-        width: 32
-        height: 32
+        width: 76
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,8 +164,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98df2d7ff23279b4ca28aa5fa98ef95a
-      internalID: 1299263420
+      spriteID: 1899749cd0d80ae48840197471931aa2
+      internalID: 2083438591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Branches Animation_2
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 0
+        width: 76
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21990a78b08c0ba4fb8c1b0ff15944b2
+      internalID: -1864159691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Branches Animation_3
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 76
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a95aab432a900d489925c7f186f9fce
+      internalID: 846224481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Branches Animation_4
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 0
+        width: 76
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 171de678c9a73854b86b8c6edd6d7c04
+      internalID: -1403547341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Branches Animation_5
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 76
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a51ba1faae3281a4eb3d8fb91155ef8c
+      internalID: 2034968191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Branches Animation_6
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 0
+        width: 76
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 340c0309fa9714b4db358054716d1a7d
+      internalID: -777873274
       vertices: []
       indices: 
       edges: []
@@ -223,10 +286,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Overworld Map Icons_0: 322101041
-      Overworld Map Icons_3: 1299263420
-      Overworld Map Icons_2: -983385605
-      Overworld Map Icons_1: -1124717971
+      Branches Animation_2: -1864159691
+      Branches Animation_6: -777873274
+      Branches Animation_3: 846224481
+      Branches Animation_0: -884391773
+      Branches Animation_4: -1403547341
+      Branches Animation_1: 2083438591
+      Branches Animation_5: 2034968191
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

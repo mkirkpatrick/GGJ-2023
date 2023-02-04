@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d0811196ecf8441b20747b15ba0060, type: 3}
   m_Name: Random Card
   m_EditorClassIdentifier: 
-  cardName: 
-  cardDescription: 
+  cardName: Random
+  cardDescription: 'Random range of damage done: 5 damage to opponent - 5 damage
+    to player'
   cardImage: {fileID: 0}
-  cardType: 0
+  cardType: 5
   effectValue: 0
   id: 0

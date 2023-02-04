@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d0811196ecf8441b20747b15ba0060, type: 3}
   m_Name: Charge Heal Card
   m_EditorClassIdentifier: 
-  cardName: 
-  cardDescription: 
+  cardName: Charge Heal
+  cardDescription: Increase healing done by healing cards by 1 HP
   cardImage: {fileID: 0}
-  cardType: 0
-  effectValue: 0
+  cardType: 5
+  effectValue: 1
   id: 0
