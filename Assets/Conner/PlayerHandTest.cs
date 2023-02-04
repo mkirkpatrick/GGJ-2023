@@ -1,62 +1,63 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHandTest : MonoBehaviour
 {
-    public RectTransform[] cardRects;
-    public float[] cardRadii;
-    int cardCount;
-    public float initialOffset = 200f;
-    public bool centered = false;
+    public GameObject[] cardObjs;
+    public List<Color> cardColors = new List<Color>();
+    GameObject[] inactiveCards;
 
     private void Start()
     {
+        cardColors.Add(Color.white);
+        cardColors.Add(Color.red);
+        cardColors.Add(Color.blue);
+        cardColors.Add(Color.yellow);
+        cardColors.Add(Color.green);
+        cardColors.Add(Color.cyan);
+        cardColors.Add(Color.magenta);
+        cardColors.Add(Color.black);
+
+        cardObjs = new GameObject[5];
+
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            cardObjs[i] = transform.GetChild(i).gameObject;
+        }
+
         AdjustHand();
     }
 
     void AdjustHand()
-    {
-        /*
-        cardCount = transform.childCount;
-
-        //Generate data
-        cardRects = new RectTransform[cardCount];
-        cardRadii = new float[cardCount];
-
-        for(int i = 0; i < cardCount; i++)
+    { 
+        for(int i = 0; i < cardObjs.Length; i++)
         {
-            RectTransform currentRect = transform.GetChild(i).GetComponent<RectTransform>();
-            cardRects[i] = currentRect;
-            cardRadii[i] = currentRect.rect.width / 2;
+            cardObjs[i].SetActive(true);
+            cardObjs[i].GetComponent<Image>().color = cardColors[i];
         }
-
-        //Execute on data
-        float totalOffset = initialOffset + cardRadii[0];
-        float bwBuffer = 80f;
-
-        for(int i = 0; i < cardCount; i++)
-        {
-            cardRects[i].anchoredPosition = new Vector2(totalOffset, 0f);
-            totalOffset += cardRadii[i] + bwBuffer + cardRadii[(i + 1) % cardCount];
-        }
-
-        /*
-        cardRects = GetComponentsInChildren<RectTransform>();
-
-        float offset = 200f;
-        float newX = 0f;
-
-        for (int i = 0; i < cardRects.Length; i++)
-        {
-            cardRects[i].anchoredPosition = new Vector2(newX, 0f);
-            newX = newX + offset;
-        }
-        */
     }
 
-    public void SelectCard(GameObject card)
+    public void SelectCard(GameObject cardButton)
     {
-        card.SetActive(false);
-        AdjustHand();
+        int num = cardButton.GetComponent<CardButtonData>().cardNum;
+        cardButton.SetActive(false);
+
+        //Cycle color back to start of list
+        Color usedColor = cardColors[num];
+        cardColors.RemoveAt(num);
+        cardColors.Insert(cardColors.Count, usedColor);
+
+        Invoke("AdjustHand", 1f);
+    }
+
+    public void AddCard()
+    {
+        if(transform.childCount < 5)
+        {
+            
+
+        }
     }
 }
