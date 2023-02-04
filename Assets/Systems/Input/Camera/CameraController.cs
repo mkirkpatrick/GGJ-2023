@@ -32,7 +32,7 @@ public class CameraController : MonoBehaviour
         //Move to target
         if (isMoving == true)
         {
-            if (Vector2.Distance(mainCamera.transform.position, targetPosition) < .1f)
+            if (Vector2.Distance(mainCamera.transform.position, targetPosition) < .05f)
             {
                 mainCamera.transform.position = targetPosition;
                 isMoving = false;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ClanSelectView : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class ClanSelectView : MonoBehaviour
     public Button maniButton;
     public Button niteeButton;
 
+    public TMP_Text description;
+
     public Button beginJourneyButton;
 
     private void Start()
@@ -21,16 +24,18 @@ public class ClanSelectView : MonoBehaviour
         maniButton.onClick.AddListener(() => SelectClan(1));
         niteeButton.onClick.AddListener(() => SelectClan(2));
 
-        beginJourneyButton.onClick.AddListener(() => BeginJourney(currentlySelectedClan));
+        beginJourneyButton.onClick.AddListener(() => BeginJourney());
+
+        description.text = "Choose your clan.";
     }
 
     private void SelectClan(int _index) {
         currentlySelectedClan = clanSelectList[_index];
+        description.text = currentlySelectedClan.description;
     }
 
-    private void BeginJourney(Clan _clan) {
-        Debug.Log(_clan);
-        PlayerController.instance.player.currentClan = _clan;
+    private void BeginJourney() {
+        PlayerController.instance.player.currentClan = currentlySelectedClan;
         SceneManager.LoadScene("Root Map");
     }
 }
