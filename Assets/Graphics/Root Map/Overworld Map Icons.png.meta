@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c1ea6f3ea1d1221488d75d3b7cfe35c9
+guid: 1032a15d296c51a4687866f05276adfb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -132,67 +132,46 @@ TextureImporter:
       name: Overworld Map Icons_0
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 32
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db5f5a9d1144c484c95aecdfe8babc1a
-      internalID: -2027169046
+      spriteID: f19fe1dfcb33b3448a523efbefda5cdc
+      internalID: 322101041
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overworld Map Icons_Swords
+      name: Overworld Map Icons_1
       rect:
         serializedVersion: 2
-        x: 96
+        x: 32
         y: 32
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd72c93f2f8823a4d9c97c36c4bdafa9
-      internalID: 52491475
+      spriteID: 68b3ccda11522ef409e1c595a8fe0d47
+      internalID: -1124717971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overworld Map Icons_Skull
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6697fdf1b49925946afd3d631f1dde00
-      internalID: -1588947414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overworld Map Icons_Campfire
+      name: Overworld Map Icons_2
       rect:
         serializedVersion: 2
         x: 0
@@ -200,20 +179,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7360c8fedced98e4a95f45860d004f46
-      internalID: -28918892
+      spriteID: 01e0e13aff2e1b743b9065b5bec992ed
+      internalID: -983385605
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Overworld Map Icons_Line
+      name: Overworld Map Icons_3
       rect:
         serializedVersion: 2
         x: 32
@@ -221,77 +200,14 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 750ecf4aab22c0d42adba83386505df6
-      internalID: -1814513445
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overworld Map Icons_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0c6b025777929cf419c27d793e0baf9c
-      internalID: 531403889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overworld Map Icons_6
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6904b466e333b94448e5b24665420f98
-      internalID: -2039851262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Overworld Map Icons_7
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 71d6f6a34e34e9348bd166723af2196d
-      internalID: -232262436
+      spriteID: 98df2d7ff23279b4ca28aa5fa98ef95a
+      internalID: 1299263420
       vertices: []
       indices: 
       edges: []
@@ -307,14 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Overworld Map Icons_Skull: -1588947414
-      Overworld Map Icons_Swords: 52491475
-      Overworld Map Icons_0: -2027169046
-      Overworld Map Icons_Line: -1814513445
-      Overworld Map Icons_5: 531403889
-      Overworld Map Icons_7: -232262436
-      Overworld Map Icons_Campfire: -28918892
-      Overworld Map Icons_6: -2039851262
+      Overworld Map Icons_0: 322101041
+      Overworld Map Icons_3: 1299263420
+      Overworld Map Icons_2: -983385605
+      Overworld Map Icons_1: -1124717971
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

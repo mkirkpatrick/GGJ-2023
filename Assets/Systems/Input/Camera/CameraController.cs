@@ -4,7 +4,6 @@ public class CameraController : MonoBehaviour
 {
     public static CameraController instance;
     public Camera mainCamera;
-    public GameObject player;
     public Transform followObject;
 
     public bool isActive = false;
@@ -57,10 +56,9 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    public void Activate(GameObject _playerObj) {
-        player = _playerObj;
+    public void Activate(Transform _follow) {
         isActive = true;
-        followObject = player.transform.Find("Player Graphics");
+        followObject = _follow;
     }
 
     public void CenterCamera()

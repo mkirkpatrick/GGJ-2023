@@ -29,7 +29,8 @@ public class ClanSelectView : MonoBehaviour
     }
 
     private void BeginJourney(Clan _clan) {
-        PlayerController.instance.currentClan = _clan;
+        Debug.Log(_clan);
+        PlayerController.instance.player.currentClan = _clan;
         SceneManager.LoadScene("Root Map");
     }
 }
