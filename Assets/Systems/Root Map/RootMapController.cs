@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RootMapController : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class RootMapController : MonoBehaviour
         MoveToNextNode();
         yield return new WaitForSeconds(3);
         MoveToNextNode();
+        yield return new WaitForSeconds(3);
+        CameraController.instance.Deactivate();
+        SceneManager.LoadScene("Ending");
 
     }
     

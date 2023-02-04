@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class BattleController : MonoBehaviour
 {
-    private DeckController deckController = GameController.instance.deckController;
+    private DeckController deckController;
 
     private void Start()
     {
+        deckController = GameController.instance.deckController;
+
         // Load Player - health
         // Load Enemy
 

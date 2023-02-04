@@ -753,7 +753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c3dfb909d9ee8f448c687da2230ac00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScreenWaitTime: 1
+  ScreenWaitTime: 2
 --- !u!4 &1807923959
 Transform:
   m_ObjectHideFlags: 0
@@ -825,6 +825,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3989132200394153468, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
+      propertyPath: allCards.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3989132200394153468, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
+      propertyPath: allCards.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a96cfdd47a0a96046b8c80103e184803, type: 2}
+    - target: {fileID: 3989132200394153468, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
+      propertyPath: allCards.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b20eff6ae93d07b488a1bc45c2b18b78, type: 2}
+    - target: {fileID: 3989132200394153468, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
+      propertyPath: allCards.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1776a5099ad2b6541a03f615f938f01b, type: 2}
+    - target: {fileID: 3989132200394153468, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
+      propertyPath: allCards.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 747e1a332b6adf64dbe469829a0576ba, type: 2}
+    - target: {fileID: 3989132200394153468, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
+      propertyPath: allCards.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 949f9f29d1015134fb016820ac208354, type: 2}
     - target: {fileID: 4405382850577472186, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
       propertyPath: deckController
       value: 

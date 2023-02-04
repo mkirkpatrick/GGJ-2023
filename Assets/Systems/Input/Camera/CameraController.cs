@@ -60,6 +60,11 @@ public class CameraController : MonoBehaviour
         isActive = true;
         followObject = _follow;
     }
+    public void Deactivate()
+    {
+        isActive = false;
+        followObject = null;
+    }
 
     public void CenterCamera()
     {
