@@ -265,7 +265,6 @@ GameObject:
   - component: {fileID: 377279898}
   - component: {fileID: 377279897}
   - component: {fileID: 377279896}
-  - component: {fileID: 377279899}
   m_Layer: 5
   m_Name: CardButton (3)
   m_TagString: Untagged
@@ -387,19 +386,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 377279894}
   m_CullTransparentMesh: 1
---- !u!114 &377279899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 377279894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c028d9d4397928e4e87c2551e7ccf798, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardNum: 3
 --- !u!1 &378054480
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +619,6 @@ GameObject:
   - component: {fileID: 520243721}
   - component: {fileID: 520243720}
   - component: {fileID: 520243719}
-  - component: {fileID: 520243722}
   m_Layer: 5
   m_Name: CardButton
   m_TagString: Untagged
@@ -755,19 +740,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520243717}
   m_CullTransparentMesh: 1
---- !u!114 &520243722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 520243717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c028d9d4397928e4e87c2551e7ccf798, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardNum: 0
 --- !u!1 &1081646330
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,7 +752,6 @@ GameObject:
   - component: {fileID: 1081646334}
   - component: {fileID: 1081646333}
   - component: {fileID: 1081646332}
-  - component: {fileID: 1081646335}
   m_Layer: 5
   m_Name: CardButton (2)
   m_TagString: Untagged
@@ -902,19 +873,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081646330}
   m_CullTransparentMesh: 1
---- !u!114 &1081646335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1081646330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c028d9d4397928e4e87c2551e7ccf798, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardNum: 2
 --- !u!1 &1168282021
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,7 +1053,6 @@ GameObject:
   - component: {fileID: 1315985015}
   - component: {fileID: 1315985014}
   - component: {fileID: 1315985013}
-  - component: {fileID: 1315985016}
   m_Layer: 5
   m_Name: CardButton (4)
   m_TagString: Untagged
@@ -1217,19 +1174,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315985011}
   m_CullTransparentMesh: 1
---- !u!114 &1315985016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315985011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c028d9d4397928e4e87c2551e7ccf798, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardNum: 4
 --- !u!1 &1393380825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,7 +1186,6 @@ GameObject:
   - component: {fileID: 1393380829}
   - component: {fileID: 1393380828}
   - component: {fileID: 1393380827}
-  - component: {fileID: 1393380830}
   m_Layer: 5
   m_Name: CardButton (1)
   m_TagString: Untagged
@@ -1339,7 +1282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1364,19 +1307,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393380825}
   m_CullTransparentMesh: 1
---- !u!114 &1393380830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393380825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c028d9d4397928e4e87c2551e7ccf798, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cardNum: 1
 --- !u!1 &1402197795
 GameObject:
   m_ObjectHideFlags: 0
