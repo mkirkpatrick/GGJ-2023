@@ -72,10 +72,12 @@ public class BattleController : MonoBehaviour
     {
         if(enemy.healthCurrent <= 0)
         {
+            enemy.resetEnemy();
             Victory();
         }
         else if(player.healthCurrent <= 0)
         {
+            enemy.resetEnemy();
             Defeat();
         }
     }

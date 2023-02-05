@@ -20,4 +20,9 @@ public class Enemy : ScriptableObject
     public Enemy(){
         
     }
+
+    public void resetEnemy(){
+        healthCurrent = healthMax
+        bleedValue = 0;
+    }
 }
