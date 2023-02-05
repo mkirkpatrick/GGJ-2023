@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Systems/Ending/Ending.unity
     guid: b34084ab762ca1a49bc4d6fe297080ec
+  - enabled: 1
+    path: Assets/Systems/Pregame Menus/Credits.unity
+    guid: a09136f4767b19d4cac5950c9aa2b166
   m_configObjects: {}
