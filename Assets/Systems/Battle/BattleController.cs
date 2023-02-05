@@ -47,6 +47,9 @@ public class BattleController : MonoBehaviour
         enemy.isEnemyAction = false;
         _card.use(player, enemy);
         deckController.DiscardCard(_index, player.deck);
+
+        CheckStatus();
+
         deckController.DrawUntilFull(player.deck);
         handView.UpdateHandView(player.deck.hand);
         battleView.UpdateView(player, enemy);
@@ -63,6 +66,18 @@ public class BattleController : MonoBehaviour
     void CardTurn()
     {
         //For when deck is up, player is choosing card
+    }
+
+    void CheckStatus()
+    {
+        if(enemy.healthCurrent <= 0)
+        {
+            Victory();
+        }
+        else if(player.healthCurrent <= 0)
+        {
+            Defeat();
+        }
     }
 
     void Victory()
