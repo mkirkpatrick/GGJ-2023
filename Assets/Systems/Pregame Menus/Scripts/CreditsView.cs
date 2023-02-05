@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CreditsView : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Button backButton;
+
     void Start()
     {
-        
+        backButton.onClick.AddListener(() => GoToMainMenu());
     }
 
-    // Update is called once per frame
+    public void GoToMainMenu()
+    {
+        Debug.Log("Clicked");
+        SceneManager.LoadScene("Main Menu");
+    }
+
     void Update()
     {
         

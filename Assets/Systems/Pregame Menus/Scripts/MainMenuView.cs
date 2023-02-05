@@ -18,6 +18,7 @@ public class MainMenuView : MonoBehaviour
     {
         playButton.onClick.AddListener(() => StartGame());
         settingsButton.onClick.AddListener(() => GoToSettings());
+        creditsButton.onClick.AddListener(() => GoToCredits());
         exitButton.onClick.AddListener(() => ExitGame());
         menuAudioSource = GetComponent<AudioSource>();
     }
@@ -30,6 +31,11 @@ public class MainMenuView : MonoBehaviour
         menuAudioSource.Play();
         SceneManager.LoadScene("Settings");
     }
+
+    void GoToCredits() {
+        SceneManager.LoadScene("Credits");
+    }
+
     void ExitGame() { 
         Application.Quit();
     }
