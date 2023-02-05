@@ -30,8 +30,7 @@ public class CardView : MonoBehaviour
         cardName.text = card.cardName;
         description.text = card.cardDescription;
         image.sprite = card.cardImage;
-
-        //frame.sprite = GetFrameSprite(card.cardType);
+        frame.sprite = GetFrameSprite(card.cardType);
     }
 
     private Sprite GetFrameSprite(CardType _type) {

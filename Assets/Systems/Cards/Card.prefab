@@ -511,11 +511,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: da8e01ac1a4a4d146b4cb866916fcf9e, type: 3}
   - {fileID: 21300000, guid: 9bae38a342244274d9c2f9f22e189f06, type: 3}
   card: {fileID: 0}
+  indexInHand: 0
   cardButton: {fileID: 5653055401966279250}
   cardName: {fileID: 8312207483370330312}
   description: {fileID: 4287263016472265102}
-  image: {fileID: 0}
-  frame: {fileID: 0}
+  image: {fileID: 5653055402192061097}
+  frame: {fileID: 5653055401388783583}
 --- !u!1 &5653055402192061103
 GameObject:
   m_ObjectHideFlags: 0
