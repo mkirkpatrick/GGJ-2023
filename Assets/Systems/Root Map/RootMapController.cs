@@ -7,7 +7,8 @@ public class RootMapController : MonoBehaviour
 {
     public List<Transform> nodes;
     Player player = PlayerController.instance.player;
-    //public int currentNodeIndex = 0;
+
+    public GameObject crossFade;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +29,41 @@ public class RootMapController : MonoBehaviour
         CameraController.instance.followObject = nodes[currentNodeIndex];
         CameraController.instance.MoveCameraToTarget(nodes[currentNodeIndex].position);
         player.nodeLocation = currentNodeIndex;
-        yield return new WaitForSeconds(3);
-        CameraController.instance.Deactivate();
-        SceneManager.LoadScene("Battle");
+
+        if(currentNodeIndex >= 6)
+        {
+            FinalNode();
+        }
+        else
+        {
+            yield return new WaitForSeconds(3);
+            CameraController.instance.Deactivate();
+            SceneManager.LoadScene("Battle");
+        }
+    }
+
+    void FinalNode()
+    {
+        StartCoroutine(FadeOut());
+    }
+
+    IEnumerator FadeOut()
+    {
+        SpriteRenderer fadeSprite = crossFade.GetComponent<SpriteRenderer>();
+        float opacity = 0f;
+        float timeElapsed = 0;
+        float fadeDuration = 2f;
+        while(timeElapsed < fadeDuration)
+        {   
+            opacity = Mathf.Lerp(0, 1, timeElapsed / fadeDuration);
+            fadeSprite.color = new Color(1f, 1f, 1f, opacity);
+
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+        opacity = 1f;
+        fadeSprite.color = new Color(1f, 1f, 1f, opacity);
+
+        SceneManager.LoadScene("Ending");
     }
 }
