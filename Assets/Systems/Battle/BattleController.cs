@@ -15,6 +15,7 @@ public class BattleController : MonoBehaviour
     public HandView handView;
 
     public Enemy enemy;
+    public Enemy[] enemyStages = new Enemy[5];
 
     private void Start()
     {
@@ -28,7 +29,9 @@ public class BattleController : MonoBehaviour
         player = playerController.player;
 
         // Load Enemy
-        enemy = new Enemy(); //needs to change to load in the specific enemy SO
+        int stageCount = 0;
+        enemy = enemyStages[stageCount]; //needs to change to load in the specific enemy SO
+        print("Node: " + stageCount);
         enemy.deck = deckController.GetEnemyDeck(enemy);
         deckController.Shuffle(true, enemy.deck);
 
@@ -82,7 +85,6 @@ public class BattleController : MonoBehaviour
 
     void Victory()
     {
-        player.nodeLocation ++; //Move to next map node
         SceneManager.LoadScene("Root Map");
     }
 

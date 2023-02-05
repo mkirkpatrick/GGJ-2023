@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class RootMapController : MonoBehaviour
 {
     public List<Transform> nodes;
-    public int currentNodeIndex = 0;
+    Player player = PlayerController.instance.player;
+    //public int currentNodeIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +21,13 @@ public class RootMapController : MonoBehaviour
     
     IEnumerator MoveToNextNode()
     {
+        int currentNodeIndex = player.nodeLocation;
         yield return new WaitForSeconds(2);
         currentNodeIndex++;
         PlayerController.instance.player.nodeLocation = currentNodeIndex;
         CameraController.instance.followObject = nodes[currentNodeIndex];
         CameraController.instance.MoveCameraToTarget(nodes[currentNodeIndex].position);
+        player.nodeLocation = currentNodeIndex;
         yield return new WaitForSeconds(3);
         CameraController.instance.Deactivate();
         SceneManager.LoadScene("Battle");

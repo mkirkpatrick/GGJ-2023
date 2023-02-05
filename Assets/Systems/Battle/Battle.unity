@@ -524,14 +524,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94a7e59d0040df46bdd924838aba5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deck:
-    deck: []
-    drawPile: []
-    hand: []
-    discardPile: []
   battleView: {fileID: 1266446166}
   handView: {fileID: 1621985160}
-  enemy: {fileID: 11400000, guid: 4e56fc5003a784f49b3bcbdd65f40303, type: 2}
+  enemy: {fileID: 0}
+  enemyStages:
+  - {fileID: 11400000, guid: 9c4ec9b2f8feff7478a7274ff83a7232, type: 2}
+  - {fileID: 11400000, guid: 232e75d14f3797e42959e97b504624e5, type: 2}
+  - {fileID: 11400000, guid: 47cda46ded902594bada48c3a5fdb602, type: 2}
+  - {fileID: 11400000, guid: 232e75d14f3797e42959e97b504624e5, type: 2}
+  - {fileID: 11400000, guid: 232e75d14f3797e42959e97b504624e5, type: 2}
 --- !u!1 &606085797
 GameObject:
   m_ObjectHideFlags: 0

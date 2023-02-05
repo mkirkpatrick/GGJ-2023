@@ -90,7 +90,7 @@ public class DeckController : MonoBehaviour
         deck.drawPile.RemoveAt(0);
 
         //if this is buggy just comment out, its for the root system
-        updateComboIndex(deck);
+        //updateComboIndex(deck);
         return c;
     }
 

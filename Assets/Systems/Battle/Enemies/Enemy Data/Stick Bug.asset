@@ -35,7 +35,37 @@ MonoBehaviour:
   bleedValue: 0
   isEnemyAction: 0
   deck:
-    deck: []
-    drawPile: []
-    hand: []
+    deck:
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: f7601eef66a32a240815eacb9292ba1c, type: 2}
+    - {fileID: 11400000, guid: f7601eef66a32a240815eacb9292ba1c, type: 2}
+    - {fileID: 11400000, guid: f7601eef66a32a240815eacb9292ba1c, type: 2}
+    - {fileID: 11400000, guid: a80c5bc8879d60a42b6e35363c627d55, type: 2}
+    - {fileID: 11400000, guid: 3bc747d9244b9b44ea3abf85139c722b, type: 2}
+    - {fileID: 11400000, guid: 7595fc6128c16144981b6a20cd674263, type: 2}
+    - {fileID: 11400000, guid: 7595fc6128c16144981b6a20cd674263, type: 2}
+    drawPile:
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: a80c5bc8879d60a42b6e35363c627d55, type: 2}
+    - {fileID: 11400000, guid: 3bc747d9244b9b44ea3abf85139c722b, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: f7601eef66a32a240815eacb9292ba1c, type: 2}
+    hand:
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: f7601eef66a32a240815eacb9292ba1c, type: 2}
+    - {fileID: 11400000, guid: 7595fc6128c16144981b6a20cd674263, type: 2}
+    - {fileID: 11400000, guid: f7601eef66a32a240815eacb9292ba1c, type: 2}
+    - {fileID: 11400000, guid: 7595fc6128c16144981b6a20cd674263, type: 2}
     discardPile: []
