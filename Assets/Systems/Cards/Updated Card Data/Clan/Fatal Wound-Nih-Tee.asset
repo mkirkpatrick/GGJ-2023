@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec98de540199ce419d9626b049f48ea, type: 3}
   m_Name: Fatal Wound-Nih-Tee
   m_EditorClassIdentifier: 
-  cardName: 
-  cardDescription: 
-  cardImage: {fileID: 0}
-  effectValue: 0
+  cardName: Fatal Wound
+  cardDescription: Inflict bleed (2 damage every turn)
+  cardImage: {fileID: 21300000, guid: 5ddf7283187859b469bb132564d4663a, type: 3}
+  effectValue: 2
   id: 0

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Calm Mind
   cardDescription: Increase HP restored by healing cards by 1
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: 368b3febde4fe3546a36db6cf7fdb54f, type: 3}
   effectValue: 1
   id: 0

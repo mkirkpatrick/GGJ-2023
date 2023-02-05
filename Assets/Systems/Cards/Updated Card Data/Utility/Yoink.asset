@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2486a130db2a06b47875c37da5585042, type: 3}
   m_Name: Yoink
   m_EditorClassIdentifier: 
-  cardName: 
-  cardDescription: 
+  cardName: Yoink
+  cardDescription: Removes one card from player hand from play (last until end of
+    encounter)
   cardImage: {fileID: 0}
   effectValue: 0
   id: 0

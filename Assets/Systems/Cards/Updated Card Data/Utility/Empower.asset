@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Empower
   cardDescription: Increase damage done by attack cards by 1
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: c447c7a6c8fb7b14ebd21955e66f5dbc, type: 3}
   effectValue: 1
   id: 0
