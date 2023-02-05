@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Mani Enemy
   m_EditorClassIdentifier: 
   enemyName: Mani Enemy
-  healthCurrent: 0
-  healthMax: 0
+  healthCurrent: 30
+  healthMax: 30
   sprite: {fileID: 21300000, guid: 49f35a5f237b0b643a17823074b312bc, type: 3}
   enemyMoves:
   - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}

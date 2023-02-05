@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Huma Enemy
   m_EditorClassIdentifier: 
   enemyName: Huma Enemy
-  healthCurrent: 0
-  healthMax: 0
+  healthCurrent: 30
+  healthMax: 30
   sprite: {fileID: 21300000, guid: 31f74db75e312e747b6a5962f087b4e1, type: 3}
   enemyMoves:
   - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}

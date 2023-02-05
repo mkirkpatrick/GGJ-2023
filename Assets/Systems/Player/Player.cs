@@ -17,6 +17,7 @@ public class Player
 
     public DeckController deckController;
     public Deck deck;
+    public Enemy[] enemyStages;
 
     public Player() {
         healthCurrent = 20;
@@ -25,5 +26,7 @@ public class Player
         attackCharge = 0;
         healCharge = 0;
         bleedValue = 0;
+
+        enemyStages = new Enemy[5];
     }
 }

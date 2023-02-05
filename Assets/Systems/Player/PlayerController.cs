@@ -13,4 +13,20 @@ public class PlayerController : MonoBehaviour
         instance = this;
         player = new Player();
     }
+
+    public void CreateEnemyList(Enemy[] enemyReferences){
+        player.enemyStages[0] = enemyReferences[3];
+        if(player.currentClan.clanName.Equals("Huma")){
+            player.enemyStages[1] = enemyReferences[1];
+            player.enemyStages[3] = enemyReferences[2];
+        } else if (player.currentClan.clanName.Equals("Mani")){
+            player.enemyStages[1] = enemyReferences[0];
+            player.enemyStages[3] = enemyReferences[2];
+        } else if (player.currentClan.clanName.Equals("Nih-Tee")){
+            player.enemyStages[1] = enemyReferences[0];
+            player.enemyStages[3] = enemyReferences[1];
+        }
+        player.enemyStages[2] = enemyReferences[5];
+        player.enemyStages[4] = enemyReferences[4];
+    }
 }

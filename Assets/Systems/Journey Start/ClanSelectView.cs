@@ -22,6 +22,8 @@ public class ClanSelectView : MonoBehaviour
 
     public AudioSource clanSelectAudioSource;
 
+    public Enemy[] enemyReferences = new Enemy[6];
+
     private void Start()
     {
         clanSelectAudioSource = GetComponent<AudioSource>();
@@ -53,6 +55,7 @@ public class ClanSelectView : MonoBehaviour
         clanSelectAudioSource.Play();
         yield return new WaitForSeconds(1f);
         PlayerController.instance.player.currentClan = currentlySelectedClan;
+        PlayerController.instance.CreateEnemyList(enemyReferences);
         SceneManager.LoadScene("Root Map");
     }
 }

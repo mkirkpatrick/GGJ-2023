@@ -2601,6 +2601,13 @@ MonoBehaviour:
   beginJourneyButton: {fileID: 328368965}
   crossfadeAnim: {fileID: 1934832395}
   clanSelectAudioSource: {fileID: 0}
+  enemyReferences:
+  - {fileID: 11400000, guid: 6f4dd58b602d473479db4e871974b510, type: 2}
+  - {fileID: 11400000, guid: 71dbbebb9c3f7ad44bf66a2bb652d51e, type: 2}
+  - {fileID: 11400000, guid: 50bb1ff63f7069c43913b52a4e1c1e1b, type: 2}
+  - {fileID: 11400000, guid: 9c4ec9b2f8feff7478a7274ff83a7232, type: 2}
+  - {fileID: 11400000, guid: 47cda46ded902594bada48c3a5fdb602, type: 2}
+  - {fileID: 11400000, guid: 232e75d14f3797e42959e97b504624e5, type: 2}
 --- !u!82 &2129432370
 AudioSource:
   m_ObjectHideFlags: 0
