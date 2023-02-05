@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class BattleController : MonoBehaviour
@@ -66,11 +67,12 @@ public class BattleController : MonoBehaviour
 
     void Victory()
     {
-
+        player.nodeLocation ++; //Move to next map node
+        SceneManager.LoadScene("Root Map");
     }
 
     void Defeat()
     {
-
+        SceneManager.LoadScene("Game Over");
     }
 }
