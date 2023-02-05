@@ -15,6 +15,9 @@ public class BattleView : MonoBehaviour
     public List<Sprite> beetles;
     public Image enemyImage;
 
+    public Animator playerAnimator;
+    public Animator enemyAnimator;
+
     // Start is called before the first frame update
     void Start()
     {

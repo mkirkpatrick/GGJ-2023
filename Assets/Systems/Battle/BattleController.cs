@@ -54,7 +54,15 @@ public class BattleController : MonoBehaviour
         handView.UpdateHandView(player.deck.hand);
         battleView.UpdateView(player, enemy);
 
-        yield return new WaitForSeconds(1);
+        if(_card.cardType == CardType.Attack)
+        {
+            battleView.enemyAnimator.Play("Player_Attack1");
+            yield return new WaitForSeconds(1f);
+            battleView.playerAnimator.Play("Enemy_Damage1");
+            yield return new WaitForSeconds(1f);
+            battleView.enemyAnimator.Play("Enemy_Idle");
+            battleView.playerAnimator.Play("Player_Idle");
+        }
 
         StartCoroutine( EnemyTurn() );
     }
@@ -66,7 +74,17 @@ public class BattleController : MonoBehaviour
         enemyCard.use(player, enemy);
         battleView.UpdateView(player, enemy);
 
-        yield return new WaitForSeconds(1);
+        if(enemyCard.cardType == CardType.Attack)
+        {
+            battleView.enemyAnimator.Play("Enemy_Attack1");
+            yield return new WaitForSeconds(1f);
+            battleView.playerAnimator.Play("Player_Damage1");
+            yield return new WaitForSeconds(1f);
+            battleView.enemyAnimator.Play("Enemy_Idle");
+            battleView.playerAnimator.Play("Player_Idle");
+        }
+
+        CheckStatus();
     }
 
     void CardTurn()
