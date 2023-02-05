@@ -22,7 +22,7 @@ public class Enemy : ScriptableObject
     }
 
     public void resetEnemy(){
-        healthCurrent = healthMax
+        healthCurrent = healthMax;
         bleedValue = 0;
     }
 }
