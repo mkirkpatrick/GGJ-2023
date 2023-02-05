@@ -136,7 +136,12 @@ public class DeckController : MonoBehaviour
         this.comboIndex = comboIndex;
     }
 
-    public Card getEnemyMove(Deck enemyDeck){
-        return enemyDeck.hand[Random.Range(0, 5)];
+
+    public Card GetEnemyMove(Deck enemyDeck){
+        int rand = Random.Range(0, 5);
+        Card c = enemyDeck.hand[rand];
+        DiscardCard(rand, enemyDeck);
+        DrawUntilFull(enemyDeck);
+        return c;
     }
 }

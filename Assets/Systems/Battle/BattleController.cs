@@ -7,7 +7,6 @@ public class BattleController : MonoBehaviour
     public static BattleController instance;
 
     private DeckController deckController;
-    public Deck deck;
     private PlayerController playerController;
     private Player player;
     
@@ -28,12 +27,15 @@ public class BattleController : MonoBehaviour
         player = playerController.player;
 
         // Load Enemy
+        enemy = new Enemy(); //needs to change to load in the specific enemy SO
+        enemy.deck = deckController.GetEnemyDeck(enemy);
+        deckController.Shuffle(true, enemy.deck);
 
-        deck = deckController.GetNewDeck(playerController.player);
-        deckController.Shuffle(true, deck);
+        player.deck = deckController.GetNewDeck(playerController.player);
+        deckController.Shuffle(true, player.deck);
 
         handView.CreateHand();
-        handView.UpdateHandView(deck.hand);
+        handView.UpdateHandView(player.deck.hand);
 
         battleView.UpdateView(player, enemy);
         
@@ -43,16 +45,18 @@ public class BattleController : MonoBehaviour
     {
         enemy.isEnemyAction = false;
         _card.use(player, enemy);
-        deckController.DiscardCard(_index, deck);
-        deckController.DrawUntilFull(deck);
-        handView.UpdateHandView(deck.hand);
+        deckController.DiscardCard(_index, player.deck);
+        deckController.DrawUntilFull(player.deck);
+        handView.UpdateHandView(player.deck.hand);
         battleView.UpdateView(player, enemy);
     }
 
     void EnemyTurn()
     {
-        //uncomment later
-        //enemy.isEnemyAction = !enemy.isEnemyAction
+        enemy.isEnemyAction = !enemy.isEnemyAction;
+        Card enemyCard = deckController.GetEnemyMove(enemy.deck);
+        enemyCard.use(player, enemy);
+
     }
 
     void CardTurn()

@@ -14,4 +14,10 @@ public class Enemy : ScriptableObject
     public List<Card> enemyMoves;
     public int bleedValue;
     public bool isEnemyAction;
+
+    public Deck deck;
+
+    public Enemy(){
+        
+    }
 }
