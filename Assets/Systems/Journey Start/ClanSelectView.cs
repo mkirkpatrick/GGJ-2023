@@ -20,6 +20,8 @@ public class ClanSelectView : MonoBehaviour
 
     private void Start()
     {
+        MusicController.instance.PlaySong(MusicController.SongTitles.Root_Map);
+
         humaButton.onClick.AddListener(() => SelectClan(0));
         maniButton.onClick.AddListener(() => SelectClan(1));
         niteeButton.onClick.AddListener(() => SelectClan(2));

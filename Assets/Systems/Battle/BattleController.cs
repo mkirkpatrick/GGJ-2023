@@ -18,7 +18,6 @@ public class BattleController : MonoBehaviour
 
     private void Start()
     {
-        MusicController.instance.StopMusic();
         // Freaking Melt Your Face
         MusicController.instance.PlaySong(MusicController.SongTitles.Beetle_Battle);
 
@@ -46,6 +45,7 @@ public class BattleController : MonoBehaviour
         deckController.DiscardCard(_index, deck);
         deckController.DrawUntilFull(deck);
         handView.UpdateHandView(deck.hand);
+        battleView.UpdateView(player, enemy);
     }
 
     void EnemyTurn()

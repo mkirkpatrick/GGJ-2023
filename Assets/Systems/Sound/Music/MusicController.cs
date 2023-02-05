@@ -26,6 +26,12 @@ public class MusicController : MonoBehaviour
 
     public void PlaySong(SongTitles _songTitle) {
 
+        if (currentSong == _songTitle)
+            return; //Song already playing. Let it.
+        else {
+            StopMusic();
+        }
+
         currentSong = _songTitle;
 
         switch (_songTitle)

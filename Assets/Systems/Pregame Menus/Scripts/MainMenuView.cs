@@ -21,7 +21,7 @@ public class MainMenuView : MonoBehaviour
 
     void StartGame()
     {
-        SceneManager.LoadScene("Journey Start");
+        SceneManager.LoadScene("Intro");
     }
     void GoToSettings() {
         SceneManager.LoadScene("Settings");

@@ -11,7 +11,6 @@ public class RootMapController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MusicController.instance.StopMusic();
         MusicController.instance.PlaySong(MusicController.SongTitles.Root_Map);
 
         CameraController.instance.Activate( nodes[PlayerController.instance.player.nodeLocation] );
