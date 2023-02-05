@@ -16,6 +16,7 @@ public class Player
     public int bleedValue;
 
     public DeckController deckController;
+    public Deck deck;
 
     public Player() {
         healthCurrent = 20;
