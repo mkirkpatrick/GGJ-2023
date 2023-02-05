@@ -9,6 +9,7 @@ public class TitleScreenView : MonoBehaviour
     // Update is called once per frame
     void Start()
     {
+        MusicController.instance.PlaySong(MusicController.SongTitles.Ending);
         StartCoroutine(LoadMainMenu(ScreenWaitTime));
     }
 

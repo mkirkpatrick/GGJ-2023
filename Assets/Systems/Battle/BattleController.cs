@@ -18,6 +18,10 @@ public class BattleController : MonoBehaviour
 
     private void Start()
     {
+        MusicController.instance.StopMusic();
+        // Freaking Melt Your Face
+        MusicController.instance.PlaySong(MusicController.SongTitles.Beetle_Battle);
+
         instance = this;
 
         deckController = GameController.instance.deckController;

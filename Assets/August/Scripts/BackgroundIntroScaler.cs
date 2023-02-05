@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BackgroundIntroScaler : MonoBehaviour
 {
-    float targetScale = 2;
-    float timeToLerp = 50f;
-    float scaleModifier = 1;
+    public float targetScale = 2;
+    public float timeToLerp = 50f;
+    public float scaleModifier = 1;
 
     void Start()
     {

@@ -11,6 +11,9 @@ public class RootMapController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MusicController.instance.StopMusic();
+        MusicController.instance.PlaySong(MusicController.SongTitles.Root_Map);
+
         CameraController.instance.Activate( nodes[PlayerController.instance.player.nodeLocation] );
 
         StartCoroutine(MoveToNextNode());
@@ -18,12 +21,12 @@ public class RootMapController : MonoBehaviour
     
     IEnumerator MoveToNextNode()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         currentNodeIndex++;
         PlayerController.instance.player.nodeLocation = currentNodeIndex;
         CameraController.instance.followObject = nodes[currentNodeIndex];
         CameraController.instance.MoveCameraToTarget(nodes[currentNodeIndex].position);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         CameraController.instance.Deactivate();
         SceneManager.LoadScene("Battle");
     }
