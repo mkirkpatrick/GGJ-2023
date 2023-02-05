@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class TitleScreenView : MonoBehaviour
 {
     public Image logo;
-    private float currentTime = 0f;
     public float ScreenWaitTime = 2f;
     public Animator crossfadeAnimator;
 
