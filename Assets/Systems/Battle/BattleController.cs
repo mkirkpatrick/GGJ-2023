@@ -42,7 +42,7 @@ public class BattleController : MonoBehaviour
         
     }
 
-    public void PlayerTurn(Card _card, int _index)
+    public IEnumerator PlayerTurn(Card _card, int _index)
     {
         enemy.isEnemyAction = false;
         _card.use(player, enemy);
@@ -53,14 +53,20 @@ public class BattleController : MonoBehaviour
         deckController.DrawUntilFull(player.deck);
         handView.UpdateHandView(player.deck.hand);
         battleView.UpdateView(player, enemy);
+
+        yield return new WaitForSeconds(1);
+
+        StartCoroutine( EnemyTurn() );
     }
 
-    void EnemyTurn()
+    public IEnumerator EnemyTurn()
     {
         enemy.isEnemyAction = !enemy.isEnemyAction;
         Card enemyCard = deckController.GetEnemyMove(enemy.deck);
         enemyCard.use(player, enemy);
+        battleView.UpdateView(player, enemy);
 
+        yield return new WaitForSeconds(1);
     }
 
     void CardTurn()

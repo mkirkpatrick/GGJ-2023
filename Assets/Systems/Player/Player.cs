@@ -20,7 +20,7 @@ public class Player
     public Enemy[] enemyStages;
 
     public Player() {
-        healthCurrent = 20;
+        healthCurrent = 30;
         healthMax = 30;
 
         attackCharge = 0;

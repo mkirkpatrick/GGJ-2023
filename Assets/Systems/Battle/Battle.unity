@@ -526,7 +526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleView: {fileID: 1266446166}
   handView: {fileID: 1621985160}
-  enemy: {fileID: 11400000, guid: 6f4dd58b602d473479db4e871974b510, type: 2}
+  enemy: {fileID: 0}
 --- !u!1 &606085797
 GameObject:
   m_ObjectHideFlags: 0
