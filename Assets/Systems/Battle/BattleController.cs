@@ -41,7 +41,8 @@ public class BattleController : MonoBehaviour
 
     public void PlayerTurn(Card _card, int _index)
     {
-        _card.use(player, enemy, false, player.attackIsCharged, player.healIsCharged);
+        enemy.isEnemyAction = !enemy.isEnemyAction;
+        _card.use(player, enemy);
         deckController.DiscardCard(_index, deck);
         deckController.DrawUntilFull(deck);
         handView.UpdateHandView(deck.hand);

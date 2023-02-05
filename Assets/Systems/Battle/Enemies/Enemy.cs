@@ -11,6 +11,7 @@ public class Enemy : ScriptableObject
     public int healthMax;
     public Sprite sprite;
 
-    public bool isBleeding;
+    public List<Card> enemyMoves;
+    public int bleedValue;
     public bool isEnemyAction;
 }

@@ -6,13 +6,13 @@ using UnityEngine;
 public class HumaCard : Card
 {
     public override CardType cardType{get{return CardType.Huma;}}
-    public override void use(Player p, Enemy e, bool isEnemyAction, bool attackIsCharged, bool healIsCharged){
-        if(isEnemyAction){
-            p.healthCurrent-=this.effectValue;
+    public override void use(Player p, Enemy e){
+        if(e.isEnemyAction){
+            p.healthCurrent -= this.effectValue;
             p.healthCurrent = (int)Mathf.Clamp(p.healthCurrent, 0f, p.healthMax);
         }
         else {
-            e.healthCurrent-=this.effectValue;
+            e.healthCurrent -= this.effectValue;
             e.healthCurrent = (int)Mathf.Clamp(e.healthCurrent, 0f, e.healthMax);
         }
     }

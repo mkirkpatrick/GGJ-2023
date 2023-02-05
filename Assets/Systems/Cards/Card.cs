@@ -14,6 +14,6 @@ public abstract class Card : ScriptableObject
     public int effectValue;
     public int id;
 
-    public abstract void use(Player p, Enemy e, bool isEnemyAction, bool attackIsCharged, bool healIsCharged);
+    public abstract void use(Player p, Enemy e);
 
 }

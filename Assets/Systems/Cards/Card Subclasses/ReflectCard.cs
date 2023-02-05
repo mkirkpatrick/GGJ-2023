@@ -6,8 +6,8 @@ using UnityEngine;
 public class ReflectCard : Card
 {
     public override CardType cardType{get{return CardType.Utility;}}
-    public override void use(Player p, Enemy e, bool isEnemyAction, bool attackIsCharged, bool healIsCharged){
+    public override void use(Player p, Enemy e){
         //when used, make the enemy card switch the user and target 
-        e.isEnemyAction = !isEnemyAction;
+        e.isEnemyAction = !e.isEnemyAction;
     }
 }

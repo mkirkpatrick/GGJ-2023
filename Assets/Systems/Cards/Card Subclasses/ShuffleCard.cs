@@ -6,7 +6,7 @@ using UnityEngine;
 public class ShuffleCard : Card
 {
     public override CardType cardType{get{return CardType.Utility;}}
-    public override void use(Player p, Enemy e, bool isEnemyAction, bool attackIsCharged, bool healIsCharged){
+    public override void use(Player p, Enemy e){
         //call the deck method to shuffle, send boolean of true (include hand)
     }
 }

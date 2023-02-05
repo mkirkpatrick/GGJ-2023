@@ -6,8 +6,8 @@ using UnityEngine;
 public class ChargeAttackCard : Card
 {
     public override CardType cardType{get{return CardType.Utility;}}
-    public override void use(Player p, Enemy e, bool isEnemyAction, bool attackIsCharged, bool healIsCharged){
+    public override void use(Player p, Enemy e){
         //increases damage done by attack cards by 1 until end of encounter
-        p.attackIsCharged = true;
+        p.attackCharge++;
     }
 }

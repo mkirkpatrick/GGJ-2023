@@ -11,16 +11,16 @@ public class Player
 
     public int nodeLocation = 0;
 
-    public bool attackIsCharged;
-    public bool healIsCharged;
-    public bool isBleeding;
+    public int attackCharge;
+    public int healCharge;
+    public int bleedValue;
 
     public Player() {
         healthCurrent = 20;
         healthMax = 30;
 
-        attackIsCharged = false;
-        healIsCharged = false;
-        isBleeding = false;
+        attackCharge = 0;
+        healCharge = 0;
+        bleedValue = 0;
     }
 }

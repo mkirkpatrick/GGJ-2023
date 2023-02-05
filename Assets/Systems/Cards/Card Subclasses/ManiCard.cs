@@ -6,14 +6,14 @@ using UnityEngine;
 public class ManiCard : Card
 {
     public override CardType cardType{get{return CardType.Mani;}}
-    public override void use(Player p, Enemy e, bool isEnemyAction, bool attackIsCharged, bool healIsCharged){
+    public override void use(Player p, Enemy e){
         //steal 5 hp from target
-        if(isEnemyAction){
-            p.healthCurrent-=5;
-            e.healthCurrent+=5;
+        if(e.isEnemyAction){
+            p.healthCurrent -= 5;
+            e.healthCurrent += 5;
         } else {
-            e.healthCurrent-=5;
-            p.healthCurrent+=5;
+            e.healthCurrent -= 5;
+            p.healthCurrent += 5;
         }
 
         p.healthCurrent = (int)Mathf.Clamp(p.healthCurrent, 0f, p.healthMax);

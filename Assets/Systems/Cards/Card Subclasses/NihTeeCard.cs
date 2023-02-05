@@ -6,12 +6,12 @@ using UnityEngine;
 public class NihTeeCard : Card
 {
     public override CardType cardType{get{return CardType.Nihtee;}}
-    public override void use(Player p, Enemy e, bool isEnemyAction, bool attackIsCharged, bool healIsCharged){
+    public override void use(Player p, Enemy e){
         //apply bleed to target
-        if(isEnemyAction){
-            p.isBleeding = true;
+        if(e.isEnemyAction){
+            p.bleedValue += this.effectValue;
         } else {
-            e.isBleeding = true;
+            e.bleedValue += this.effectValue;
         }
     }
 }

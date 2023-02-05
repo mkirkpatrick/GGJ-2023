@@ -6,8 +6,7 @@ using UnityEngine;
 public class ChargeHealCard : Card
 {
     public override CardType cardType{get{return CardType.Utility;}}
-    public override void use(Player p, Enemy e, bool isEnemyAction, bool attackIsCharged, bool healIsCharged){
-        //increase any healing done for the rest of the encounter by 1
-        p.healIsCharged = true;
+    public override void use(Player p, Enemy e){
+        p.healCharge++;
     }
 }
