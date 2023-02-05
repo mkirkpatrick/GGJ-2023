@@ -21,7 +21,6 @@ public class HandView : MonoBehaviour
     public void SelectCard(int _index) {
         cardSlots[_index].SetActive(false);
 
-
     }
 
     private void AdjustHand()
