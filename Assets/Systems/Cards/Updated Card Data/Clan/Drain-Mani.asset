@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda8b7a3c947b2147b2062502f222b80, type: 3}
   m_Name: Drain-Mani
   m_EditorClassIdentifier: 
-  cardName: 
-  cardDescription: 
-  cardImage: {fileID: 0}
-  effectValue: 0
+  cardName: Drain
+  cardDescription: Stela 5 HP from opponent
+  cardImage: {fileID: 21300000, guid: 4c89e8758ce18ee4983881b125155da0, type: 3}
+  effectValue: 5
   id: 0

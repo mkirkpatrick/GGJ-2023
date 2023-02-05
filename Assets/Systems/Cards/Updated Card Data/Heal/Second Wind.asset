@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66735ce719ed0984da7b6c6410093647, type: 3}
   m_Name: Second Wind
   m_EditorClassIdentifier: 
-  cardName: 
-  cardDescription: 
-  cardImage: {fileID: 0}
-  effectValue: 0
+  cardName: Second Wind
+  cardDescription: Restore 5 HP
+  cardImage: {fileID: 21300000, guid: f39d56b6899ecad41bd6d10e4bc2f959, type: 3}
+  effectValue: 5
   id: 0

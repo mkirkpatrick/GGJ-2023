@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07dd44dd903be8943be1817a72a4ff89, type: 3}
   m_Name: Gamble
   m_EditorClassIdentifier: 
-  cardName: Last Resort
+  cardName: Gamble
   cardDescription: Randomly inflict up to 5 damage to opponent or to self
-  cardImage: {fileID: 0}
+  cardImage: {fileID: 21300000, guid: a0aac06d57644764b929accb3051541e, type: 3}
   effectValue: 0
   id: 0

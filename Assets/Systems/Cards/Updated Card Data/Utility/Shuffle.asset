@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0912854dd15e14b90daa82c832de33, type: 3}
   m_Name: Shuffle
   m_EditorClassIdentifier: 
-  cardName: 
-  cardDescription: 
-  cardImage: {fileID: 0}
+  cardName: Shuffle
+  cardDescription: Shuffle all cards and draw new hand
+  cardImage: {fileID: 21300000, guid: 0ff731c3cc1522f4fa4677ad0474c994, type: 3}
   effectValue: 0
   id: 0
