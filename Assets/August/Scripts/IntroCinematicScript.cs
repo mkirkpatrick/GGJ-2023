@@ -20,7 +20,7 @@ public class IntroCinematicScript : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         textManagerScript.StartDialogue(dialogueText);
-        yield return new WaitForSeconds(34f);
+        yield return new WaitForSeconds(38f);
         crossfadeAnim.SetTrigger("FadeOut");
     }
 
