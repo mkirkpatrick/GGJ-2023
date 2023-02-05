@@ -14,7 +14,7 @@ public class MusicController : MonoBehaviour
 
     public SongTitles currentSong;
 
-    private void Start()
+    private void Awake()
     {
         instance = this;
 
