@@ -82,15 +82,14 @@ public class DeckController : MonoBehaviour
             Shuffle(false, deck);
         }
         Card c = deck.drawPile[0];
-
-        //debugging
-        Debug.Log("Drawing Card..." + c.cardName);
-
         deck.hand.Add(c);
         deck.drawPile.RemoveAt(0);
 
         //if this is buggy just comment out, its for the root system
-        //updateComboIndex(deck);
+        if(deck.hand.Count==5){
+            //Debug.Log("updating combo index");
+            updateComboIndex(deck);
+        }
         return c;
     }
 
@@ -123,13 +122,19 @@ public class DeckController : MonoBehaviour
     public void updateComboIndex(Deck deck){
         CardType c = deck.hand[0].cardType;
         bool isCombo = true;
-        var index = 1;
+        var index = 0;
         var comboIndex = 0;
+        //Debug.Log("Root card type is: " + c);
         while((index<5) && isCombo){
+            //Debug.Log("In while loop");
+            //Debug.Log("card type checking is: " + deck.hand[index].cardType);
             if(deck.hand[index].cardType.Equals(c)){
-                index++;
+                //Debug.Log("is a combo");
                 comboIndex = index;
+                //Debug.Log("New combo index: " + comboIndex);
+                index++;
             } else{
+                //Debug.Log("Not a combo");
                 isCombo = false;
             }
         }
