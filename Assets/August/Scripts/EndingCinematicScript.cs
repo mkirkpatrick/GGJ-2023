@@ -13,6 +13,7 @@ public class EndingCinematicScript : MonoBehaviour
 
     void Start()
     {
+        CameraController.instance.Deactivate();
         textManagerScript = textManager.GetComponent<TextManager>();
         dialogueText = GetComponent<DialogueText>();
         StartCoroutine(PauseThenRun());
