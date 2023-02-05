@@ -5,6 +5,7 @@ using UnityEngine;
 public class DeckController : MonoBehaviour
 {
     public List<Card> allCards;
+    public List<Card> clanCards;
     public Deck currentDeck;
     public int comboIndex;
 
@@ -20,23 +21,22 @@ public class DeckController : MonoBehaviour
     */
 
     //fills deck with card data set
-    public Deck GetNewDeck()
+    public Deck GetNewDeck(Player _player)
     {
         Deck temp = new Deck();
         for(var i=0; i<allCards.Count; i++){
             DeckAdd(allCards[i], temp);
         }
-        //UNCOMMENT ONCE PLAYER STUFF IS UNDER CONTROL
-        /*
-        if(p.currentClan.clanName.Equals("Huma")){
+
+        if(_player.currentClan.clanName.Equals("Huma")){
             DeckAdd(clanCards[0], temp);
-        } else if (p.currentClan.clanName.Equals("Mani")){
+        } else if (_player.currentClan.clanName.Equals("Mani")){
             DeckAdd(clanCards[1], temp);
-        } else if (p.currentClan.clanName.Equals("Nih-Tee")){
+        } else if (_player.currentClan.clanName.Equals("Nih-Tee")){
             DeckAdd(clanCards[2], temp);
         }
-        */
-        PopulateDraw(temp);  
+
+        PopulateDraw(temp);
         return temp;
     }
 

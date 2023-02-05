@@ -16,7 +16,11 @@ public class Player
     public bool isBleeding;
 
     public Player() {
-        healthCurrent = 30;
+        healthCurrent = 20;
         healthMax = 30;
+
+        attackIsCharged = false;
+        healIsCharged = false;
+        isBleeding = false;
     }
 }

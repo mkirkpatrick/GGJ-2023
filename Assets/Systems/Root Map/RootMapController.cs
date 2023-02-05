@@ -18,12 +18,12 @@ public class RootMapController : MonoBehaviour
     
     IEnumerator MoveToNextNode()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         currentNodeIndex++;
         PlayerController.instance.player.nodeLocation = currentNodeIndex;
         CameraController.instance.followObject = nodes[currentNodeIndex];
         CameraController.instance.MoveCameraToTarget(nodes[currentNodeIndex].position);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         CameraController.instance.Deactivate();
         SceneManager.LoadScene("Battle");
     }

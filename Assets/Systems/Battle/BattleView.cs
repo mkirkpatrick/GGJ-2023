@@ -11,13 +11,15 @@ public class BattleView : MonoBehaviour
     public TMP_Text playerHealth;
     public TMP_Text enemeyHealth;
 
-    public Button theButton;
-
     // Start is called before the first frame update
     void Start()
     {
         player = PlayerController.instance.player;
-        SetPlayerHealth(player.healthCurrent, player.healthMax);
+    }
+
+    public void UpdateView(Player _player, Enemy _enemy) {
+        SetPlayerHealth(_player.healthCurrent, _player.healthMax);
+        SetEnemyHealth(_enemy.healthCurrent, _enemy.healthMax);
     }
 
     public void SetPlayerHealth(int _healthCurrent, int _healthMax) {

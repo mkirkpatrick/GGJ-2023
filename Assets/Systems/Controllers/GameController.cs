@@ -20,6 +20,9 @@ public class GameController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        playerController = transform.Find("Player Controller").GetComponent<PlayerController>();
+        deckController = transform.Find("Deck Controller").GetComponent<DeckController>();
     }
     private void Start()
     {

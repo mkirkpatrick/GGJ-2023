@@ -6,26 +6,40 @@ using TMPro;
 
 public class HandView : MonoBehaviour
 {
-    public GameObject[] cardSlots;
+    public Transform handContainer;
+    public CardView cardPrefab;
+    public List<CardView> cardViews;
 
-    private void Start()
+    private void Awake()
     {
-        cardSlots = new GameObject[5];
+        cardViews = new List<CardView>();
+    }
 
-        for(int i = 0; i < transform.childCount; i++)
+    public void CreateHand() {
+        for (int i = 0; i < 5; i++)
         {
-            cardSlots[i] = transform.GetChild(i).gameObject;
+            CardView newCard = Instantiate(cardPrefab);
+            cardViews.Add(newCard);
+            newCard.gameObject.transform.SetParent(handContainer);
+        }
+    }
+    public void UpdateHandView(List<Card> _cards)
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            cardViews[i].card = _cards[i];
+            cardViews[i].UpdateCardView(i);
         }
     }
 
     public void SelectCard(int _index) {
-        cardSlots[_index].SetActive(false);
+        //cardSlots[_index].SetActive(false);
 
     }
 
     private void AdjustHand()
     {
-        for(int i = 0; i < cardSlots.Length; i++)
+        //for(int i = 0; i < cardSlots.Length; i++)
         {
 
         }

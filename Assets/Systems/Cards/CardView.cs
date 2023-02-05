@@ -6,21 +6,32 @@ using TMPro;
 
 public class CardView : MonoBehaviour
 {
+    private BattleController battleController;
     public List<Sprite> frameSpriteList;
 
     public Card card;
+    public int indexInHand;
+
+    public Button cardButton;
 
     public TMP_Text cardName;
     public TMP_Text description;
     public Image image;
     public Image frame;
 
-    public void UpdateCardView() {
+    private void Start()
+    {
+        battleController = BattleController.instance;
+        cardButton.onClick.AddListener(() => CardClick());
+    }
+
+    public void UpdateCardView(int _index) {
+        indexInHand = _index;
         cardName.text = card.cardName;
         description.text = card.cardDescription;
         image.sprite = card.cardImage;
 
-       frame.sprite = GetFrameSprite(card.cardType);
+        //frame.sprite = GetFrameSprite(card.cardType);
     }
 
     private Sprite GetFrameSprite(CardType _type) {
@@ -42,5 +53,9 @@ public class CardView : MonoBehaviour
             default:
                 return null;
         }
+    }
+
+    public void CardClick() {
+        battleController.PlayerTurn(card, indexInHand);
     }
 }

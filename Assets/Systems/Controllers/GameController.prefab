@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 138356842}
   - component: {fileID: 138356843}
   m_Layer: 0
-  m_Name: Playercontroller
+  m_Name: Player Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,58 +683,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allCards: []
+  clanCards: []
   currentDeck:
     deck: []
     drawPile: []
     hand: []
     discardPile: []
   comboIndex: 0
---- !u!1 &7888389169933364828
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7239795852445498754}
-  - component: {fileID: 5519204890798255304}
-  m_Layer: 0
-  m_Name: Battle Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7239795852445498754
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7888389169933364828}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1286279445190711421}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5519204890798255304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7888389169933364828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f94a7e59d0040df46bdd924838aba5a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  battleView: {fileID: 0}
-  handView: {fileID: 0}
 --- !u!1 &9081123683381597248
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +724,6 @@ Transform:
   - {fileID: 138356842}
   - {fileID: 537554849811016122}
   - {fileID: 6182952966123515348}
-  - {fileID: 7239795852445498754}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -785,5 +739,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ef186ae28b5fed43861194303f37fba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  deckController: {fileID: 0}
+  playerController: {fileID: 138356843}
+  deckController: {fileID: 3989132200394153468}
