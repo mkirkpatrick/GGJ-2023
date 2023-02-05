@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverScript : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameOverScript : MonoBehaviour
     public TextManager textManagerScript;
     public DialogueText dialogueText;
     public AudioSource audioSource;
+    public Animator crossfadeAnim;
 
     void Start()
     {
@@ -22,5 +24,9 @@ public class GameOverScript : MonoBehaviour
         audioSource.Play();
         yield return new WaitForSeconds(2f);
         textManagerScript.StartDialogue(dialogueText);
+        yield return new WaitForSeconds(8f);
+        crossfadeAnim.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Main Menu");
     }
 }
