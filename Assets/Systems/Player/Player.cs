@@ -15,6 +15,8 @@ public class Player
     public int healCharge;
     public int bleedValue;
 
+    public DeckController deckController;
+
     public Player() {
         healthCurrent = 20;
         healthMax = 30;

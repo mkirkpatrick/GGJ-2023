@@ -26,6 +26,8 @@ public class GameController : MonoBehaviour
     }
     private void Start()
     {
+        playerController.player.deckController = deckController;
+
         Screen.SetResolution(1366, 768, false);
         Screen.fullScreenMode = FullScreenMode.Windowed;
     }
