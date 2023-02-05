@@ -10,6 +10,6 @@ public class ShuffleCard : Card
     public override void use(Player p, Enemy e){
         //call the deck method to shuffle, send boolean of true (include hand)
         deckController = p.deckController;
-        //deckController.Shuffle(true, //playerdeck)
+        deckController.Shuffle(true, p.deck);
     }
 }
