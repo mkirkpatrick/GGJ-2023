@@ -41,7 +41,7 @@ public class BattleController : MonoBehaviour
 
     public void PlayerTurn(Card _card, int _index)
     {
-        enemy.isEnemyAction = !enemy.isEnemyAction;
+        enemy.isEnemyAction = false;
         _card.use(player, enemy);
         deckController.DiscardCard(_index, deck);
         deckController.DrawUntilFull(deck);
@@ -51,7 +51,8 @@ public class BattleController : MonoBehaviour
 
     void EnemyTurn()
     {
-
+        //uncomment later
+        //enemy.isEnemyAction = !enemy.isEnemyAction
     }
 
     void CardTurn()

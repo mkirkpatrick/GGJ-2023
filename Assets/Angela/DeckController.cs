@@ -40,6 +40,11 @@ public class DeckController : MonoBehaviour
         return temp;
     }
 
+    public Deck GetEnemyDeck(Enemy e){
+        Deck temp = new Deck();
+        return temp;
+    }
+
     //for debugging, probably won't be used
     public void PrintDeck(){
         Debug.Log("drawpile");
