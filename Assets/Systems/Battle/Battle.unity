@@ -884,7 +884,7 @@ MonoBehaviour:
   currentEnemy: {fileID: 11400000, guid: 4e56fc5003a784f49b3bcbdd65f40303, type: 2}
   playerHealth: {fileID: 1660186703}
   enemeyHealth: {fileID: 571130643}
-  playerImage: {fileID: 1398628636}
+  playerImage: {fileID: 1398628638}
   beetles:
   - {fileID: 21300000, guid: 4d320d7ac7be2564b916318930489723, type: 3}
   - {fileID: 21300000, guid: acf1aae2ec5109d4e80256dcc48db51c, type: 3}
@@ -900,7 +900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1398628635}
   - component: {fileID: 1398628637}
-  - component: {fileID: 1398628636}
+  - component: {fileID: 1398628638}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -928,7 +928,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 16}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0}
---- !u!114 &1398628636
+--- !u!222 &1398628637
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398628634}
+  m_CullTransparentMesh: 1
+--- !u!114 &1398628638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -958,14 +966,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!222 &1398628637
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398628634}
-  m_CullTransparentMesh: 1
 --- !u!1 &1554548473
 GameObject:
   m_ObjectHideFlags: 0
