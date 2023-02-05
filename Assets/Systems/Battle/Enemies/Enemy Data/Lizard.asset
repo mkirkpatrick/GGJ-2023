@@ -13,26 +13,20 @@ MonoBehaviour:
   m_Name: Lizard
   m_EditorClassIdentifier: 
   enemyName: Lizard
-  healthCurrent: 45
-  healthMax: 45
+  healthCurrent: 40
+  healthMax: 40
   sprite: {fileID: 21300000, guid: e9d684a5bf443334d9594ac2ecbe7561, type: 3}
   enemyMoves:
   - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
   - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
-  - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
-  - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
-  - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
-  - {fileID: 11400000, guid: f7601eef66a32a240815eacb9292ba1c, type: 2}
-  - {fileID: 11400000, guid: f7601eef66a32a240815eacb9292ba1c, type: 2}
-  - {fileID: 11400000, guid: f7601eef66a32a240815eacb9292ba1c, type: 2}
+  - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+  - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
   - {fileID: 11400000, guid: f7601eef66a32a240815eacb9292ba1c, type: 2}
   - {fileID: 11400000, guid: f7601eef66a32a240815eacb9292ba1c, type: 2}
   - {fileID: 11400000, guid: a80c5bc8879d60a42b6e35363c627d55, type: 2}
-  - {fileID: 11400000, guid: a80c5bc8879d60a42b6e35363c627d55, type: 2}
-  - {fileID: 11400000, guid: 3bc747d9244b9b44ea3abf85139c722b, type: 2}
   - {fileID: 11400000, guid: 3bc747d9244b9b44ea3abf85139c722b, type: 2}
   - {fileID: 11400000, guid: 230e7a3f1b38aee4aa5f57ba6c5f5a3a, type: 2}
-  - {fileID: 11400000, guid: 7595fc6128c16144981b6a20cd674263, type: 2}
+  - {fileID: 11400000, guid: 7413a2f7a7cef0b488056898a50228b0, type: 2}
   - {fileID: 11400000, guid: 7413a2f7a7cef0b488056898a50228b0, type: 2}
   bleedValue: 0
   isEnemyAction: 0

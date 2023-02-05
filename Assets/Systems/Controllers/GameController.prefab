@@ -49,9 +49,21 @@ MonoBehaviour:
     healthCurrent: 30
     healthMax: 30
     nodeLocation: 0
-    attackIsCharged: 0
-    healIsCharged: 0
-    isBleeding: 0
+    attackCharge: 0
+    healCharge: 0
+    bleedValue: 0
+    deckController: {fileID: 0}
+    deck:
+      deck: []
+      drawPile: []
+      hand: []
+      discardPile: []
+    enemyStages:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
 --- !u!1 &593559423
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,7 +916,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 230e7a3f1b38aee4aa5f57ba6c5f5a3a, type: 2}
   - {fileID: 11400000, guid: cf341aed9c61e38448ebdf1aac2e015e, type: 2}
   - {fileID: 11400000, guid: 7413a2f7a7cef0b488056898a50228b0, type: 2}
-  - {fileID: 11400000, guid: 7595fc6128c16144981b6a20cd674263, type: 2}
   clanCards:
   - {fileID: 11400000, guid: f44c3fdb0bc0276498854af4c6ff3cd0, type: 2}
   - {fileID: 11400000, guid: 5c5c83992868d4645b743f35e0dad68d, type: 2}

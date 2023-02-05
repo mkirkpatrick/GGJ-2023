@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Ant
   m_EditorClassIdentifier: 
   enemyName: Ant
-  healthCurrent: 20
-  healthMax: 20
+  healthCurrent: 15
+  healthMax: 15
   sprite: {fileID: 21300000, guid: f3344a22a6b1c8d4085857933f7ed51f, type: 3}
   enemyMoves:
   - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
@@ -25,12 +25,30 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
   - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
   - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
-  - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
-  - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
   bleedValue: 0
   isEnemyAction: 0
   deck:
-    deck: []
+    deck:
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
     drawPile: []
-    hand: []
-    discardPile: []
+    hand:
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    discardPile:
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: 884f00bcd408ca64a92a81c82184b74a, type: 2}
+    - {fileID: 11400000, guid: e5ef8eaad03026c47bc44630befd7a49, type: 2}

@@ -9,7 +9,7 @@ public class ShuffleCard : Card
     DeckController deckController;
     public override void use(Player p, Enemy e){
         //call the deck method to shuffle, send boolean of true (include hand)
-        deckController = p.deckController;
+        deckController = GameController.instance.deckController;
         deckController.Shuffle(true, p.deck);
     }
 }
