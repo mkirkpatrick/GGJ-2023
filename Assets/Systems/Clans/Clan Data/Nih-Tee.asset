@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa14c9b0255296e4d9dcc63f81805b34, type: 3}
-  m_Name: Ni-Tee
+  m_Name: Nih-Tee
   m_EditorClassIdentifier: 
   clanName: Nih-Tee
   description: "The Nih-tee are a clan of highly spiritual rhino beetles. They live
