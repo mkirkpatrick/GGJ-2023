@@ -6,9 +6,14 @@ using UnityEngine.SceneManagement;
 public class RootMapController : MonoBehaviour
 {
     public List<Transform> nodes;
-    Player player = PlayerController.instance.player;
+    Player player;
 
     public GameObject crossFade;
+
+    private void Awake()
+    {
+        player = PlayerController.instance.player;
+    }
 
     // Start is called before the first frame update
     void Start()
