@@ -10,11 +10,14 @@ public class AttackCard : Card
         //decrease target hp by effect value
         if(isEnemyAction){
             p.healthCurrent-=this.effectValue;
+            p.healthCurrent = (int)Mathf.Clamp(p.healthCurrent, 0f, p.healthMax);
         } else if (attackIsCharged){
             //if charge attack card has been played by the player, damage increased by 1
             e.healthCurrent-=(this.effectValue+1);
+            e.healthCurrent = (int)Mathf.Clamp(e.healthCurrent, 0f, e.healthMax);
         } else {
             e.healthCurrent-=this.effectValue;
+            e.healthCurrent = (int)Mathf.Clamp(e.healthCurrent, 0f, e.healthMax);
         }
     }
 }

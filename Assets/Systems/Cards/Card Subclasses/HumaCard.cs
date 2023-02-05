@@ -9,8 +9,11 @@ public class HumaCard : Card
     public override void use(Player p, Enemy e, bool isEnemyAction, bool attackIsCharged, bool healIsCharged){
         if(isEnemyAction){
             p.healthCurrent-=this.effectValue;
-        } else {
+            p.healthCurrent = (int)Mathf.Clamp(p.healthCurrent, 0f, p.healthMax);
+        }
+        else {
             e.healthCurrent-=this.effectValue;
+            e.healthCurrent = (int)Mathf.Clamp(e.healthCurrent, 0f, e.healthMax);
         }
     }
 }

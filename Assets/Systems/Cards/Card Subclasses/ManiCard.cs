@@ -15,5 +15,8 @@ public class ManiCard : Card
             e.healthCurrent-=5;
             p.healthCurrent+=5;
         }
+
+        p.healthCurrent = (int)Mathf.Clamp(p.healthCurrent, 0f, p.healthMax);
+        e.healthCurrent = (int)Mathf.Clamp(e.healthCurrent, 0f, e.healthMax);
     }
 }
