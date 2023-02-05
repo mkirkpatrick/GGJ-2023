@@ -42,9 +42,16 @@ public class MainMenuView : MonoBehaviour
 
     IEnumerator StartGameCoroutine()
     {
+        ResetGameData();
         menuAudioSource.Play();
         crossfadeAnim.SetTrigger("FadeOut");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Intro");
+    }
+
+    void ResetGameData()
+    {
+        PlayerController.instance.CreateNewPlayer();
+        //Reset enemies
     }
 }

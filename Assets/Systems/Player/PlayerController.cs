@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        player = new Player();
+        CreateNewPlayer();
     }
 
     public void CreateEnemyList(Enemy[] enemyReferences){
@@ -28,5 +28,10 @@ public class PlayerController : MonoBehaviour
         }
         player.enemyStages[2] = enemyReferences[5];
         player.enemyStages[4] = enemyReferences[4];
+    }
+
+    public void CreateNewPlayer()
+    {
+        player = new Player();
     }
 }
