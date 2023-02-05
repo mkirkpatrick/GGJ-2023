@@ -46,6 +46,9 @@ public class ClanSelectView : MonoBehaviour
 
     private void BeginJourney() {
 
+        if (currentlySelectedClan == null)
+            return;
+
         StartCoroutine(BeginJourneyCoroutine());
     }
 

@@ -9,13 +9,12 @@ public class TitleScreenView : MonoBehaviour
     public float ScreenWaitTime = 2f;
     public Animator crossfadeAnimator;
 
-    // Update is called once per frame
     void Start()
     {
         MusicController.instance.PlaySong(MusicController.SongTitles.Ending);
         StartCoroutine(LoadMainMenu(ScreenWaitTime));
     }
-
+    
     IEnumerator LoadMainMenu(float _time)
     {
         yield return new WaitForSeconds(_time);
