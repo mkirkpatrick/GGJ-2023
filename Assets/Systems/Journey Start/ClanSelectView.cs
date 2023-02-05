@@ -18,8 +18,14 @@ public class ClanSelectView : MonoBehaviour
 
     public Button beginJourneyButton;
 
+    public Animator crossfadeAnim;
+
+    public AudioSource clanSelectAudioSource;
+
     private void Start()
     {
+        clanSelectAudioSource = GetComponent<AudioSource>();
+
         MusicController.instance.PlaySong(MusicController.SongTitles.Root_Map);
 
         humaButton.onClick.AddListener(() => SelectClan(0));
@@ -37,6 +43,15 @@ public class ClanSelectView : MonoBehaviour
     }
 
     private void BeginJourney() {
+
+        StartCoroutine(BeginJourneyCoroutine());
+    }
+
+    IEnumerator BeginJourneyCoroutine()
+    {
+        crossfadeAnim.SetTrigger("FadeOut");
+        clanSelectAudioSource.Play();
+        yield return new WaitForSeconds(1f);
         PlayerController.instance.player.currentClan = currentlySelectedClan;
         SceneManager.LoadScene("Root Map");
     }

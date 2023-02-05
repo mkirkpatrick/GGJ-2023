@@ -8,6 +8,7 @@ public class TitleScreenView : MonoBehaviour
     public Image logo;
     private float currentTime = 0f;
     public float ScreenWaitTime = 2f;
+    public Animator crossfadeAnimator;
 
     // Update is called once per frame
     void Start()
@@ -19,7 +20,8 @@ public class TitleScreenView : MonoBehaviour
     IEnumerator LoadMainMenu(float _time)
     {
         yield return new WaitForSeconds(_time);
-
+        crossfadeAnimator.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Main Menu");
     }
 }
