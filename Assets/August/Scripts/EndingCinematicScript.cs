@@ -8,9 +8,9 @@ public class EndingCinematicScript : MonoBehaviour
     public GameObject textManager;
     public TextManager textManagerScript;
     public DialogueText dialogueText;
-    public ParticleSystem redParticles;
-    public ParticleSystem blueParticles;
-    public ParticleSystem yellowParticles;
+    //public ParticleSystem redParticles;
+    //public ParticleSystem blueParticles;
+    //public ParticleSystem yellowParticles;
 
     void Start()
     {
@@ -25,11 +25,10 @@ public class EndingCinematicScript : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         textManagerScript.StartDialogue(dialogueText);
-        yield return new WaitForSeconds(22f);
-        redParticles.Play();
-        blueParticles.Play();
-        yellowParticles.Play();
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(65f);
+        //redParticles.Play();
+        //blueParticles.Play();
+        //yellowParticles.Play();
         SceneManager.LoadScene("Main Menu");
     }
 }
