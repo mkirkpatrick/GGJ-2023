@@ -24,6 +24,8 @@ public class BattleController : MonoBehaviour
         // Freaking Melt Your Face
         MusicController.instance.PlaySong(MusicController.SongTitles.Beetle_Battle);
 
+        audioSource = GetComponent<AudioSource>();
+
         instance = this;
 
         deckController = GameController.instance.deckController;
@@ -34,6 +36,11 @@ public class BattleController : MonoBehaviour
         enemy = player.enemyStages[player.nodeLocation - 1]; //needs to change to load in the specific enemy SO
         enemy.deck = deckController.GetEnemyDeck(enemy);
         deckController.Shuffle(true, enemy.deck);
+
+        //reset player stats 
+        player.attackCharge = 0;
+        player.healCharge = 0;
+        player.bleedValue = 0;
 
         player.deck = deckController.GetNewDeck(playerController.player);
         deckController.Shuffle(true, player.deck);
@@ -92,6 +99,8 @@ public class BattleController : MonoBehaviour
             battleView.playerAnimator.Play("Player_Idle");
         }
 
+        enemy.healthCurrent -= enemy.bleedValue;
+        player.healthCurrent -= player.bleedValue;
         CheckStatus();
     }
 
