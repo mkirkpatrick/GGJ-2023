@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndingCinematicScript : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class EndingCinematicScript : MonoBehaviour
     void Start()
     {
         CameraController.instance.Deactivate();
+        MusicController.instance.PlaySong(MusicController.SongTitles.Ending);
         textManagerScript = textManager.GetComponent<TextManager>();
         dialogueText = GetComponent<DialogueText>();
         StartCoroutine(PauseThenRun());
@@ -27,5 +29,7 @@ public class EndingCinematicScript : MonoBehaviour
         redParticles.Play();
         blueParticles.Play();
         yellowParticles.Play();
-    }    
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Main Menu");
+    }
 }
