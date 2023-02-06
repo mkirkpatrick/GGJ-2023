@@ -16,6 +16,9 @@ public class BattleController : MonoBehaviour
 
     public Enemy enemy;
 
+    public AudioSource audioSource;
+    public AudioClip[] battleSounds;
+
     private void Start()
     {
         // Freaking Melt Your Face
@@ -54,11 +57,15 @@ public class BattleController : MonoBehaviour
         handView.UpdateHandView(player.deck.hand);
         battleView.UpdateView(player, enemy);
 
-        if(_card.cardType == CardType.Attack)
+        print(battleSounds[1]);
+        audioSource.PlayOneShot(battleSounds[1]);
+
+        if (_card.cardType == CardType.Attack)
         {
             battleView.enemyAnimator.Play("Player_Attack1");
             yield return new WaitForSeconds(1f);
             battleView.playerAnimator.Play("Enemy_Damage1");
+            audioSource.PlayOneShot(battleSounds[0]);
             yield return new WaitForSeconds(1f);
             battleView.enemyAnimator.Play("Enemy_Idle");
             battleView.playerAnimator.Play("Player_Idle");
@@ -79,6 +86,7 @@ public class BattleController : MonoBehaviour
             battleView.enemyAnimator.Play("Enemy_Attack1");
             yield return new WaitForSeconds(1f);
             battleView.playerAnimator.Play("Player_Damage1");
+            audioSource.PlayOneShot(battleSounds[0]);
             yield return new WaitForSeconds(1f);
             battleView.enemyAnimator.Play("Enemy_Idle");
             battleView.playerAnimator.Play("Player_Idle");
