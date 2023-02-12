@@ -13,6 +13,7 @@ public class BattleController : MonoBehaviour
     
     public BattleView battleView;
     public HandView handView;
+    public PlayerView playerView;
 
     public Enemy enemy;
 
@@ -67,6 +68,9 @@ public class BattleController : MonoBehaviour
         print(battleSounds[1]);
         audioSource.PlayOneShot(battleSounds[1]);
 
+
+
+        /*
         if (_card.cardType == CardType.Attack)
         {
             battleView.enemyAnimator.Play("Player_Attack1");
@@ -77,6 +81,9 @@ public class BattleController : MonoBehaviour
             battleView.enemyAnimator.Play("Enemy_Idle");
             battleView.playerAnimator.Play("Player_Idle");
         }
+        */
+        playerView.ChangeAnimState(PlayerView.AnimState.Attacking);
+        yield return new WaitForSeconds(1f);
 
         StartCoroutine( EnemyTurn() );
     }
@@ -88,6 +95,7 @@ public class BattleController : MonoBehaviour
         enemyCard.use(player, enemy);
         battleView.UpdateView(player, enemy);
 
+        /*
         if(enemyCard.cardType == CardType.Attack)
         {
             battleView.enemyAnimator.Play("Enemy_Attack1");
@@ -98,6 +106,9 @@ public class BattleController : MonoBehaviour
             battleView.enemyAnimator.Play("Enemy_Idle");
             battleView.playerAnimator.Play("Player_Idle");
         }
+        */
+        playerView.ChangeAnimState(PlayerView.AnimState.Damaged);
+        yield return new WaitForSeconds(1f);
 
         enemy.healthCurrent -= enemy.bleedValue;
         player.healthCurrent -= player.bleedValue;

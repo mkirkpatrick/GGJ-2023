@@ -527,6 +527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   battleView: {fileID: 1266446166}
   handView: {fileID: 1621985160}
+  playerView: {fileID: 1398628640}
   enemy: {fileID: 0}
   audioSource: {fileID: 0}
   battleSounds:
@@ -809,7 +810,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 879644361}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &879644363
 Camera:
   m_ObjectHideFlags: 0
@@ -1088,7 +1089,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: acf1aae2ec5109d4e80256dcc48db51c, type: 3}
   - {fileID: 21300000, guid: ce9d5f3e5f85c3b4ea4a3fbd5ff2b903, type: 3}
   enemyImage: {fileID: 1720898162}
-  playerAnimator: {fileID: 1398628639}
   enemyAnimator: {fileID: 1720898164}
 --- !u!1 &1398628634
 GameObject:
@@ -1102,6 +1102,7 @@ GameObject:
   - component: {fileID: 1398628637}
   - component: {fileID: 1398628638}
   - component: {fileID: 1398628639}
+  - component: {fileID: 1398628640}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -1188,6 +1189,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1398628640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398628634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b1dc55e8c896945b6b3c1cf0edf8f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyAnimator: {fileID: 0}
+  spriteAnimator: {fileID: 0}
 --- !u!1 &1554548473
 GameObject:
   m_ObjectHideFlags: 0
