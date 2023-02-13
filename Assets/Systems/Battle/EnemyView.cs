@@ -1,46 +1,38 @@
 using UnityEngine;
 
-public class PlayerView : MonoBehaviour
+public class EnemyView : MonoBehaviour
 {
     public Animator bodyAnimator;      //Animates position of object
     public Animator spriteAnimator;    //Animates sprite of object
 
     public AudioSource audioSource;
-    public AudioClip[] playerSounds;
-
-    public enum AnimState {Idle, Attacking, Healing, Tactic, Damaged};
+    public enum AnimState { Idle, Attacking, Healing, Tactic, Damaged };
 
     private void Awake()
     {
         bodyAnimator = GetComponent<Animator>();
-        spriteAnimator = transform.GetChild(0).GetComponent<Animator>();
-        //audioSource = GetComponent<AudioSource>();
+        //No sprite animations yet for enemies
     }
 
     public void ChangeAnimState(AnimState animState)
-    { 
-        switch(animState)
+    {
+        switch (animState)
         {
             case AnimState.Attacking:
-                bodyAnimator.Play("Player_Attack1");
+                bodyAnimator.Play("Enemy_Attack1");
                 break;
             case AnimState.Damaged:
-                bodyAnimator.Play("Player_Damage1");
+                bodyAnimator.Play("Enemy_Damage1");
                 break;
             default:
-                bodyAnimator.Play("Player_Idle");
+                bodyAnimator.Play("Enemy_Idle");
                 break;
         }
     }
 
-    public void ChangeAnimState(string animName)
-    {
-        bodyAnimator.Play(animName);
-    }
-
     public void PlaySound(AudioClip clip)
     {
-        if(audioSource.isPlaying)
+        if (audioSource.isPlaying)
         {
             audioSource.Stop();
         }

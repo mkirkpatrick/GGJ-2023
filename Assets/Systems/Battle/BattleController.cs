@@ -14,6 +14,7 @@ public class BattleController : MonoBehaviour
     public BattleView battleView;
     public HandView handView;
     public PlayerView playerView;
+    public EnemyView enemyView;
 
     public Enemy enemy;
 
@@ -70,19 +71,16 @@ public class BattleController : MonoBehaviour
 
 
 
-        /*
+        
         if (_card.cardType == CardType.Attack)
         {
-            battleView.enemyAnimator.Play("Player_Attack1");
+            playerView.ChangeAnimState(PlayerView.AnimState.Attacking);
             yield return new WaitForSeconds(1f);
-            battleView.playerAnimator.Play("Enemy_Damage1");
-            audioSource.PlayOneShot(battleSounds[0]);
+            enemyView.ChangeAnimState(EnemyView.AnimState.Damaged);
             yield return new WaitForSeconds(1f);
-            battleView.enemyAnimator.Play("Enemy_Idle");
-            battleView.playerAnimator.Play("Player_Idle");
         }
-        */
-        playerView.ChangeAnimState(PlayerView.AnimState.Attacking);
+
+
         yield return new WaitForSeconds(1f);
 
         StartCoroutine( EnemyTurn() );
@@ -95,20 +93,13 @@ public class BattleController : MonoBehaviour
         enemyCard.use(player, enemy);
         battleView.UpdateView(player, enemy);
 
-        /*
         if(enemyCard.cardType == CardType.Attack)
         {
-            battleView.enemyAnimator.Play("Enemy_Attack1");
+            enemyView.ChangeAnimState(EnemyView.AnimState.Attacking);
             yield return new WaitForSeconds(1f);
-            battleView.playerAnimator.Play("Player_Damage1");
-            audioSource.PlayOneShot(battleSounds[0]);
+            playerView.ChangeAnimState(PlayerView.AnimState.Damaged);
             yield return new WaitForSeconds(1f);
-            battleView.enemyAnimator.Play("Enemy_Idle");
-            battleView.playerAnimator.Play("Player_Idle");
         }
-        */
-        playerView.ChangeAnimState(PlayerView.AnimState.Damaged);
-        yield return new WaitForSeconds(1f);
 
         enemy.healthCurrent -= enemy.bleedValue;
         player.healthCurrent -= player.bleedValue;

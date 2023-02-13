@@ -17,6 +17,8 @@ public class Enemy : ScriptableObject
 
     public Deck deck;
 
+    public AnimationClip[] battleAnimations;
+
     public Enemy(){
         
     }
