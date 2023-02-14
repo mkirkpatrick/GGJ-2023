@@ -64,6 +64,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    battleAnimations: []
 --- !u!1 &593559423
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1472997136004458465}
   - component: {fileID: 7754383465525070416}
+  - component: {fileID: 1952319585902365394}
   m_Layer: 0
   m_Name: Sound Effects Controller
   m_TagString: Untagged
@@ -516,6 +518,47 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1952319585902365394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5095362981932503204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbe7743e494d5f849b957261fecb0379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  uiSounds:
+  - {fileID: 8300000, guid: ab6d10d63259c954cb4d8dc01e8a8cc6, type: 3}
+  - {fileID: 8300000, guid: cc004bed43885f647843198eebf70b7d, type: 3}
+  - {fileID: 8300000, guid: e4f825f7ed80c774ebaafd692db2b8e6, type: 3}
+  - {fileID: 8300000, guid: 703c5b0f9c5d9174dbb736fd3e5fd369, type: 3}
+  - {fileID: 8300000, guid: db963fdd1b177bb43addc0f1a1e6f27d, type: 3}
+  - {fileID: 8300000, guid: 4721cf41db3cab74d83ff600291de0bd, type: 3}
+  - {fileID: 8300000, guid: c28660b92d3a04b49be102fc70cb455c, type: 3}
+  - {fileID: 8300000, guid: 274da3c19cc01d5439f76f694ffec0aa, type: 3}
+  - {fileID: 8300000, guid: 8aec05a82bab0734dac38a112357f525, type: 3}
+  battleSounds:
+  - {fileID: 8300000, guid: ee0409798233b084688b8a9df067e55d, type: 3}
+  - {fileID: 8300000, guid: 14461a37950bff7469cc039b97438752, type: 3}
+  - {fileID: 8300000, guid: 8766cfdf96cda3a4fb87def1bcab8e11, type: 3}
+  - {fileID: 8300000, guid: 8c3f19f097322c243bfdfa4cd68bde64, type: 3}
+  - {fileID: 8300000, guid: f613edda904075f4fbeb65bf424f4476, type: 3}
+  - {fileID: 8300000, guid: 9695a79f24bb1334882fa7560ecb0f5e, type: 3}
+  - {fileID: 8300000, guid: 60ad1d0fcabe56544b7b17500b86a476, type: 3}
+  - {fileID: 8300000, guid: 61adbb811a2304440a83dd16fd15ac03, type: 3}
+  - {fileID: 8300000, guid: 8cd78283d5947d94a8694dd48a21e3f8, type: 3}
+  - {fileID: 8300000, guid: 6c9793c8cfbdfee4cb4714aba32e9fcd, type: 3}
+  - {fileID: 8300000, guid: 3b7432c9cf50bfd42a96e024b5a36437, type: 3}
+  - {fileID: 8300000, guid: aa18b8b8e2408f440bd96af039828a00, type: 3}
+  - {fileID: 8300000, guid: 358014a11f71dc64780c93007bdbeb64, type: 3}
+  - {fileID: 8300000, guid: b9088c9a29446494999c4475d3a59525, type: 3}
+  - {fileID: 8300000, guid: 4725f9a425666f14892a0bc16a98350b, type: 3}
+  - {fileID: 8300000, guid: 62f9b44ef7654c5479e0d45fbec493e3, type: 3}
+  - {fileID: 8300000, guid: b7bbd2064bfd55c40bed936bb08fab51, type: 3}
 --- !u!1 &5895297550705726773
 GameObject:
   m_ObjectHideFlags: 0

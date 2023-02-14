@@ -530,6 +530,7 @@ MonoBehaviour:
   playerView: {fileID: 1398628640}
   enemyView: {fileID: 1720898166}
   enemy: {fileID: 0}
+  isPlayerTurn: 0
   audioSource: {fileID: 0}
   battleSounds:
   - {fileID: 8300000, guid: 8cd78283d5947d94a8694dd48a21e3f8, type: 3}
@@ -1205,8 +1206,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyAnimator: {fileID: 0}
   spriteAnimator: {fileID: 0}
+  playerAnimations: []
   audioSource: {fileID: 1398628641}
-  playerSounds: []
 --- !u!82 &1398628641
 AudioSource:
   m_ObjectHideFlags: 0

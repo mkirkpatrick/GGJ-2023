@@ -25,10 +25,14 @@ public class Player
         healthCurrent = 30;
         healthMax = 30;
 
+        ResetStats();
+
+        enemyStages = new Enemy[5];
+    }
+
+    public void ResetStats() {
         attackCharge = 0;
         healCharge = 0;
         bleedValue = 0;
-
-        enemyStages = new Enemy[5];
     }
 }

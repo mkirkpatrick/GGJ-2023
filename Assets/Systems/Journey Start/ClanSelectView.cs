@@ -20,14 +20,10 @@ public class ClanSelectView : MonoBehaviour
 
     public Animator crossfadeAnim;
 
-    public AudioSource clanSelectAudioSource;
-
     public Enemy[] enemyReferences = new Enemy[6];
 
     private void Start()
     {
-        clanSelectAudioSource = GetComponent<AudioSource>();
-
         MusicController.instance.PlaySong(MusicController.SongTitles.Root_Map);
 
         humaButton.onClick.AddListener(() => SelectClan(0));
@@ -55,7 +51,7 @@ public class ClanSelectView : MonoBehaviour
     IEnumerator BeginJourneyCoroutine()
     {
         crossfadeAnim.SetTrigger("FadeOut");
-        clanSelectAudioSource.Play();
+        SoundEffectsController.instance.PlaySound("Confirm Select 3");
         yield return new WaitForSeconds(1f);
         PlayerController.instance.player.currentClan = currentlySelectedClan;
         PlayerController.instance.CreateEnemyList(enemyReferences);

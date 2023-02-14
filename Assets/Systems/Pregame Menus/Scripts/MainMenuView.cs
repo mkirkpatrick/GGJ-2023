@@ -11,7 +11,6 @@ public class MainMenuView : MonoBehaviour
     public Button creditsButton;
     public Button settingsButton;
     public Button exitButton;
-    public AudioSource menuAudioSource;
     public Animator crossfadeAnim;
 
     void Start()
@@ -20,7 +19,6 @@ public class MainMenuView : MonoBehaviour
         settingsButton.onClick.AddListener(() => GoToSettings());
         creditsButton.onClick.AddListener(() => GoToCredits());
         exitButton.onClick.AddListener(() => ExitGame());
-        menuAudioSource = GetComponent<AudioSource>();
     }
 
     void StartGame()
@@ -28,22 +26,24 @@ public class MainMenuView : MonoBehaviour
         StartCoroutine(StartGameCoroutine());
     }
     void GoToSettings() {
-        menuAudioSource.Play();
+        SoundEffectsController.instance.PlaySound("Confirm Selection");
         SceneManager.LoadScene("Settings");
     }
 
     void GoToCredits() {
+        SoundEffectsController.instance.PlaySound("Confirm Selection");
         SceneManager.LoadScene("Credits");
     }
 
-    void ExitGame() { 
+    void ExitGame() {
+        SoundEffectsController.instance.PlaySound("Confirm Selection");
         Application.Quit();
     }
 
     IEnumerator StartGameCoroutine()
     {
         ResetGameData();
-        menuAudioSource.Play();
+        SoundEffectsController.instance.PlaySound("Confirm Selection");
         crossfadeAnim.SetTrigger("FadeOut");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Intro");

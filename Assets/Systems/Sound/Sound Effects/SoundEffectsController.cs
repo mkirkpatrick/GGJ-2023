@@ -6,34 +6,28 @@ public class SoundEffectsController : MonoBehaviour
 {
     public static SoundEffectsController instance;
 
-    public AudioSource[] soundList;
-    public enum SongTitles { Beetle_Battle, Root_Map, Ending }
-    public AudioSource attack;
-    public AudioSource heal;
-    public AudioSource endSong;
+    public AudioSource audioSource;
 
-    public SongTitles currentSong;
+    public enum SoundType { UI, Battle}
+    public List<AudioClip> uiSounds;
+    public List<AudioClip> battleSounds;
+    private Dictionary<string, AudioClip> soundMasterList;
 
     private void Awake()
     {
         instance = this;
+        audioSource = GetComponent<AudioSource>();
 
-        soundList = GetComponents<AudioSource>();
-        attack = soundList[0];
-        heal = soundList[1];
+        //Build dictionary so sounds can be called by name
+        soundMasterList = new Dictionary<string, AudioClip>();
+        foreach(AudioClip clip in uiSounds)
+            soundMasterList.Add(clip.name, clip);
+        foreach (AudioClip clip in battleSounds)
+            soundMasterList.Add(clip.name, clip);
     }
 
     public void PlaySound(string _soundString)
     {
-
-        switch (_soundString)
-        {
-            case "Attack":
-                attack.Play();
-                break;
-            case "Heal":
-                heal.Play();
-                break;
-        }
+        audioSource.PlayOneShot(soundMasterList[_soundString]);
     }
 }

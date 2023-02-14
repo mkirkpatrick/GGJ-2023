@@ -31,14 +31,16 @@ public class SettingsView : MonoBehaviour
 
     void GoToMainMenu()
     {
-        Debug.Log("Go to Main Menu");
+        SoundEffectsController.instance.PlaySound("Confirm Selection");
         SceneManager.LoadScene("Main Menu");
     }
-    void SetFullscreen(bool _value) { 
+    void SetFullscreen(bool _value) {
+        SoundEffectsController.instance.PlaySound("Confirm Selection");
         Screen.fullScreen = _value;
     }
     void SetScreenResolution(int _width, int _height)
     {
+        SoundEffectsController.instance.PlaySound("Confirm Selection");
         Screen.SetResolution(_width, _height, Screen.fullScreen);
     }
 }

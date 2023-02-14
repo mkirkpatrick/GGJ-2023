@@ -15,12 +15,7 @@ public class CreditsView : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        Debug.Log("Clicked");
+        SoundEffectsController.instance.PlaySound("Confirm Selection");
         SceneManager.LoadScene("Main Menu");
-    }
-
-    void Update()
-    {
-        
     }
 }

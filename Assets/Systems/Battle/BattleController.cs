@@ -10,6 +10,7 @@ public class BattleController : MonoBehaviour
     private DeckController deckController;
     private PlayerController playerController;
     private Player player;
+    private SoundEffectsController soundEffectsController;
     
     public BattleView battleView;
     public HandView handView;
@@ -18,34 +19,26 @@ public class BattleController : MonoBehaviour
 
     public Enemy enemy;
 
+    public bool isPlayerTurn = false;
+
+    //TODO: Pull sound effects out to SoundEffectController and add reference
     public AudioSource audioSource;
     public AudioClip[] battleSounds;
 
     private void Start()
     {
+        //Get References
+        instance = this;
+        deckController = GameController.instance.deckController;
+        playerController = GameController.instance.playerController;
+        soundEffectsController = SoundEffectsController.instance;
+
         // Freaking Melt Your Face
         MusicController.instance.PlaySong(MusicController.SongTitles.Beetle_Battle);
 
         audioSource = GetComponent<AudioSource>();
 
-        instance = this;
-
-        deckController = GameController.instance.deckController;
-        playerController = GameController.instance.playerController;
-        player = playerController.player;
-
-        // Load Enemy
-        enemy = player.enemyStages[player.nodeLocation - 1]; //needs to change to load in the specific enemy SO
-        enemy.deck = deckController.GetEnemyDeck(enemy);
-        deckController.Shuffle(true, enemy.deck);
-
-        //reset player stats 
-        player.attackCharge = 0;
-        player.healCharge = 0;
-        player.bleedValue = 0;
-
-        player.deck = deckController.GetNewDeck(playerController.player);
-        deckController.Shuffle(true, player.deck);
+        LoadBattleScene();
 
         handView.CreateHand();
         handView.UpdateHandView(player.deck.hand);
@@ -54,13 +47,31 @@ public class BattleController : MonoBehaviour
         
     }
 
-    public IEnumerator PlayerTurn(Card _card, int _index)
+    private void LoadBattleScene() {
+        // Load Player
+        player = playerController.player;
+        player.ResetStats();
+
+        player.deck = deckController.GetNewDeck(playerController.player);
+        deckController.Shuffle(true, player.deck);
+
+        // Load Enemy
+        enemy = player.enemyStages[player.nodeLocation - 1]; //needs to change to load in the specific enemy SO
+        enemy.deck = deckController.GetEnemyDeck(enemy);
+        deckController.Shuffle(true, enemy.deck);
+
+        //Initialize first round
+        isPlayerTurn = true;
+    }
+
+    public IEnumerator PlayerTurnActivate(Card _card, int _index)
     {
+        isPlayerTurn = false;
         enemy.isEnemyAction = false;
         _card.use(player, enemy);
         deckController.DiscardCard(_index, player.deck);
 
-        CheckStatus();
+        CheckBattleStatus();
 
         deckController.DrawUntilFull(player.deck);
         handView.UpdateHandView(player.deck.hand);
@@ -83,10 +94,10 @@ public class BattleController : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        StartCoroutine( EnemyTurn() );
+        StartCoroutine( EnemyTurnActivate() );
     }
 
-    public IEnumerator EnemyTurn()
+    public IEnumerator EnemyTurnActivate()
     {
         enemy.isEnemyAction = !enemy.isEnemyAction;
         Card enemyCard = deckController.GetEnemyMove(enemy.deck);
@@ -103,22 +114,24 @@ public class BattleController : MonoBehaviour
 
         enemy.healthCurrent -= enemy.bleedValue;
         player.healthCurrent -= player.bleedValue;
-        CheckStatus();
+        CheckBattleStatus();
+        NewTurn();
     }
 
-    void CardTurn()
+    void NewTurn()
     {
-        //For when deck is up, player is choosing card
+        enemy.isEnemyAction = false;
+        isPlayerTurn = true;
     }
 
-    void CheckStatus()
+    void CheckBattleStatus()
     {
-        if(enemy.healthCurrent <= 0)
+        if (enemy.healthCurrent <= 0)
         {
             enemy.resetEnemy();
             Victory();
         }
-        else if(player.healthCurrent <= 0)
+        else if (player.healthCurrent <= 0)
         {
             enemy.resetEnemy();
             Defeat();

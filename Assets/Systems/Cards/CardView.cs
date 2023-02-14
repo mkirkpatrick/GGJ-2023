@@ -55,6 +55,7 @@ public class CardView : MonoBehaviour
     }
 
     public void CardClick() {
-        StartCoroutine( battleController.PlayerTurn(card, indexInHand) );
+        if(battleController.isPlayerTurn)
+            StartCoroutine( battleController.PlayerTurnActivate(card, indexInHand) );
     }
 }

@@ -1,12 +1,14 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerView : MonoBehaviour
 {
     public Animator bodyAnimator;      //Animates position of object
     public Animator spriteAnimator;    //Animates sprite of object
+    public List<AnimationClip> playerAnimations;
 
     public AudioSource audioSource;
-    public AudioClip[] playerSounds;
+    //public AudioClip[] playerSounds;
 
     public enum AnimState {Idle, Attacking, Healing, Tactic, Damaged};
 
