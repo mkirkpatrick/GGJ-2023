@@ -55,6 +55,8 @@ public class BattleController : MonoBehaviour
         player.deck = deckController.GetNewDeck(playerController.player);
         deckController.Shuffle(true, player.deck);
 
+        playerView.ChangeAnimState(PlayerView.AnimState.Idle);
+
         // Load Enemy
         enemy = player.enemyStages[player.nodeLocation - 1]; //needs to change to load in the specific enemy SO
         enemy.deck = deckController.GetEnemyDeck(enemy);
@@ -77,11 +79,7 @@ public class BattleController : MonoBehaviour
         handView.UpdateHandView(player.deck.hand);
         battleView.UpdateView(player, enemy);
 
-        print(battleSounds[1]);
         audioSource.PlayOneShot(battleSounds[1]);
-
-
-
         
         if (_card.cardType == CardType.Attack)
         {

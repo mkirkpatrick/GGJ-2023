@@ -19,7 +19,7 @@ public class Player
     public Deck deck;
     public Enemy[] enemyStages;
 
-    public AnimationClip[] battleAnimations;
+    //public AnimationClip[] battleAnimations;
 
     public Player() {
         healthCurrent = 30;

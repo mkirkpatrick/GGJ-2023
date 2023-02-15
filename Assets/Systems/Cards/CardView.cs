@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
-public class CardView : MonoBehaviour
+public class CardView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private BattleController battleController;
     public List<Sprite> frameSpriteList;
@@ -57,5 +58,14 @@ public class CardView : MonoBehaviour
     public void CardClick() {
         if(battleController.isPlayerTurn)
             StartCoroutine( battleController.PlayerTurnActivate(card, indexInHand) );
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        gameObject.transform.localScale = new Vector3(4, 4, 1);
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        gameObject.transform.localScale = new Vector3(3, 3, 1);
     }
 }

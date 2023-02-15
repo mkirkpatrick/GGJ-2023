@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
 
     public Player player;
+    public List<AnimationClip> idleAnimations;
 
     private void Awake()
     {

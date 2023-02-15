@@ -3,20 +3,17 @@ using UnityEngine;
 
 public class PlayerView : MonoBehaviour
 {
+    private PlayerController playerController;
+
     public Animator bodyAnimator;      //Animates position of object
     public Animator spriteAnimator;    //Animates sprite of object
-    public List<AnimationClip> playerAnimations;
-
-    public AudioSource audioSource;
-    //public AudioClip[] playerSounds;
+    //public List<AnimationClip> playerAnimations;
 
     public enum AnimState {Idle, Attacking, Healing, Tactic, Damaged};
 
     private void Awake()
     {
-        bodyAnimator = GetComponent<Animator>();
-        spriteAnimator = transform.GetChild(0).GetComponent<Animator>();
-        //audioSource = GetComponent<AudioSource>();
+        playerController = GameController.instance.playerController;
     }
 
     public void ChangeAnimState(AnimState animState)
@@ -29,24 +26,29 @@ public class PlayerView : MonoBehaviour
             case AnimState.Damaged:
                 bodyAnimator.Play("Player_Damage1");
                 break;
-            default:
-                bodyAnimator.Play("Player_Idle");
+            case AnimState.Idle:
+                SetIdleAnimation(playerController.player.currentClan.clanName);
                 break;
         }
     }
 
-    public void ChangeAnimState(string animName)
-    {
-        bodyAnimator.Play(animName);
-    }
-
     public void PlaySound(AudioClip clip)
     {
-        if(audioSource.isPlaying)
-        {
-            audioSource.Stop();
-        }
-
-        audioSource.PlayOneShot(clip);
+        SoundEffectsController.instance.PlaySound(clip.name);
     }
+
+    private void SetIdleAnimation(string _clanName) {
+
+        switch (_clanName) {
+            case "Huma":
+                spriteAnimator.Play("Base Layer.Huma_Idle");
+                break;
+            case "Mani":
+                spriteAnimator.Play("Base Layer.Mani_Idle");
+                break;
+            case "Nih-Tee":
+                spriteAnimator.Play("Base Layer.Nihtee_Idle");
+                break;
+        }
+    } 
 }

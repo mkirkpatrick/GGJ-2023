@@ -64,7 +64,10 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    battleAnimations: []
+  idleAnimations:
+  - {fileID: 7400000, guid: 60cfb2d4f08a93941a827b034e154b8e, type: 2}
+  - {fileID: 7400000, guid: 21c3f5f94a6d03347a8a8b131acadb8e, type: 2}
+  - {fileID: 7400000, guid: e3d337c8221f65145bbf7d2871110bfe, type: 2}
 --- !u!1 &593559423
 GameObject:
   m_ObjectHideFlags: 0
