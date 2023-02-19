@@ -7,7 +7,6 @@ public class DeckController : MonoBehaviour
     public List<Card> allCards;
     public List<Card> clanCards;
     public Deck currentDeck;
-    public int comboIndex;
 
     /*for debugging
     void Start()
@@ -124,23 +123,38 @@ public class DeckController : MonoBehaviour
         bool isCombo = true;
         var index = 0;
         var comboIndex = 0;
-        //Debug.Log("Root card type is: " + c);
-        while((index<5) && isCombo){
-            //Debug.Log("In while loop");
-            //Debug.Log("card type checking is: " + deck.hand[index].cardType);
+        Debug.Log("Root card type is: " + c);
+        while((index<5) && (isCombo)){
+            Debug.Log("In while loop");
+            Debug.Log("card type checking is: " + deck.hand[index].cardType);
             if(deck.hand[index].cardType.Equals(c)){
-                //Debug.Log("is a combo");
+                Debug.Log("is a combo");
                 comboIndex = index;
-                //Debug.Log("New combo index: " + comboIndex);
+                Debug.Log("New combo index: " + comboIndex);
                 index++;
-            } else{
-                //Debug.Log("Not a combo");
+            } else {
+                Debug.Log("Not a combo");
                 isCombo = false;
             }
         }
-        this.comboIndex = comboIndex;
+        Debug.Log("Combo index is: " + comboIndex);
+        deck.comboIndex = comboIndex;
     }
 
+    public bool isInCombo(int index, Deck deck){
+        if(index<=deck.comboIndex){
+            return true;
+        }
+        return false;
+    }
+
+    public List<Card> getComboCards(Deck deck){
+        List<Card> comboList = new List<Card>();
+        for(int i=0; i<=deck.comboIndex; i++){
+            comboList.Add(deck.hand[i]);
+        }
+        return comboList;
+    }
 
     public Card GetEnemyMove(Deck enemyDeck){
         int rand = Random.Range(0, 5);

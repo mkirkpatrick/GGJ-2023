@@ -70,8 +70,20 @@ public class BattleController : MonoBehaviour
     {
         isPlayerTurn = false;
         enemy.isEnemyAction = false;
-        _card.use(player, enemy);
-        deckController.DiscardCard(_index, player.deck);
+
+        //checking for root combo and acting accordingly
+        if (deckController.isInCombo(_index, player.deck)){
+            //plays all of the combo cards 
+            List<Card> comboList = deckController.getComboCards(player.deck);
+            for(int i = 0; i < comboList.Count; i++){
+                comboList[0].use(player, enemy);
+                deckController.DiscardCard(0, player.deck);
+            }
+        } else {
+            //just plays the single card
+            _card.use(player, enemy);
+            deckController.DiscardCard(_index, player.deck);
+        }
 
         CheckBattleStatus();
 
