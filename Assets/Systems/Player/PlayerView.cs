@@ -20,14 +20,20 @@ public class PlayerView : MonoBehaviour
     { 
         switch(animState)
         {
+            case AnimState.Idle:
+                SetIdleAnimation(playerController.player.currentClan.clanName);
+                break;
             case AnimState.Attacking:
                 bodyAnimator.Play("Player_Attack1");
                 break;
             case AnimState.Damaged:
                 bodyAnimator.Play("Player_Damage1");
                 break;
-            case AnimState.Idle:
-                SetIdleAnimation(playerController.player.currentClan.clanName);
+            case AnimState.Healing:
+                bodyAnimator.Play("Player_Heal1");
+                break;
+            case AnimState.Tactic:
+                bodyAnimator.Play("Player_Tactic1");
                 break;
         }
     }

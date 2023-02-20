@@ -100,6 +100,16 @@ public class BattleController : MonoBehaviour
             enemyView.ChangeAnimState(EnemyView.AnimState.Damaged);
             yield return new WaitForSeconds(1f);
         }
+        else if(_card.cardType == CardType.Heal)
+        {
+            playerView.ChangeAnimState(PlayerView.AnimState.Healing);
+            yield return new WaitForSeconds(1f);
+        }
+        else if(_card.cardType == CardType.Utility)
+        {
+            playerView.ChangeAnimState(PlayerView.AnimState.Tactic);
+            yield return new WaitForSeconds(1f);
+        }
 
 
         yield return new WaitForSeconds(1f);
