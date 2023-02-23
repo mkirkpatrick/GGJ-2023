@@ -123,21 +123,21 @@ public class DeckController : MonoBehaviour
         bool isCombo = true;
         var index = 0;
         var comboIndex = 0;
-        Debug.Log("Root card type is: " + c);
-        while((index<5) && (isCombo)){
+        //Debug.Log("Root card type is: " + c);
+        while((index<5) && (isCombo) && (!c.Equals(CardType.Utility))){
             Debug.Log("In while loop");
             Debug.Log("card type checking is: " + deck.hand[index].cardType);
             if(deck.hand[index].cardType.Equals(c)){
-                Debug.Log("is a combo");
+                //Debug.Log("is a combo");
                 comboIndex = index;
-                Debug.Log("New combo index: " + comboIndex);
+                //Debug.Log("New combo index: " + comboIndex);
                 index++;
             } else {
-                Debug.Log("Not a combo");
+                //Debug.Log("Not a combo");
                 isCombo = false;
             }
         }
-        Debug.Log("Combo index is: " + comboIndex);
+        //Debug.Log("Combo index is: " + comboIndex);
         deck.comboIndex = comboIndex;
     }
 
