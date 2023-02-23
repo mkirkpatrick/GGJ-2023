@@ -19,9 +19,9 @@ public class RandomCard : Card
         } else if (rand<0){
             //if it's negative, damage the user
             if(e.isEnemyAction){
-                e.healthCurrent -= rand;
+                e.healthCurrent += rand;
             } else {
-                p.healthCurrent -= rand;
+                p.healthCurrent += rand;
             }
         }
         //if its zero you're out of luck bc nothing happens >.>
