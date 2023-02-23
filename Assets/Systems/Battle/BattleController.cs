@@ -76,7 +76,7 @@ public class BattleController : MonoBehaviour
             //plays all of the combo cards 
             List<Card> comboList = deckController.getComboCards(player.deck);
             for(int i = 0; i < comboList.Count; i++){
-                comboList[0].use(player, enemy);
+                comboList[i].use(player, enemy);
                 deckController.DiscardCard(0, player.deck);
             }
         } else {
