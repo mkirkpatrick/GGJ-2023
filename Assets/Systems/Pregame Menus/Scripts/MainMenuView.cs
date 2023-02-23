@@ -11,7 +11,7 @@ public class MainMenuView : MonoBehaviour
     public Button creditsButton;
     public Button settingsButton;
     public Button exitButton;
-    public Animator crossfadeAnim;
+    //public Animator crossfadeAnim;
 
     void Start()
     {
@@ -19,6 +19,8 @@ public class MainMenuView : MonoBehaviour
         settingsButton.onClick.AddListener(() => GoToSettings());
         creditsButton.onClick.AddListener(() => GoToCredits());
         exitButton.onClick.AddListener(() => ExitGame());
+
+        GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeIn");
     }
 
     void StartGame()
@@ -44,7 +46,7 @@ public class MainMenuView : MonoBehaviour
     {
         ResetGameData();
         SoundEffectsController.instance.PlaySound("Confirm Selection");
-        crossfadeAnim.SetTrigger("FadeOut");
+        GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeOut");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Intro");
     }

@@ -18,7 +18,7 @@ public class ClanSelectView : MonoBehaviour
 
     public Button beginJourneyButton;
 
-    public Animator crossfadeAnim;
+    //public Animator crossfadeAnim;
 
     public Enemy[] enemyReferences = new Enemy[6];
 
@@ -33,6 +33,8 @@ public class ClanSelectView : MonoBehaviour
         beginJourneyButton.onClick.AddListener(() => BeginJourney());
 
         description.text = "Choose your clan.";
+
+        GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeIn");
     }
 
     private void SelectClan(int _index) {
@@ -50,7 +52,7 @@ public class ClanSelectView : MonoBehaviour
 
     IEnumerator BeginJourneyCoroutine()
     {
-        crossfadeAnim.SetTrigger("FadeOut");
+        GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeOut");
         SoundEffectsController.instance.PlaySound("Confirm Select 3");
         yield return new WaitForSeconds(1f);
         PlayerController.instance.player.currentClan = currentlySelectedClan;

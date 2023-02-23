@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 
     public PlayerController playerController;
     public DeckController deckController;
+    public GameObject crossFade;
 
     private void Awake()
     {
@@ -23,6 +24,9 @@ public class GameController : MonoBehaviour
 
         playerController = transform.Find("Player Controller").GetComponent<PlayerController>();
         deckController = transform.Find("Deck Controller").GetComponent<DeckController>();
+        
+        //crossFade = transform.Find("Crossfade").gameObject;
+        DontDestroyOnLoad(crossFade);
     }
     private void Start()
     {

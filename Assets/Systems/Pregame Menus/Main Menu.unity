@@ -719,13 +719,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crossfade
       objectReference: {fileID: 0}
+    - target: {fileID: 8061437385957221718, guid: 56e2fe363bacf724fb9f507872a8d422, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56e2fe363bacf724fb9f507872a8d422, type: 3}
---- !u!95 &707817580 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8061437386231004303, guid: 56e2fe363bacf724fb9f507872a8d422, type: 3}
-  m_PrefabInstance: {fileID: 707817579}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &762941858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1650,7 +1649,7 @@ MonoBehaviour:
   creditsButton: {fileID: 492753814}
   settingsButton: {fileID: 636632441}
   exitButton: {fileID: 1610490824}
-  crossfadeAnim: {fileID: 707817580}
+  crossfadeAnim: {fileID: 0}
 --- !u!4 &1759892729
 Transform:
   m_ObjectHideFlags: 0

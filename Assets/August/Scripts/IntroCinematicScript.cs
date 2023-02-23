@@ -7,12 +7,15 @@ public class IntroCinematicScript : MonoBehaviour
     public GameObject textManager;
     public TextManager textManagerScript;
     public DialogueText dialogueText;
-    public Animator crossfadeAnim;
+    //public Animator crossfadeAnim;
 
     void Start()
     {
         textManagerScript = textManager.GetComponent<TextManager>();
         dialogueText = GetComponent<DialogueText>();
+
+        GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeIn");
+
         StartCoroutine(PauseThenRun());
     }
 
@@ -21,7 +24,7 @@ public class IntroCinematicScript : MonoBehaviour
         yield return new WaitForSeconds(2f);
         textManagerScript.StartDialogue(dialogueText);
         yield return new WaitForSeconds(38f);
-        crossfadeAnim.SetTrigger("FadeOut");
+        GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeOut");
     }
 
 }

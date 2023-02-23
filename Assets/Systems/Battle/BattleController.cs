@@ -38,6 +38,8 @@ public class BattleController : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
 
+        StartCoroutine(BattleIntro());
+
         LoadBattleScene();
 
         handView.CreateHand();
@@ -64,6 +66,13 @@ public class BattleController : MonoBehaviour
 
         //Initialize first round
         isPlayerTurn = true;
+    }
+
+    public IEnumerator BattleIntro()
+    {
+        GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("BattleFadeIn");
+        SoundEffectsController.instance.PlaySound("Damage 2");
+        yield return new WaitForSeconds(2f);
     }
 
     public IEnumerator PlayerTurnActivate(Card _card, int _index)

@@ -22,6 +22,11 @@ public class RootMapController : MonoBehaviour
 
         CameraController.instance.Activate( nodes[PlayerController.instance.player.nodeLocation] );
 
+        GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeIn");
+
+        CameraController.instance.zoomSpeed = 5f;
+        CameraController.instance.targetZoom = 3f;
+
         StartCoroutine(MoveToNextNode());
     }
     
@@ -41,7 +46,13 @@ public class RootMapController : MonoBehaviour
         }
         else
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(1.5f);
+            SoundEffectsController.instance.PlaySound("Battle Begin");
+            yield return new WaitForSeconds(1f);
+            CameraController.instance.zoomSpeed = 2f;
+            CameraController.instance.targetZoom = 1f;
+            GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeOut");
+            yield return new WaitForSeconds(2);
             CameraController.instance.Deactivate();
             SceneManager.LoadScene("Battle");
         }

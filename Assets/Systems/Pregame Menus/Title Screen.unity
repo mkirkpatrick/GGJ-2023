@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &123941877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8061437385957221718, guid: 56e2fe363bacf724fb9f507872a8d422, type: 3}
+  m_PrefabInstance: {fileID: 1012915430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &831206406
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +405,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8061437386231004297, guid: 56e2fe363bacf724fb9f507872a8d422, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56e2fe363bacf724fb9f507872a8d422, type: 3}
 --- !u!1 &1031693306
@@ -480,11 +489,6 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
---- !u!95 &1283503803 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8061437386231004303, guid: 56e2fe363bacf724fb9f507872a8d422, type: 3}
-  m_PrefabInstance: {fileID: 1012915430}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1392034976
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +596,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   logo: {fileID: 1392034978}
   ScreenWaitTime: 3
-  crossfadeAnimator: {fileID: 1283503803}
 --- !u!4 &1807923959
 Transform:
   m_ObjectHideFlags: 0
@@ -616,6 +619,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 593559425, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
+      propertyPath: minZoom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 593559425, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
+      propertyPath: targetZoom
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1286279445190711421, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -660,6 +671,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4405382850577472186, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
+      propertyPath: crossFade
+      value: 
+      objectReference: {fileID: 123941877}
     - target: {fileID: 9081123683381597248, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
       propertyPath: m_Name
       value: GameController

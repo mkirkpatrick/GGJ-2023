@@ -7,7 +7,7 @@ public class TitleScreenView : MonoBehaviour
 {
     public Image logo;
     public float ScreenWaitTime = 2f;
-    public Animator crossfadeAnimator;
+    //public Animator crossfadeAnimator;
 
     void Start()
     {
@@ -18,7 +18,7 @@ public class TitleScreenView : MonoBehaviour
     IEnumerator LoadMainMenu(float _time)
     {
         yield return new WaitForSeconds(_time);
-        crossfadeAnimator.SetTrigger("FadeOut");
+        GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeOut");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Main Menu");
     }
