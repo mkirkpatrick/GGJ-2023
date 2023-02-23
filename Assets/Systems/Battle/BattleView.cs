@@ -10,6 +10,8 @@ public class BattleView : MonoBehaviour
     public Enemy currentEnemy;
     public TMP_Text playerHealth;
     public TMP_Text enemeyHealth;
+    public TMP_Text attackBonus;
+    public TMP_Text healBonus;
 
     public Image playerImage;
     public List<Sprite> beetles;
@@ -29,6 +31,7 @@ public class BattleView : MonoBehaviour
 
         SetPlayerImage(_player);
         SetEnemyImage(_enemy);
+        SetBonuses(_player);
     }
 
     public void SetPlayerHealth(int _healthCurrent, int _healthMax) {
@@ -37,6 +40,11 @@ public class BattleView : MonoBehaviour
     public void SetEnemyHealth(int _healthCurrent, int _healthMax)
     {
         enemeyHealth.text = _healthCurrent.ToString() + " / " + _healthMax.ToString();
+    }
+
+    public void SetBonuses(Player _player) {
+        attackBonus.text = _player.attackCharge.ToString();
+        healBonus.text = _player.healCharge.ToString();
     }
 
     public void SetPlayerImage(Player _player) {

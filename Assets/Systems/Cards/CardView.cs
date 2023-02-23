@@ -19,6 +19,7 @@ public class CardView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public TMP_Text description;
     public Image image;
     public Image frame;
+    public GameObject rootBorder;
 
     private void Start()
     {
@@ -32,6 +33,13 @@ public class CardView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         description.text = card.cardDescription;
         image.sprite = card.cardImage;
         frame.sprite = GetFrameSprite(card.cardType);
+
+        int comboIndex = PlayerController.instance.player.deck.comboIndex;
+
+        if (_index <= comboIndex)
+            ShowRootBorder(true);
+        else
+            ShowRootBorder(false);
     }
 
     private Sprite GetFrameSprite(CardType _type) {
@@ -53,6 +61,10 @@ public class CardView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             default:
                 return null;
         }
+    }
+
+    public void ShowRootBorder(bool _showValue) { 
+        rootBorder.SetActive(_showValue);
     }
 
     public void CardClick() {

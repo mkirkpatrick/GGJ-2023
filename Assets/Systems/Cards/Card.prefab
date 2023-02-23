@@ -152,7 +152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5653055400709416900
 RectTransform:
   m_ObjectHideFlags: 0
@@ -517,6 +517,7 @@ MonoBehaviour:
   description: {fileID: 4287263016472265102}
   image: {fileID: 5653055402192061097}
   frame: {fileID: 5653055401388783583}
+  rootBorder: {fileID: 5653055400709416901}
 --- !u!1 &5653055402192061103
 GameObject:
   m_ObjectHideFlags: 0

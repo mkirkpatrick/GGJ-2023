@@ -46,7 +46,6 @@ public class BattleController : MonoBehaviour
         handView.UpdateHandView(player.deck.hand);
 
         battleView.UpdateView(player, enemy);
-        
     }
 
     private void LoadBattleScene() {
