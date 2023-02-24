@@ -8,19 +8,27 @@ public class PlayerView : MonoBehaviour
     public Animator bodyAnimator;      //Animates position of object
     public Animator spriteAnimator;    //Animates sprite of object
 
-    public enum AnimState {Idle, Attacking, Healing, Tactic, Damaged, Huma, Mani, Nihtee};
+    public enum AnimState {Idle, Attacking, Healing, Tactic, Damaged, Huma, Mani, Nihtee, Dead};
 
     private void Awake()
     {
         playerController = GameController.instance.playerController;
     }
 
-    public void ChangeAnimState(AnimState animState)
+    public void ChangeAnimState(string animName)
     { 
+        if(animName == "Idle")
+        {
+            SetIdleAnimation(playerController.player.currentClan.clanName);
+        }
+        else
+        {
+            bodyAnimator.Play(animName);
+        }
+        /*
         switch(animState)
         {
             case AnimState.Idle:
-                SetIdleAnimation(playerController.player.currentClan.clanName);
                 break;
             case AnimState.Attacking:
                 bodyAnimator.Play("Player_Attack1");
@@ -40,7 +48,9 @@ public class PlayerView : MonoBehaviour
             case AnimState.Mani:
                 bodyAnimator.Play("Player_ManiAttack");
                 break;
+            case
         }
+        */
     }
 
     public void PlaySound(AudioClip clip)

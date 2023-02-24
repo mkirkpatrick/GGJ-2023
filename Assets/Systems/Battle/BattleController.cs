@@ -57,7 +57,7 @@ public class BattleController : MonoBehaviour
         player.deck = deckController.GetNewDeck(playerController.player);
         deckController.Shuffle(true, player.deck);
 
-        playerView.ChangeAnimState(PlayerView.AnimState.Idle);
+        playerView.ChangeAnimState("Idle");
 
         // Load Enemy
         enemy = player.enemyStages[player.nodeLocation - 1]; //needs to change to load in the specific enemy SO
@@ -109,41 +109,44 @@ public class BattleController : MonoBehaviour
         switch(_card.cardType)
         {
             case CardType.Attack:
-                playerView.ChangeAnimState(PlayerView.AnimState.Attacking);
+                playerView.ChangeAnimState("Player_Attack1");
                 yield return new WaitForSeconds(1f);
-                enemyView.ChangeAnimState(EnemyView.AnimState.Damaged);
+                enemyView.ChangeAnimState("Enemy_Damage1");
                 combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
                 break;
             case CardType.Heal:
-                playerView.ChangeAnimState(PlayerView.AnimState.Healing);
+                playerView.ChangeAnimState("Player_Heal1");
                 combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
                 break;
             case CardType.Utility: 
-                playerView.ChangeAnimState(PlayerView.AnimState.Tactic);
+                playerView.ChangeAnimState("Player_Tactic1");
                 break;
             case CardType.Huma:
-                playerView.ChangeAnimState(PlayerView.AnimState.Huma);
+                playerView.ChangeAnimState("Player_HumaAttack");
                 yield return new WaitForSeconds(1f);
-                enemyView.ChangeAnimState(EnemyView.AnimState.Damaged);
+                enemyView.ChangeAnimState("Enemy_Damage1");
                 combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
                 break;
             case CardType.Mani:
-                playerView.ChangeAnimState(PlayerView.AnimState.Mani);
+                playerView.ChangeAnimState("Player_ManiAttack");
                 yield return new WaitForSeconds(1.1f);
-                enemyView.ChangeAnimState(EnemyView.AnimState.Damaged);
+                enemyView.ChangeAnimState("Enemy_Damage1");
                 combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
                 break;
             case CardType.Nihtee:
                 break;
         }
 
-        CheckBattleStatus();
+        bool stopBattle = CheckBattleStatus();
 
-        battleView.UpdateView(player, enemy);
+        if (!stopBattle)
+        {
+            battleView.UpdateView(player, enemy);
 
-        yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(1f);
 
-        StartCoroutine( EnemyTurnActivate() );
+            StartCoroutine(EnemyTurnActivate());
+        }
     }
 
     public IEnumerator EnemyTurnActivate()
@@ -152,16 +155,24 @@ public class BattleController : MonoBehaviour
         Card enemyCard = deckController.GetEnemyMove(enemy.deck);
         enemyCard.use(player, enemy);
         
-
-        if(enemyCard.cardType == CardType.Attack)
+        switch(enemyCard.cardType)
         {
-            enemyView.ChangeAnimState(EnemyView.AnimState.Attacking);
-            yield return new WaitForSeconds(1f);
-            playerView.ChangeAnimState(PlayerView.AnimState.Damaged);
-            combatTextController.SpawnCombatText(enemyView.transform, playerView.transform, enemyCard);
+            case CardType.Attack:
+                enemyView.ChangeAnimState("Enemy_Attack1");
+                yield return new WaitForSeconds(1f);
+                playerView.ChangeAnimState("Player_Damage1");
+                break;
+            case CardType.Heal:
+                enemyView.ChangeAnimState("Enemy_Heal1");
+                yield return new WaitForSeconds(1f);
+                break;
+            case CardType.Utility:
+                enemyView.ChangeAnimState("Enemy_Status1");
+                yield return new WaitForSeconds(1f);
+                break;
         }
-        else if (enemyCard.cardType == CardType.Heal)
-            combatTextController.SpawnCombatText(enemyView.transform, playerView.transform, enemyCard);
+        
+        combatTextController.SpawnCombatText(enemyView.transform, playerView.transform, enemyCard);
 
         battleView.UpdateView(player, enemy);
 
@@ -169,8 +180,12 @@ public class BattleController : MonoBehaviour
         CheckBleedEffect();
 
         yield return new WaitForSeconds(1f);
-        CheckBattleStatus();
-        NewTurn();
+        bool stopBattle = CheckBattleStatus();
+
+        if(!stopBattle)
+        {
+            NewTurn();
+        }
     }
 
     void CheckBleedEffect() {
@@ -194,27 +209,53 @@ public class BattleController : MonoBehaviour
         isPlayerTurn = true;
     }
 
-    void CheckBattleStatus()
+    bool CheckBattleStatus()
     {
         if (enemy.healthCurrent <= 0)
         {
-            enemy.resetEnemy();
-            Victory();
+            StartCoroutine(Victory());
+            return true;
         }
         else if (player.healthCurrent <= 0)
         {
-            enemy.resetEnemy();
-            Defeat();
+            StartCoroutine(Defeat());
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
-    void Victory()
+    IEnumerator Victory()
     {
+        enemyView.ChangeAnimState("Enemy_Death");
+
+        yield return new WaitForSeconds(1f);
+
+        soundEffectsController.PlaySound("Victory");
+
+        yield return new WaitForSeconds(3f);
+
+        GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeOut");
+
+        yield return new WaitForSeconds(1f);
+
+        enemy.resetEnemy();
         SceneManager.LoadScene("Root Map");
     }
 
-    void Defeat()
+    IEnumerator Defeat()
     {
+        playerView.ChangeAnimState("Player_Death");
+
+        yield return new WaitForSeconds(1f);
+
+        GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeOut");
+
+        yield return new WaitForSeconds(1f);
+
+        enemy.resetEnemy();
         SceneManager.LoadScene("Game Over");
     }
 }

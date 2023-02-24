@@ -13,6 +13,9 @@ public class GameOverScript : MonoBehaviour
 
     void Start()
     {
+        GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeIn");
+        MusicController.instance.StopMusic();
+
         textManagerScript = textManager.GetComponent<TextManager>();
         audioSource = GetComponent<AudioSource>();
         dialogueText = GetComponent<DialogueText>();
@@ -25,7 +28,7 @@ public class GameOverScript : MonoBehaviour
         yield return new WaitForSeconds(2f);
         textManagerScript.StartDialogue(dialogueText);
         yield return new WaitForSeconds(8f);
-        crossfadeAnim.SetTrigger("FadeOut");
+        GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeOut");
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Main Menu");
     }

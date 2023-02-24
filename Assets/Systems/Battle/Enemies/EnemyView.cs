@@ -13,8 +13,10 @@ public class EnemyView : MonoBehaviour
         //No sprite animations yet for enemies
     }
 
-    public void ChangeAnimState(AnimState animState)
+    public void ChangeAnimState(string animName)
     {
+        bodyAnimator.Play(animName);
+        /*
         switch (animState)
         {
             case AnimState.Attacking:
@@ -27,6 +29,7 @@ public class EnemyView : MonoBehaviour
                 bodyAnimator.Play("Enemy_Idle");
                 break;
         }
+        */
     }
 
     public void PlaySound(AudioClip clip)
