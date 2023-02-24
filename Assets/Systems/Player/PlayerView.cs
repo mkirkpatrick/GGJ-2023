@@ -8,7 +8,7 @@ public class PlayerView : MonoBehaviour
     public Animator bodyAnimator;      //Animates position of object
     public Animator spriteAnimator;    //Animates sprite of object
 
-    public enum AnimState {Idle, Attacking, Healing, Tactic, Damaged};
+    public enum AnimState {Idle, Attacking, Healing, Tactic, Damaged, Huma, Mani, Nihtee};
 
     private void Awake()
     {
@@ -33,6 +33,9 @@ public class PlayerView : MonoBehaviour
                 break;
             case AnimState.Tactic:
                 bodyAnimator.Play("Player_Tactic1");
+                break;
+            case AnimState.Huma:
+                bodyAnimator.Play("Player_HumaAttack");
                 break;
         }
     }

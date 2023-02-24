@@ -102,22 +102,33 @@ public class BattleController : MonoBehaviour
         
         audioSource.PlayOneShot(battleSounds[1]);
         
-        if (_card.cardType == CardType.Attack)
+        switch(_card.cardType)
         {
-            playerView.ChangeAnimState(PlayerView.AnimState.Attacking);
-            yield return new WaitForSeconds(1f);
-            enemyView.ChangeAnimState(EnemyView.AnimState.Damaged);
-            combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
+            case CardType.Attack:
+                playerView.ChangeAnimState(PlayerView.AnimState.Attacking);
+                yield return new WaitForSeconds(1f);
+                enemyView.ChangeAnimState(EnemyView.AnimState.Damaged);
+                combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
+                break;
+            case CardType.Heal:
+                playerView.ChangeAnimState(PlayerView.AnimState.Healing);
+                combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
+                break;
+            case CardType.Utility: 
+                playerView.ChangeAnimState(PlayerView.AnimState.Tactic);
+                break;
+            case CardType.Huma:
+                playerView.ChangeAnimState(PlayerView.AnimState.Huma);
+                yield return new WaitForSeconds(1f);
+                enemyView.ChangeAnimState(EnemyView.AnimState.Damaged);
+                combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
+                break;
+            case CardType.Mani:
+                break;
+            case CardType.Nihtee:
+                break;
         }
-        else if(_card.cardType == CardType.Heal)
-        {
-            playerView.ChangeAnimState(PlayerView.AnimState.Healing);
-            combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
-        }
-        else if(_card.cardType == CardType.Utility)
-        {
-            playerView.ChangeAnimState(PlayerView.AnimState.Tactic);
-        }
+
         battleView.UpdateView(player, enemy);
 
         yield return new WaitForSeconds(1f);
