@@ -6,6 +6,7 @@ using UnityEngine;
 public class BattleController : MonoBehaviour
 {
     public static BattleController instance;
+    public CombatTextController combatTextController;
 
     private DeckController deckController;
     private PlayerController playerController;
@@ -78,6 +79,7 @@ public class BattleController : MonoBehaviour
     {
         isPlayerTurn = false;
         enemy.isEnemyAction = false;
+        int cardValue = 0;
 
         //checking for root combo and acting accordingly
         if (deckController.isInCombo(_index, player.deck)){
@@ -97,8 +99,7 @@ public class BattleController : MonoBehaviour
 
         deckController.DrawUntilFull(player.deck);
         handView.UpdateHandView(player.deck.hand);
-        battleView.UpdateView(player, enemy);
-
+        
         audioSource.PlayOneShot(battleSounds[1]);
         
         if (_card.cardType == CardType.Attack)
@@ -106,19 +107,18 @@ public class BattleController : MonoBehaviour
             playerView.ChangeAnimState(PlayerView.AnimState.Attacking);
             yield return new WaitForSeconds(1f);
             enemyView.ChangeAnimState(EnemyView.AnimState.Damaged);
-            yield return new WaitForSeconds(1f);
+            combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
         }
         else if(_card.cardType == CardType.Heal)
         {
             playerView.ChangeAnimState(PlayerView.AnimState.Healing);
-            yield return new WaitForSeconds(1f);
+            combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
         }
         else if(_card.cardType == CardType.Utility)
         {
             playerView.ChangeAnimState(PlayerView.AnimState.Tactic);
-            yield return new WaitForSeconds(1f);
         }
-
+        battleView.UpdateView(player, enemy);
 
         yield return new WaitForSeconds(1f);
 
@@ -130,20 +130,41 @@ public class BattleController : MonoBehaviour
         enemy.isEnemyAction = !enemy.isEnemyAction;
         Card enemyCard = deckController.GetEnemyMove(enemy.deck);
         enemyCard.use(player, enemy);
-        battleView.UpdateView(player, enemy);
+        
 
         if(enemyCard.cardType == CardType.Attack)
         {
             enemyView.ChangeAnimState(EnemyView.AnimState.Attacking);
             yield return new WaitForSeconds(1f);
             playerView.ChangeAnimState(PlayerView.AnimState.Damaged);
-            yield return new WaitForSeconds(1f);
+            combatTextController.SpawnCombatText(enemyView.transform, playerView.transform, enemyCard);
         }
+        else if (enemyCard.cardType == CardType.Heal)
+            combatTextController.SpawnCombatText(enemyView.transform, playerView.transform, enemyCard);
 
-        enemy.healthCurrent -= enemy.bleedValue;
-        player.healthCurrent -= player.bleedValue;
+        battleView.UpdateView(player, enemy);
+
+        yield return new WaitForSeconds(1f);
+        CheckBleedEffect();
+
+        yield return new WaitForSeconds(1f);
         CheckBattleStatus();
         NewTurn();
+    }
+
+    void CheckBleedEffect() {
+        if (enemy.bleedValue > 0)
+        {
+            enemy.healthCurrent -= enemy.bleedValue;
+            combatTextController.SpawnCombatText(enemyView.transform, enemy.bleedValue);
+        }
+
+        if (player.bleedValue > 0)
+        {
+            player.healthCurrent -= player.bleedValue;
+            combatTextController.SpawnCombatText(playerView.transform, player.bleedValue);
+        }
+        battleView.UpdateView(player, enemy);
     }
 
     void NewTurn()

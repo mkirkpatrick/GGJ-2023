@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 22
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c6a22d719146974ab6571717cc52803, type: 2}
   m_sharedMaterial: {fileID: -824934119054355178, guid: 9c6a22d719146974ab6571717cc52803, type: 2}
@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 4113692108296957750}
   - component: {fileID: 4113692108296957748}
   - component: {fileID: 4113692108296957751}
+  - component: {fileID: 9052900761551027407}
   m_Layer: 5
   m_Name: Combat Text
   m_TagString: Untagged
@@ -212,3 +213,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9052900761551027407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4113692108296957745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06fe11ab598a9f4ba79040b0226a326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatText: {fileID: 4113692107891914722}
+  textColor: {r: 0.9215687, g: 0.3372549, b: 0.29411766, a: 0}
+  timeDestroy: 3
