@@ -89,13 +89,17 @@ public class BattleController : MonoBehaviour
                 comboList[i].use(player, enemy);
                 deckController.DiscardCard(0, player.deck);
             }
+
+            soundEffectsController.PlaySound("Card Shuffle");
         } else {
             //just plays the single card
             _card.use(player, enemy);
             deckController.DiscardCard(_index, player.deck);
+
+            soundEffectsController.PlaySound("Card Flap");
         }
 
-        CheckBattleStatus();
+        yield return new WaitForSeconds(0.5f);
 
         deckController.DrawUntilFull(player.deck);
         handView.UpdateHandView(player.deck.hand);
@@ -128,6 +132,8 @@ public class BattleController : MonoBehaviour
             case CardType.Nihtee:
                 break;
         }
+
+        CheckBattleStatus();
 
         battleView.UpdateView(player, enemy);
 
