@@ -99,7 +99,7 @@ public class BattleController : MonoBehaviour
             soundEffectsController.PlaySound("Card Flap");
         }
 
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f); //pause for card sfx?
 
         deckController.DrawUntilFull(player.deck);
         handView.UpdateHandView(player.deck.hand);

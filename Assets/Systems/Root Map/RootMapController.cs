@@ -54,7 +54,7 @@ public class RootMapController : MonoBehaviour
             GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeOut");
             yield return new WaitForSeconds(2);
             CameraController.instance.Deactivate();
-            SceneManager.LoadScene("Battle");
+            SceneManager.LoadScene("TotallyLegitLoadingScreen");
         }
     }
 
