@@ -37,6 +37,9 @@ public class PlayerView : MonoBehaviour
             case AnimState.Huma:
                 bodyAnimator.Play("Player_HumaAttack");
                 break;
+            case AnimState.Mani:
+                bodyAnimator.Play("Player_ManiAttack");
+                break;
         }
     }
 

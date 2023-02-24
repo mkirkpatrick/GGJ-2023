@@ -128,6 +128,10 @@ public class BattleController : MonoBehaviour
                 combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
                 break;
             case CardType.Mani:
+                playerView.ChangeAnimState(PlayerView.AnimState.Mani);
+                yield return new WaitForSeconds(1.1f);
+                enemyView.ChangeAnimState(EnemyView.AnimState.Damaged);
+                combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
                 break;
             case CardType.Nihtee:
                 break;
