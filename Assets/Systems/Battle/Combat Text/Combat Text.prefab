@@ -173,7 +173,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 12}
-  m_SizeDelta: {x: 32, y: 10}
+  m_SizeDelta: {x: 34, y: 10}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &4113692108296957748
 CanvasRenderer:
@@ -226,5 +226,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatText: {fileID: 4113692107891914722}
-  textColor: {r: 0.9215687, g: 0.3372549, b: 0.29411766, a: 0}
-  timeDestroy: 3

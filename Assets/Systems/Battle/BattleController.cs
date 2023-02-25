@@ -21,6 +21,7 @@ public class BattleController : MonoBehaviour
     public Enemy enemy;
 
     public bool isPlayerTurn = false;
+    private List<Card> playerTurnCards = new List<Card>();
 
     //TODO: Pull sound effects out to SoundEffectController and add reference
     public AudioSource audioSource;
@@ -79,7 +80,6 @@ public class BattleController : MonoBehaviour
     {
         isPlayerTurn = false;
         enemy.isEnemyAction = false;
-        int cardValue = 0;
 
         //checking for root combo and acting accordingly
         if (deckController.isInCombo(_index, player.deck)){
@@ -87,6 +87,7 @@ public class BattleController : MonoBehaviour
             List<Card> comboList = deckController.getComboCards(player.deck);
             for(int i = 0; i < comboList.Count; i++){
                 comboList[i].use(player, enemy);
+                playerTurnCards.Add(comboList[i]);
                 deckController.DiscardCard(0, player.deck);
             }
 
@@ -94,6 +95,7 @@ public class BattleController : MonoBehaviour
         } else {
             //just plays the single card
             _card.use(player, enemy);
+            playerTurnCards.Add(_card);
             deckController.DiscardCard(_index, player.deck);
 
             soundEffectsController.PlaySound("Card Flap");
@@ -112,11 +114,13 @@ public class BattleController : MonoBehaviour
                 playerView.ChangeAnimState("Player_Attack1");
                 yield return new WaitForSeconds(1f);
                 enemyView.ChangeAnimState("Enemy_Damage1");
-                combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
+                foreach(Card card in playerTurnCards)
+                    combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, card);
                 break;
             case CardType.Heal:
                 playerView.ChangeAnimState("Player_Heal1");
-                combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
+                foreach (Card card in playerTurnCards)
+                    combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, card);
                 break;
             case CardType.Utility: 
                 playerView.ChangeAnimState("Player_Tactic1");
@@ -134,6 +138,7 @@ public class BattleController : MonoBehaviour
                 combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
                 break;
             case CardType.Nihtee:
+                combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
                 break;
         }
 
@@ -192,13 +197,13 @@ public class BattleController : MonoBehaviour
         if (enemy.bleedValue > 0)
         {
             enemy.healthCurrent -= enemy.bleedValue;
-            combatTextController.SpawnCombatText(enemyView.transform, enemy.bleedValue);
+            combatTextController.SpawnDamageText(enemyView.transform, enemy.bleedValue);
         }
 
         if (player.bleedValue > 0)
         {
             player.healthCurrent -= player.bleedValue;
-            combatTextController.SpawnCombatText(playerView.transform, player.bleedValue);
+            combatTextController.SpawnDamageText(playerView.transform, player.bleedValue);
         }
         battleView.UpdateView(player, enemy);
     }
@@ -207,6 +212,7 @@ public class BattleController : MonoBehaviour
     {
         enemy.isEnemyAction = false;
         isPlayerTurn = true;
+        playerTurnCards.Clear();
     }
 
     bool CheckBattleStatus()
