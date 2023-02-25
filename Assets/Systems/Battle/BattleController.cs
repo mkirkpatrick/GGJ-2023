@@ -148,10 +148,10 @@ public class BattleController : MonoBehaviour
 
         bool stopBattle = CheckBattleStatus();
 
+        battleView.UpdateView(player, enemy);
+
         if (!stopBattle)
         {
-            battleView.UpdateView(player, enemy);
-
             yield return new WaitForSeconds(1f);
 
             StartCoroutine(EnemyTurnActivate());
