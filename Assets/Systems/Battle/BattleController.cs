@@ -107,20 +107,24 @@ public class BattleController : MonoBehaviour
         handView.UpdateHandView(player.deck.hand);
         
         audioSource.PlayOneShot(battleSounds[1]);
-        
-        switch(_card.cardType)
+
+        int textValue = 0;
+
+        switch (_card.cardType)
         {
             case CardType.Attack:
                 playerView.ChangeAnimState("Player_Attack1");
                 yield return new WaitForSeconds(1f);
                 enemyView.ChangeAnimState("Enemy_Damage1");
                 foreach(Card card in playerTurnCards)
-                    combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, card);
+                    textValue += card.effectValue + player.attackCharge;
+                combatTextController.SpawnDamageText(enemyView.transform, textValue);
                 break;
             case CardType.Heal:
                 playerView.ChangeAnimState("Player_Heal1");
                 foreach (Card card in playerTurnCards)
-                    combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, card);
+                    textValue += card.effectValue + player.healCharge;
+                combatTextController.SpawnHealText(playerView.transform, textValue);
                 break;
             case CardType.Utility: 
                 playerView.ChangeAnimState("Player_Tactic1");

@@ -9,7 +9,7 @@ public class Player
     public int healthCurrent;
     public int healthMax;
 
-    public int nodeLocation = 0;
+    public int nodeLocation;
 
     public int attackCharge;
     public int healCharge;
@@ -27,6 +27,7 @@ public class Player
 
         ResetStats();
 
+        nodeLocation = 0;
         enemyStages = new Enemy[5];
     }
 
