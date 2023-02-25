@@ -14,10 +14,13 @@ public class LoadScreenView : MonoBehaviour
 
     IEnumerator LoadRoutine()
     {
+        SoundEffectsController.instance.PlaySound("Cave Ambiene Loop");
         yield return new WaitForSeconds(loadTime);
 
         GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeOut");
         yield return new WaitForSeconds(1f);
+
+        SoundEffectsController.instance.StopSounds();
 
         SceneManager.LoadScene("Battle");
     }

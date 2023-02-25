@@ -30,4 +30,8 @@ public class SoundEffectsController : MonoBehaviour
     {
         audioSource.PlayOneShot(soundMasterList[_soundString]);
     }
+    public void StopSounds()
+    {
+        audioSource.Stop();
+    }
 }
