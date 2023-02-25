@@ -41,7 +41,7 @@ public class BattleController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         StartCoroutine(BattleIntro());
-
+        
         LoadBattleScene();
 
         handView.CreateHand();
@@ -53,6 +53,7 @@ public class BattleController : MonoBehaviour
     private void LoadBattleScene() {
         // Load Player
         player = playerController.player;
+        player.deckController = this.deckController;
         player.ResetStats();
 
         player.deck = deckController.GetNewDeck(playerController.player);
@@ -252,6 +253,9 @@ public class BattleController : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         enemy.resetEnemy();
+
+        GameController.instance.playerController.CheckClanVictory(player.nodeLocation-1);
+
         SceneManager.LoadScene("Root Map");
     }
 

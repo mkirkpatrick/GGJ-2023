@@ -8,17 +8,6 @@ public class DeckController : MonoBehaviour
     public List<Card> clanCards;
     public Deck currentDeck;
 
-    /*for debugging
-    void Start()
-    {
-        currentDeck = GetNewDeck();
-        Shuffle(false, currentDeck);
-        DrawFullHand(currentDeck);
-        DiscardCard(1, currentDeck);
-        PrintDeck();
-    }
-    */
-
     //fills deck with card data set
     public Deck GetNewDeck(Player _player)
     {
@@ -38,6 +27,11 @@ public class DeckController : MonoBehaviour
 
         PopulateDraw(temp);
         return temp;
+    }
+
+    //adds the beaten clan's card to player deck
+    public void addClanCard(int index, Deck deck){
+        DeckAdd(clanCards[index], deck);
     }
 
     public Deck GetEnemyDeck(Enemy e){
@@ -125,8 +119,8 @@ public class DeckController : MonoBehaviour
         var comboIndex = 0;
         //Debug.Log("Root card type is: " + c);
         while((index<5) && (isCombo) && (!c.Equals(CardType.Utility))){
-            Debug.Log("In while loop");
-            Debug.Log("card type checking is: " + deck.hand[index].cardType);
+            //Debug.Log("In while loop");
+            //Debug.Log("card type checking is: " + deck.hand[index].cardType);
             if(deck.hand[index].cardType.Equals(c)){
                 //Debug.Log("is a combo");
                 comboIndex = index;

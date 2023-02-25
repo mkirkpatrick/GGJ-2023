@@ -31,6 +31,36 @@ public class PlayerController : MonoBehaviour
         player.enemyStages[4] = enemyReferences[4];
     }
 
+    public void CheckClanVictory (int node){
+        Debug.Log("checking clan victory");
+        Debug.Log("node is : " + node);
+        if(node == 1){
+            Debug.Log("adding card");
+            if(player.currentClan.clanName.Equals("Huma")){
+                //add index 1 in clan cards
+                player.deckController.addClanCard(1, player.deck);
+            } else if (player.currentClan.clanName.Equals("Mani")){
+                //add index 0 in clan cards
+                player.deckController.addClanCard(0, player.deck);
+            } else if (player.currentClan.clanName.Equals("Nih-Tee")){
+                // add index 0 in clan cards
+                player.deckController.addClanCard(0, player.deck);
+            } 
+        } else if (node == 3){
+            Debug.Log("adding card");
+            if(player.currentClan.clanName.Equals("Huma")){
+                //add index 2 in clan cards
+                player.deckController.addClanCard(2, player.deck);
+            } else if (player.currentClan.clanName.Equals("Mani")){
+                //add index 2 in clan cards
+                player.deckController.addClanCard(2, player.deck);
+            } else if (player.currentClan.clanName.Equals("Nih-Tee")){
+                // add index 1 in clan cards
+                player.deckController.addClanCard(1, player.deck);
+            }
+        }
+    }
+
     public void CreateNewPlayer()
     {
         player = new Player();
