@@ -46,9 +46,7 @@ public class RootMapController : MonoBehaviour
         }
         else
         {
-            yield return new WaitForSeconds(1.5f);
-            SoundEffectsController.instance.PlaySound("Battle Begin");
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
             CameraController.instance.zoomSpeed = 2f;
             CameraController.instance.targetZoom = 1f;
             GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeOut");

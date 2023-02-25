@@ -164,8 +164,10 @@ public class BattleController : MonoBehaviour
         enemy.isEnemyAction = !enemy.isEnemyAction;
         Card enemyCard = deckController.GetEnemyMove(enemy.deck);
         enemyCard.use(player, enemy);
-        
-        switch(enemyCard.cardType)
+
+        enemyView.ChangeAnimState("Idle");
+
+        switch (enemyCard.cardType)
         {
             case CardType.Attack:
                 enemyView.ChangeAnimState("Enemy_Attack1");
@@ -241,6 +243,8 @@ public class BattleController : MonoBehaviour
     IEnumerator Victory()
     {
         enemyView.ChangeAnimState("Enemy_Death");
+        MusicController.instance.StopMusic();
+        soundEffectsController.PlaySound("Creature Death Groan Long");
 
         yield return new WaitForSeconds(1f);
 
