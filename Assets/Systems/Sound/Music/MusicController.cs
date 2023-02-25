@@ -7,10 +7,11 @@ public class MusicController : MonoBehaviour
     public static MusicController instance;
 
     public AudioSource[] songList;
-    public enum SongTitles { Beetle_Battle, Root_Map, Ending}
+    public enum SongTitles { Beetle_Battle, Root_Map, Ending, Map_March}
     public AudioSource battleSong;
     public AudioSource mapSong;
     public AudioSource endSong;
+    public AudioSource mapMarchSong;
 
     public SongTitles currentSong;
 
@@ -22,6 +23,7 @@ public class MusicController : MonoBehaviour
         battleSong = songList[0];
         mapSong = songList[1];
         endSong = songList[2];
+        mapMarchSong = songList[3];
     }
 
     public void PlaySong(SongTitles _songTitle) {
@@ -45,6 +47,9 @@ public class MusicController : MonoBehaviour
             case SongTitles.Ending:
                 StartCoroutine(AudioFade.FadeIn(endSong, 1f));
                 break;
+            case SongTitles.Map_March:
+                StartCoroutine(AudioFade.FadeIn(mapMarchSong, .5f));
+                break;
         }
     }
 
@@ -59,6 +64,9 @@ public class MusicController : MonoBehaviour
                 break;
             case SongTitles.Ending:
                 StartCoroutine( AudioFade.FadeOut(endSong, 1f) );
+                break;
+            case SongTitles.Map_March:
+                StartCoroutine(AudioFade.FadeOut(mapMarchSong, 1f));
                 break;
         }
     }

@@ -58,6 +58,7 @@ MonoBehaviour:
       drawPile: []
       hand: []
       discardPile: []
+      comboIndex: 0
     enemyStages:
     - {fileID: 0}
     - {fileID: 0}
@@ -574,6 +575,7 @@ GameObject:
   - component: {fileID: 7754383465525070417}
   - component: {fileID: 4021747355141873858}
   - component: {fileID: 4900791033402263643}
+  - component: {fileID: 8227676536812685852}
   - component: {fileID: 7773777558826549050}
   m_Layer: 0
   m_Name: Music Controller
@@ -885,6 +887,102 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &8227676536812685852
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5895297550705726773}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9876bc98e8e50c84c87652b0f8a7ac3b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &7773777558826549050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,6 +999,7 @@ MonoBehaviour:
   battleSong: {fileID: 0}
   mapSong: {fileID: 0}
   endSong: {fileID: 0}
+  mapMarchSong: {fileID: 0}
   currentSong: 0
 --- !u!1 &7016113876247569648
 GameObject:
@@ -971,7 +1070,7 @@ MonoBehaviour:
     drawPile: []
     hand: []
     discardPile: []
-  comboIndex: 0
+    comboIndex: 0
 --- !u!1 &9081123683381597248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,3 +1122,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 138356843}
   deckController: {fileID: 3989132200394153468}
+  crossFade: {fileID: 0}
