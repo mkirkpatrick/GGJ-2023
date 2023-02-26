@@ -21,6 +21,7 @@ public class MainMenuView : MonoBehaviour
         exitButton.onClick.AddListener(() => ExitGame());
 
         GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeIn");
+        MusicController.instance.PlaySong(MusicController.SongTitles.Beginning);
     }
 
     void StartGame()

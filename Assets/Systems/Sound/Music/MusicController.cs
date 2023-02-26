@@ -7,11 +7,12 @@ public class MusicController : MonoBehaviour
     public static MusicController instance;
 
     public AudioSource[] songList;
-    public enum SongTitles { Beetle_Battle, Root_Map, Ending, Map_March}
-    public AudioSource battleSong;
-    public AudioSource mapSong;
-    public AudioSource endSong;
-    public AudioSource mapMarchSong;
+    public enum SongTitles { None, Beginning, Moody_Piano, Map_March, Beetle_Battle, Beetle_Enlightenment}
+    public AudioSource beginning;
+    public AudioSource moodyPiano;
+    public AudioSource mapMarch;
+    public AudioSource beetleBattle;
+    public AudioSource beetleEnlightenment;
 
     public SongTitles currentSong;
 
@@ -20,10 +21,11 @@ public class MusicController : MonoBehaviour
         instance = this;
 
         songList = GetComponents<AudioSource>();
-        battleSong = songList[0];
-        mapSong = songList[1];
-        endSong = songList[2];
-        mapMarchSong = songList[3];
+        beginning = songList[0];
+        moodyPiano = songList[1];
+        mapMarch = songList[2];
+        beetleBattle = songList[3];
+        beetleEnlightenment = songList[4];
     }
 
     public void PlaySong(SongTitles _songTitle) {
@@ -38,17 +40,20 @@ public class MusicController : MonoBehaviour
 
         switch (_songTitle)
         {
-            case SongTitles.Beetle_Battle:
-                StartCoroutine(AudioFade.FadeIn(battleSong, 1f));
+            case SongTitles.Beginning:
+                StartCoroutine(AudioFade.FadeIn(beginning, .5f));
                 break;
-            case SongTitles.Root_Map:
-                StartCoroutine(AudioFade.FadeIn(mapSong, 1f));
-                break;
-            case SongTitles.Ending:
-                StartCoroutine(AudioFade.FadeIn(endSong, 1f));
+            case SongTitles.Moody_Piano:
+                StartCoroutine(AudioFade.FadeIn(moodyPiano, 1f));
                 break;
             case SongTitles.Map_March:
-                StartCoroutine(AudioFade.FadeIn(mapMarchSong, .5f));
+                StartCoroutine(AudioFade.FadeIn(mapMarch, .5f));
+                break;
+            case SongTitles.Beetle_Battle:
+                StartCoroutine(AudioFade.FadeIn(beetleBattle, 1f));
+                break;
+            case SongTitles.Beetle_Enlightenment:
+                StartCoroutine(AudioFade.FadeIn(beetleEnlightenment, 1f));
                 break;
         }
     }
@@ -57,16 +62,19 @@ public class MusicController : MonoBehaviour
         switch (currentSong)
         {
             case SongTitles.Beetle_Battle:
-                StartCoroutine( AudioFade.FadeOut(battleSong, 1f) );
+                StartCoroutine( AudioFade.FadeOut(beetleBattle, 1f) );
                 break;
-            case SongTitles.Root_Map:
-                StartCoroutine( AudioFade.FadeOut(mapSong, 1f) );
+            case SongTitles.Moody_Piano:
+                StartCoroutine( AudioFade.FadeOut(moodyPiano, 1f) );
                 break;
-            case SongTitles.Ending:
-                StartCoroutine( AudioFade.FadeOut(endSong, 1f) );
+            case SongTitles.Beetle_Enlightenment:
+                StartCoroutine( AudioFade.FadeOut(beetleEnlightenment, 1f) );
                 break;
             case SongTitles.Map_March:
-                StartCoroutine(AudioFade.FadeOut(mapMarchSong, 1f));
+                StartCoroutine(AudioFade.FadeOut(mapMarch, 1f));
+                break;
+            case SongTitles.Beginning:
+                StartCoroutine(AudioFade.FadeOut(beginning, 1f));
                 break;
         }
     }

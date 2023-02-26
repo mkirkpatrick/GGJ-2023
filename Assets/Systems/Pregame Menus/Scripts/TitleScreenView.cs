@@ -11,12 +11,12 @@ public class TitleScreenView : MonoBehaviour
 
     void Start()
     {
-        MusicController.instance.PlaySong(MusicController.SongTitles.Ending);
         StartCoroutine(LoadMainMenu(ScreenWaitTime));
     }
     
     IEnumerator LoadMainMenu(float _time)
     {
+        MusicController.instance.PlaySong(MusicController.SongTitles.Beginning);
         yield return new WaitForSeconds(_time);
         GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeOut");
         yield return new WaitForSeconds(1f);

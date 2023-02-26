@@ -619,14 +619,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 593559425, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
-      propertyPath: minZoom
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 593559425, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
-      propertyPath: targetZoom
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1286279445190711421, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -675,11 +667,7 @@ PrefabInstance:
       propertyPath: crossFade
       value: 
       objectReference: {fileID: 123941877}
-    - target: {fileID: 8227676536812685852, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
-      propertyPath: m_Volume
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8227676536812685852, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
+    - target: {fileID: 4900791033402263643, guid: 5ed7e95b33841774fa263d1a87a71250, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}

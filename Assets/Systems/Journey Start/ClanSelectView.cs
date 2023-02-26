@@ -24,7 +24,7 @@ public class ClanSelectView : MonoBehaviour
 
     private void Start()
     {
-        MusicController.instance.PlaySong(MusicController.SongTitles.Root_Map);
+        MusicController.instance.PlaySong(MusicController.SongTitles.Moody_Piano);
 
         humaButton.onClick.AddListener(() => SelectClan(0));
         maniButton.onClick.AddListener(() => SelectClan(1));
@@ -57,6 +57,7 @@ public class ClanSelectView : MonoBehaviour
         yield return new WaitForSeconds(1f);
         PlayerController.instance.player.currentClan = currentlySelectedClan;
         PlayerController.instance.CreateEnemyList(enemyReferences);
+        SoundEffectsController.instance.StopSounds();
         SceneManager.LoadScene("Root Map");
     }
 }
