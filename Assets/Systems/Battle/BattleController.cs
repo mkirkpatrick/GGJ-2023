@@ -112,8 +112,6 @@ public class BattleController : MonoBehaviour
         
         audioSource.PlayOneShot(battleSounds[1]);
 
-        int textValue = 0;
-
         //The ANIMATION ZONE ----------
 
         //Play animations
@@ -127,7 +125,23 @@ public class BattleController : MonoBehaviour
 
         if (_card.effectValue > 0)
         {
-            combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
+            int textValue = 0;
+
+            if (playerTurnCards.Count == 1)
+                combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
+            else {
+                if (_card.cardType == CardType.Attack) {
+                    foreach (Card card in playerTurnCards)
+                        textValue += card.effectValue + player.attackCharge;
+                    combatTextController.SpawnDamageText(enemyView.transform, textValue);
+                }
+                else if (_card.cardType == CardType.Heal)
+                {
+                    foreach (Card card in playerTurnCards)
+                        textValue += card.effectValue + player.healCharge;
+                    combatTextController.SpawnHealText(enemyView.transform, textValue);
+                }
+            }
         }
 
         //Reaction animation

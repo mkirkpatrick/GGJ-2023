@@ -10,14 +10,10 @@ public class RootMapController : MonoBehaviour
 
     public GameObject crossFade;
 
-    private void Awake()
-    {
-        player = PlayerController.instance.player;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
+        player = PlayerController.instance.player;
         MusicController.instance.PlaySong(MusicController.SongTitles.Map_March);
 
         CameraController.instance.Activate( nodes[PlayerController.instance.player.nodeLocation] );
@@ -35,7 +31,7 @@ public class RootMapController : MonoBehaviour
         int currentNodeIndex = player.nodeLocation;
         yield return new WaitForSeconds(2);
         currentNodeIndex++;
-        PlayerController.instance.player.nodeLocation = currentNodeIndex;
+        player.nodeLocation = currentNodeIndex;
         CameraController.instance.followObject = nodes[currentNodeIndex];
         CameraController.instance.MoveCameraToTarget(nodes[currentNodeIndex].position);
         player.nodeLocation = currentNodeIndex;
