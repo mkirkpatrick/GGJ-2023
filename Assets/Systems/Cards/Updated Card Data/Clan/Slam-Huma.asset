@@ -17,3 +17,4 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 5a21cb41a21bf404b8518a977cb97241, type: 3}
   effectValue: 10
   id: 0
+  cardUserAnim: HumaAttack

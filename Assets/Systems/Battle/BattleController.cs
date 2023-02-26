@@ -79,6 +79,9 @@ public class BattleController : MonoBehaviour
 
     public IEnumerator PlayerTurnActivate(Card _card, int _index)
     {
+        int prevPlayerHP = player.healthCurrent;
+        int prevEnemyHP = enemy.healthCurrent;
+
         isPlayerTurn = false;
         enemy.isEnemyAction = false;
 
@@ -111,41 +114,52 @@ public class BattleController : MonoBehaviour
 
         int textValue = 0;
 
-        switch (_card.cardType)
+        //The ANIMATION ZONE ----------
+
+        //Play animations
+        if(_card.cardUserAnim != "Skip")
         {
-            case CardType.Attack:
-                playerView.ChangeAnimState("Player_Attack1");
-                yield return new WaitForSeconds(1f);
-                enemyView.ChangeAnimState("Enemy_Damage1");
-                foreach(Card card in playerTurnCards)
-                    textValue += card.effectValue + player.attackCharge;
-                combatTextController.SpawnDamageText(enemyView.transform, textValue);
-                break;
-            case CardType.Heal:
-                playerView.ChangeAnimState("Player_Heal1");
-                foreach (Card card in playerTurnCards)
-                    textValue += card.effectValue + player.healCharge;
-                combatTextController.SpawnHealText(playerView.transform, textValue);
-                break;
-            case CardType.Utility: 
-                playerView.ChangeAnimState("Player_Tactic1");
-                break;
-            case CardType.Huma:
-                playerView.ChangeAnimState("Player_HumaAttack");
-                yield return new WaitForSeconds(1f);
-                enemyView.ChangeAnimState("Enemy_Damage1");
-                combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
-                break;
-            case CardType.Mani:
-                playerView.ChangeAnimState("Player_ManiAttack");
-                yield return new WaitForSeconds(1.1f);
-                enemyView.ChangeAnimState("Enemy_Damage1");
-                combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
-                break;
-            case CardType.Nihtee:
-                combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
-                break;
+            string playerAnimName = "Player_" + _card.cardUserAnim;
+            print(playerAnimName);
+            playerView.ChangeAnimState(playerAnimName);
+            yield return new WaitForSeconds(1f);
         }
+
+        if (_card.effectValue > 0)
+        {
+            combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
+        }
+
+        //Reaction animation
+        if (prevPlayerHP != player.healthCurrent || _card.cardType == CardType.Heal)
+        {
+            if (prevPlayerHP < player.healthCurrent || _card.cardType == CardType.Heal)
+            {
+                //Heal animation
+                playerView.ChangeAnimState("Player_Heal1");
+            }
+            else
+            {
+                //Damage animation
+                playerView.ChangeAnimState("Player_Damage1");
+            }
+        }
+        if (prevEnemyHP != enemy.healthCurrent)
+        {
+            if (prevEnemyHP < enemy.healthCurrent)
+            {
+                //Heal animation
+                enemyView.ChangeAnimState("Enemy_Heal1");
+            }
+            else
+            {
+                //Damage animation
+                enemyView.ChangeAnimState("Enemy_Damage1");
+            }
+        }
+
+
+        //Now leaving the ANIMATION ZONE ----------
 
         bool stopBattle = CheckBattleStatus();
 
@@ -155,35 +169,60 @@ public class BattleController : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
 
+            playerView.ChangeAnimState("Player_Idle");
+            enemyView.ChangeAnimState("Enemy_Idle");
+
             StartCoroutine(EnemyTurnActivate());
         }
     }
 
     public IEnumerator EnemyTurnActivate()
     {
+        int prevPlayerHP = player.healthCurrent;
+        int prevEnemyHP = enemy.healthCurrent;
+
         enemy.isEnemyAction = !enemy.isEnemyAction;
         Card enemyCard = deckController.GetEnemyMove(enemy.deck);
         enemyCard.use(player, enemy);
 
-        enemyView.ChangeAnimState("Idle");
+        //The ANIMATION ZONE ----------
 
-        switch (enemyCard.cardType)
+        if (enemyCard.cardUserAnim != "Skip")
         {
-            case CardType.Attack:
-                enemyView.ChangeAnimState("Enemy_Attack1");
-                yield return new WaitForSeconds(1f);
-                playerView.ChangeAnimState("Player_Damage1");
-                break;
-            case CardType.Heal:
-                enemyView.ChangeAnimState("Enemy_Heal1");
-                yield return new WaitForSeconds(1f);
-                break;
-            case CardType.Utility:
-                enemyView.ChangeAnimState("Enemy_Status1");
-                yield return new WaitForSeconds(1f);
-                break;
+            string enemyAnimName = "Enemy_" + enemyCard.cardUserAnim;
+            print(enemyAnimName);
+            enemyView.ChangeAnimState(enemyAnimName);
+            yield return new WaitForSeconds(1f);
         }
-        
+
+        //Reaction animation
+        if (prevPlayerHP != player.healthCurrent || enemy.isEnemyAction == false)
+        {
+            if (prevPlayerHP < player.healthCurrent || enemyCard.cardType == CardType.Heal)
+            {
+                //Heal animation
+                playerView.ChangeAnimState("Player_Heal1");
+            }
+            else if (prevPlayerHP > player.healthCurrent)
+            {
+                //Damage animation
+                playerView.ChangeAnimState("Player_Damage1");
+            }
+        }
+        if (prevEnemyHP != enemy.healthCurrent || enemy.isEnemyAction == true)
+        {
+            if (prevEnemyHP < enemy.healthCurrent || enemyCard.cardType == CardType.Heal)
+            {
+                //Heal animation
+                enemyView.ChangeAnimState("Enemy_Heal1");
+            }
+            else if(prevEnemyHP > enemy.healthCurrent)
+            {
+                //Damage animation
+                enemyView.ChangeAnimState("Enemy_Damage1");
+            }
+        }
+
         combatTextController.SpawnCombatText(enemyView.transform, playerView.transform, enemyCard);
 
         battleView.UpdateView(player, enemy);
@@ -194,7 +233,10 @@ public class BattleController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         bool stopBattle = CheckBattleStatus();
 
-        if(!stopBattle)
+        playerView.ChangeAnimState("Player_Idle");
+        enemyView.ChangeAnimState("Enemy_Idle");
+
+        if (!stopBattle)
         {
             NewTurn();
         }

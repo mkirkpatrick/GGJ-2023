@@ -17,3 +17,4 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 5ddf7283187859b469bb132564d4663a, type: 3}
   effectValue: 2
   id: 0
+  cardUserAnim: NihteeAttack

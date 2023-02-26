@@ -13,6 +13,7 @@ public abstract class Card : ScriptableObject
     public abstract CardType cardType{get;}
     public int effectValue;
     public int id;
+    public string cardUserAnim;
 
     public abstract void use(Player p, Enemy e);
 

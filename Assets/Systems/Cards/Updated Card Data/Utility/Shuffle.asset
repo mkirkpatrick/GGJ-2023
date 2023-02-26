@@ -17,3 +17,4 @@ MonoBehaviour:
   cardImage: {fileID: 21300000, guid: 0ff731c3cc1522f4fa4677ad0474c994, type: 3}
   effectValue: 0
   id: 0
+  cardUserAnim: Tactic1

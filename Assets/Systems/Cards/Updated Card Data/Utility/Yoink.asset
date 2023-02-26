@@ -18,3 +18,4 @@ MonoBehaviour:
   cardImage: {fileID: 0}
   effectValue: 0
   id: 0
+  cardUserAnim: Tactic1
