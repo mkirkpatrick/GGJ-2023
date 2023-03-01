@@ -10,4 +10,5 @@ public class Deck
     public List<Card> hand = new List<Card>(5);
     public List<Card> discardPile = new List<Card>();
     public int comboIndex=0;
+    
 }

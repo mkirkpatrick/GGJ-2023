@@ -52,8 +52,8 @@ public class DeckController : MonoBehaviour
         }
         shuffledCards.AddRange(deck.discardPile);
         shuffledCards.AddRange(deck.drawPile);
+
         //iterates through and shuffles the cards
-        
         for(var i = 0; i < shuffledCards.Count; i++){
             int rand = Random.Range(i, shuffledCards.Count);
             var temp = shuffledCards[i];

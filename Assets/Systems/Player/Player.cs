@@ -22,6 +22,7 @@ public class Player
     //public AnimationClip[] battleAnimations;
 
     public Player() {
+        
         healthCurrent = 30;
         healthMax = 30;
 
@@ -29,6 +30,7 @@ public class Player
 
         nodeLocation = 0;
         enemyStages = new Enemy[5];
+
     }
 
     public void ResetStats() {

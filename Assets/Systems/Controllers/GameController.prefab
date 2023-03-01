@@ -52,7 +52,7 @@ MonoBehaviour:
     attackCharge: 0
     healCharge: 0
     bleedValue: 0
-    deckController: {fileID: 0}
+    deckController: {fileID: 3989132200394153468}
     deck:
       deck: []
       drawPile: []
@@ -1162,12 +1162,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f44c3fdb0bc0276498854af4c6ff3cd0, type: 2}
   - {fileID: 11400000, guid: 5c5c83992868d4645b743f35e0dad68d, type: 2}
   - {fileID: 11400000, guid: 6d599659896ab5a49bb4c4c3a58bd383, type: 2}
-  currentDeck:
-    deck: []
-    drawPile: []
-    hand: []
-    discardPile: []
-    comboIndex: 0
+  addedCards: []
 --- !u!1 &9081123683381597248
 GameObject:
   m_ObjectHideFlags: 0

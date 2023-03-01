@@ -42,6 +42,7 @@ public class BattleController : MonoBehaviour
 
         StartCoroutine(BattleIntro());
         
+        //playerController.player.deck = deckController.GetNewDeck(playerController.player);
         LoadBattleScene();
 
         handView.CreateHand();
@@ -53,10 +54,7 @@ public class BattleController : MonoBehaviour
     private void LoadBattleScene() {
         // Load Player
         player = playerController.player;
-        player.deckController = this.deckController;
         player.ResetStats();
-
-        player.deck = deckController.GetNewDeck(playerController.player);
         deckController.Shuffle(true, player.deck);
 
         playerView.ChangeAnimState("Idle");
@@ -260,12 +258,14 @@ public class BattleController : MonoBehaviour
         if (enemy.bleedValue > 0)
         {
             enemy.healthCurrent -= enemy.bleedValue;
+            enemy.healthCurrent = (int)Mathf.Clamp(enemy.healthCurrent, 0f, enemy.healthMax);
             combatTextController.SpawnDamageText(enemyView.transform, enemy.bleedValue);
         }
 
         if (player.bleedValue > 0)
         {
             player.healthCurrent -= player.bleedValue;
+            player.healthCurrent = (int)Mathf.Clamp(player.healthCurrent, 0f, player.healthMax);
             combatTextController.SpawnDamageText(playerView.transform, player.bleedValue);
         }
         battleView.UpdateView(player, enemy);
@@ -314,7 +314,7 @@ public class BattleController : MonoBehaviour
 
         enemy.resetEnemy();
 
-        GameController.instance.playerController.CheckClanVictory(player.nodeLocation-1);
+        playerController.CheckClanVictory(player.nodeLocation-1, deckController);
 
         SceneManager.LoadScene("Root Map");
     }
