@@ -8,14 +8,21 @@ public class CombatTextController : MonoBehaviour
     public List<Color> textColors;
     public float time = 1f;
 
-    public void SpawnCombatText(Transform _origin, Transform _opponent, Card _card) {
+    public void SpawnCombatText(Transform _origin, Transform _opponent, Card _card, bool _isPlayer) {
+        int attack = 0;
+        int heal = 0;
+        if (_isPlayer) {
+            attack = PlayerController.instance.player.attackCharge;
+            heal = PlayerController.instance.player.healCharge;
+        }
+         
         if (_card.cardType == CardType.Attack)
         {
-            int _textValue = _card.effectValue + PlayerController.instance.player.attackCharge;
+            int _textValue = _card.effectValue + attack;
             ShowText(_textValue.ToString(), _opponent, 0);
         }
         else if (_card.cardType == CardType.Heal) {
-            int _textValue = _card.effectValue + PlayerController.instance.player.healCharge;
+            int _textValue = _card.effectValue + heal;
             ShowText(_textValue.ToString(), _origin, 1);
         }
         else if (_card.cardType == CardType.Huma)

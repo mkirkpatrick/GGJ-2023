@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class DeckController : MonoBehaviour
 {
+    public static DeckController instance;
+
     public List<Card> allCards;
     public List<Card> clanCards;
     public Deck currentDeck;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     //fills deck with card data set
     public Deck GetNewDeck(Player _player)
@@ -47,11 +54,14 @@ public class DeckController : MonoBehaviour
     public void Shuffle(bool includeHand, Deck deck){
         List<Card> shuffledCards = new List<Card>();
         //adds in the cards in the hand if necessary
-        if(includeHand){
-            shuffledCards.AddRange(deck.hand);
+        if (includeHand)
+        {
+            shuffledCards.AddRange( deck.deck );
         }
-        shuffledCards.AddRange(deck.discardPile);
-        shuffledCards.AddRange(deck.drawPile);
+        else {
+            shuffledCards.AddRange(deck.discardPile);
+            shuffledCards.AddRange(deck.drawPile);
+        }
 
         //iterates through and shuffles the cards
         for(var i = 0; i < shuffledCards.Count; i++){

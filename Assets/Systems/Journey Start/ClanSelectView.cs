@@ -47,6 +47,9 @@ public class ClanSelectView : MonoBehaviour
         if (currentlySelectedClan == null)
             return;
 
+        PlayerController.instance.CreateNewPlayer(currentlySelectedClan);
+        PlayerController.instance.CreateEnemyList(enemyReferences);
+
         StartCoroutine(BeginJourneyCoroutine());
     }
 
@@ -55,8 +58,6 @@ public class ClanSelectView : MonoBehaviour
         GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeOut");
         SoundEffectsController.instance.PlaySound("Confirm Select 3");
         yield return new WaitForSeconds(1f);
-        PlayerController.instance.player.currentClan = currentlySelectedClan;
-        PlayerController.instance.CreateEnemyList(enemyReferences);
         SoundEffectsController.instance.StopSounds();
         SceneManager.LoadScene("Root Map");
     }

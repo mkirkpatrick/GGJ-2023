@@ -34,7 +34,6 @@ public class RootMapController : MonoBehaviour
         player.nodeLocation = currentNodeIndex;
         CameraController.instance.followObject = nodes[currentNodeIndex];
         CameraController.instance.MoveCameraToTarget(nodes[currentNodeIndex].position);
-        player.nodeLocation = currentNodeIndex;
 
         if(currentNodeIndex >= 6)
         {

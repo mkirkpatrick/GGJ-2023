@@ -14,6 +14,10 @@ public class PlayerController : MonoBehaviour
     {
         instance = this;
     }
+    private void Start()
+    {
+        deckController = DeckController.instance;
+    }
 
     public void CreateEnemyList(Enemy[] enemyReferences){
         player.enemyStages[0] = enemyReferences[3];
@@ -61,9 +65,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void CreateNewPlayer()
+    public void CreateNewPlayer(Clan _clan)
     {
-        player = new Player();
+        player = new Player(_clan);
         player.deck = deckController.GetNewDeck(player);
     }
 }

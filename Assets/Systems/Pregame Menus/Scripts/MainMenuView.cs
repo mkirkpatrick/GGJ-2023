@@ -54,7 +54,7 @@ public class MainMenuView : MonoBehaviour
 
     void ResetGameData()
     {
-        PlayerController.instance.CreateNewPlayer();
+
         //Reset enemies
     }
 }

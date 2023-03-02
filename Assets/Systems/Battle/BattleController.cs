@@ -21,6 +21,7 @@ public class BattleController : MonoBehaviour
     public Enemy enemy;
 
     public bool isPlayerTurn = false;
+    public Card playerCard;
     private List<Card> playerTurnCards = new List<Card>();
 
     //TODO: Pull sound effects out to SoundEffectController and add reference
@@ -42,7 +43,6 @@ public class BattleController : MonoBehaviour
 
         StartCoroutine(BattleIntro());
         
-        //playerController.player.deck = deckController.GetNewDeck(playerController.player);
         LoadBattleScene();
 
         handView.CreateHand();
@@ -77,6 +77,7 @@ public class BattleController : MonoBehaviour
 
     public IEnumerator PlayerTurnActivate(Card _card, int _index)
     {
+        playerCard = _card;
         int prevPlayerHP = player.healthCurrent;
         int prevEnemyHP = enemy.healthCurrent;
 
@@ -126,7 +127,7 @@ public class BattleController : MonoBehaviour
             int textValue = 0;
 
             if (playerTurnCards.Count == 1)
-                combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card);
+                combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, _card, true);
             else {
                 if (_card.cardType == CardType.Attack) {
                     foreach (Card card in playerTurnCards)
@@ -137,7 +138,7 @@ public class BattleController : MonoBehaviour
                 {
                     foreach (Card card in playerTurnCards)
                         textValue += card.effectValue + player.healCharge;
-                    combatTextController.SpawnHealText(enemyView.transform, textValue);
+                    combatTextController.SpawnHealText(playerView.transform, textValue);
                 }
             }
         }
@@ -234,8 +235,10 @@ public class BattleController : MonoBehaviour
                 enemyView.ChangeAnimState("Enemy_Damage1");
             }
         }
-
-        combatTextController.SpawnCombatText(enemyView.transform, playerView.transform, enemyCard);
+        if(playerCard.cardName == "Reflect")
+            combatTextController.SpawnCombatText(playerView.transform, enemyView.transform, enemyCard, false);
+        else
+            combatTextController.SpawnCombatText(enemyView.transform, playerView.transform, enemyCard, false);
 
         battleView.UpdateView(player, enemy);
 
@@ -306,7 +309,7 @@ public class BattleController : MonoBehaviour
 
         soundEffectsController.PlaySound("Victory");
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
 
         GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeOut");
 
