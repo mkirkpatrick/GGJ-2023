@@ -25,7 +25,7 @@ public class EndingCinematicScript : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         textManagerScript.StartDialogue(dialogueText);
-        yield return new WaitForSeconds(65f);
+        yield return new WaitForSeconds(62f);
         //redParticles.Play();
         //blueParticles.Play();
         //yellowParticles.Play();
