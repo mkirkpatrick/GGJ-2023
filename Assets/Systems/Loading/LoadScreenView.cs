@@ -4,10 +4,17 @@ using UnityEngine.SceneManagement;
 
 public class LoadScreenView : MonoBehaviour
 {
-    public float loadTime = 5f;
+    [SerializeField]
+    private float loadTime = 5f;
+    [SerializeField]
+    private GameObject hintParent;
+    private int hintNum = 0;
 
     private void Start()
     {
+        hintNum = PlayerController.instance.player.nodeLocation - 1;
+        LoadHintScreen(hintNum);
+
         GameController.instance.crossFade.GetComponent<CrossfadeView>().FadeState("FadeIn");
         StartCoroutine(LoadRoutine());
     }
@@ -23,5 +30,16 @@ public class LoadScreenView : MonoBehaviour
         SoundEffectsController.instance.StopSounds();
 
         SceneManager.LoadScene("Battle");
+    }
+
+    void LoadHintScreen(int hintNum)
+    {
+        Transform hintTransform = hintParent.transform;
+        for (int i = 0; i < hintTransform.childCount; i++)
+        {
+            hintTransform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        hintTransform.GetChild(hintNum).gameObject.SetActive(true);
     }
 }

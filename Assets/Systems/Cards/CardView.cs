@@ -37,7 +37,8 @@ public class CardView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         int comboIndex = PlayerController.instance.player.deck.comboIndex;
 
         if (_index <= comboIndex)
-            ShowRootBorder(true);
+            if(card.cardType == CardType.Attack || card.cardType == CardType.Heal)
+                ShowRootBorder(true);
         else
             ShowRootBorder(false);
     }
