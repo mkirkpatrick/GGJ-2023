@@ -36,11 +36,22 @@ public class CardView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
         int comboIndex = PlayerController.instance.player.deck.comboIndex;
 
+
         if (_index <= comboIndex)
-            if(card.cardType == CardType.Attack || card.cardType == CardType.Heal)
+        {
+            if (card.cardType == CardType.Attack || card.cardType == CardType.Heal)
+            {
                 ShowRootBorder(true);
+            }
+            else
+            {
+                ShowRootBorder(false);
+            }
+        } 
         else
+        {
             ShowRootBorder(false);
+        }
     }
 
     private Sprite GetFrameSprite(CardType _type) {

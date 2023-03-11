@@ -25,32 +25,6 @@ public class PlayerView : MonoBehaviour
         {
             bodyAnimator.Play(animName);
         }
-        /*
-        switch(animState)
-        {
-            case AnimState.Idle:
-                break;
-            case AnimState.Attacking:
-                bodyAnimator.Play("Player_Attack1");
-                break;
-            case AnimState.Damaged:
-                bodyAnimator.Play("Player_Damage1");
-                break;
-            case AnimState.Healing:
-                bodyAnimator.Play("Player_Heal1");
-                break;
-            case AnimState.Tactic:
-                bodyAnimator.Play("Player_Tactic1");
-                break;
-            case AnimState.Huma:
-                bodyAnimator.Play("Player_HumaAttack");
-                break;
-            case AnimState.Mani:
-                bodyAnimator.Play("Player_ManiAttack");
-                break;
-            case
-        }
-        */
     }
 
     public void PlaySound(AudioClip clip)
