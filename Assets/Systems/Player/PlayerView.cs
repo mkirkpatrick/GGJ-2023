@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerView : MonoBehaviour
@@ -6,9 +5,7 @@ public class PlayerView : MonoBehaviour
     private PlayerController playerController;
 
     public Animator bodyAnimator;      //Animates position of object
-    public Animator spriteAnimator;    //Animates sprite of object
-
-    public enum AnimState {Idle, Attacking, Healing, Tactic, Damaged, Huma, Mani, Nihtee, Dead};
+    public Animator spriteAnimator;
 
     private void Awake()
     {

@@ -104,8 +104,6 @@ public class BattleController : MonoBehaviour
             soundEffectsController.PlaySound("Card Flap");
         }
 
-        //yield return new WaitForSeconds(0.5f); //pause for card sfx?
-
         deckController.DrawUntilFull(player.deck);
         handView.UpdateHandView(player.deck.hand);
         
@@ -117,7 +115,6 @@ public class BattleController : MonoBehaviour
         if(_card.cardUserAnim != "Skip")
         {
             string playerAnimName = "Player_" + _card.cardUserAnim;
-            print(playerAnimName);
             playerView.ChangeAnimState(playerAnimName);
             yield return new WaitForSeconds(1f);
         }
